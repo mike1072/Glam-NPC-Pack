@@ -1,0 +1,14 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("GV#FLAR")
+SetGlobal("GV#FLARSandrahCutscene","GLOBAL",1)
+Wait(1)
+PlaySound("EFF_P05")
+Polymorph(DRAGON_RED)
+Wait(2)
+StartDialogueNoSet("Sandrah")
+EndCutSceneMode()
+END
+

@@ -57,9 +57,10 @@ I_C_T ~%tutu_var%LUCKY~ 0 GV#FLARInterjectLUCKY1
 END
 
 //Potion Seller
-I_C_T2 ~%tutu_var%MYSMER~ 0 GV#FLARInterjectMYSMER1
+I_C_T ~%tutu_var%MYSMER~ 0 GV#FLARInterjectMYSMER1
 == GV#FLARJ IF ~InParty("GV#FLAR") InMyArea("GV#FLAR") !StateCheck("GV#FLAR",CD_STATE_NOTVALID)~ THEN
 ~Careful, <CHARNAME>. These elixirs indeed fume with magic, but not all of it benign. I know a drawback when I smell one.~
+== %tutu_var%MYSMER ~What say you, friend? A mere pittance for a taste of godly power and wisdom?~
 END
 
 //Meklin
@@ -175,9 +176,10 @@ END
 
 
 //Arcand
-I_C_T2 ~%tutu_var%ARCAND~ 3 GV#FLARInterjectARCAND1
+I_C_T ~%tutu_var%ARCAND~ 3 GV#FLARInterjectARCAND1
 == GV#FLARJ IF ~InParty("GV#FLAR") InMyArea("GV#FLAR") !StateCheck("GV#FLAR",CD_STATE_NOTVALID)~ THEN
 ~There was a time, once, when I would have met this man, and I would have stepped on him, and that would have been the sum of our acquaintance. How dark the days have become.~
+== %tutu_var%ARCAND ~There's darker yet in store for you, as surely as I wertle-woo...~
 END
 
 //Arghain

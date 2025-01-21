@@ -162,9 +162,10 @@ I_C_T2 ~%tutu_var%THEREL~ 9 GV#LITTInterjectTHEREL2
 END
 
 //Tiber
-I_C_T2 ~%tutu_var%TIBER~ 4 GV#LITTInterjectTIBER1
+I_C_T ~%tutu_var%TIBER~ 4 GV#LITTInterjectTIBER1
 == GV#LITTJ IF ~InParty("GV#LITT") InMyArea("GV#LITT") !StateCheck("GV#LITT",CD_STATE_NOTVALID)~ THEN
 ~*sigh* All this just for trying to make the world a bit safer. In the daftest way they could, maybe, but they still deserved better.~
+== %tutu_var%TIBER ~Spider's Bane...I wish we'd never found the wretched thing.~
 END
 
 //Brun

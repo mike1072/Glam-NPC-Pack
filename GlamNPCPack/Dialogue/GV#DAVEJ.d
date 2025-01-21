@@ -2,25 +2,29 @@ BEGIN GV#DAVEJ
 
 
 //Thalantyr
-I_C_T2 ~%tutu_var%THALAN~ 1 GV#DAVEInterjectTHALAN1
+I_C_T ~%tutu_var%THALAN~ 1 GV#DAVEInterjectTHALAN1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 ~It's not you, <CHARNAME>. I've knocked on his door once or twice before and he was exactly this grumpy every time. Probably cabin fever.~
+== %tutu_var%THALAN ~On the contrary, a spell of cabin fever may be just the remedy I need. Would that I were allowed the chance to find out.~
 END
 
 //Hentold
-I_C_T2 ~%tutu_var%HENTOL~ 8 GV#DAVEInterjectHENTOL1
+I_C_T ~%tutu_var%HENTOL~ 8 GV#DAVEInterjectHENTOL1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 ~Ahh. Classic mistake. If you're going to rob the dead, do it before they're buried. Always gets complicated once the rot sets in.~
+== %tutu_var%HENTOL ~My thieving days are over, and I'll swear it to any god that would grant me peace!~
 END
 
-I_C_T2 ~%tutu_var%HENTOL~ 9 GV#DAVEInterjectHENTOL1
+I_C_T ~%tutu_var%HENTOL~ 9 GV#DAVEInterjectHENTOL1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 ~Ahh. Classic mistake. If you're going to rob the dead, do it before they're buried. Always gets complicated once the rot sets in.~
+== %tutu_var%HENTOL ~My thieving days are over, and I'll swear it to any god that would grant me peace!~
 END
 
-I_C_T2 ~%tutu_var%HENTOL~ 10 GV#DAVEInterjectHENTOL1
+I_C_T ~%tutu_var%HENTOL~ 10 GV#DAVEInterjectHENTOL1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 ~Ahh. Classic mistake. If you're going to rob the dead, do it before they're buried. Always gets complicated once the rot sets in.~
+== %tutu_var%HENTOL ~My thieving days are over, and I'll swear it to any god that would grant me peace!~
 END
 
 //Taugosz
@@ -64,10 +68,11 @@ I_C_T ~%tutu_var%TAMOKO~ 16 GV#DAVEInterjectTAMOKO1
 END
 
 //Telano
-I_C_T2 ~%tutu_var%TELANO~ 9 GV#DAVEInterjectTELANO1
+I_C_T ~%tutu_var%TELANO~ 9 GV#DAVEInterjectTELANO1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 ~Ah, the old "If you kill me, you're no better than me" routine. I tried that on a group of Helmies once.~
 = ~It, uh...didn't work. At all.~
+== %tutu_var%TELANO ~I'll have a hawk's eye on you, <CHARNAME>, from this moment forward. Be wary.~
 END
 
 //Therella

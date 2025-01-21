@@ -1,5 +1,5 @@
 EXTEND_BOTTOM %tutu_var%THALAN 1
-++ ~Are you aware there's a temple of Talos next door to you?~ + gv#thalan1
++~GlobalGT("GV#DAVETalk","GLOBAL",8)~+ ~Are you aware there's a temple of Talos next door to you?~ + gv#thalan1
 END
 
 APPEND %tutu_var%THALAN

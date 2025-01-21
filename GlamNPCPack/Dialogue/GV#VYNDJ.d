@@ -2421,8 +2421,9 @@ END
 //Nathan's Corpse
 CHAIN IF ~Global("GV#VYNDNathan","GLOBAL",1)~ THEN GV#VYNDJ GV#VYNDNathanInterjection1
 ~Called it.~
-== GV#LITTJ IF ~IsValidForPartyDialogue("GV#LITT")~ THEN ~Nobody's impressed, Vynd.~
-DO ~SetGlobal("GV#VYNDNathan","GLOBAL",2)~ EXIT
+DO ~SetGlobal("GV#VYNDNathan","GLOBAL",2)~
+== GV#LITTJ IF ~IsValidForPartyDialogue("GV#LITT") Global("GV#VYNDNathan","GLOBAL",1)~ THEN ~Nobody's impressed, Vynd.~
+EXIT
 
 //Albert the Demon
 CHAIN IF ~Global("GV#VYNDAlbert","GLOBAL",1)~ THEN GV#VYNDJ GV#VYNDAlbertInterjection2

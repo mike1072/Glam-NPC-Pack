@@ -475,8 +475,8 @@ SAY SELECT_ACTION2 ~Done.~ [GV#MOIDj]
 SAY SELECT_ACTION3 ~Fine.~ [GV#MOIDk]
 END
 
-
-COPY ~GlamNPCPack/Creature/GV#VYND.cre~ ~override/GV#VYND.cre~
+ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
+COPY ~GlamNPCPack/Creature/gv#vynd.cre~ ~override/gv#vynd.cre~
 
 SAY NAME1 ~Vynd~
 SAY NAME2 ~Vynd~
@@ -502,6 +502,38 @@ SAY SELECT_ACTION1 ~Here I go.~ [gv#vyndi]
 SAY SELECT_ACTION2 ~On my way.~ [gv#vyndj]
 SAY SELECT_ACTION3 ~No worries.~ [gv#vyndk]
 
+END ELSE BEGIN
+
+COPY ~GlamNPCPack/Creature/GV#VYND2.cre~ ~override/GV#VYND.cre~
+
+SAY NAME1 ~Vynd~
+SAY NAME2 ~Vynd~
+
+SAY BIO ~When asked about his past, Vynd wonders aloud how you'd feel if some nosy bastard you barely know asked for your life story. You've pieced together that he's not new to the surface world, and he left the Underdark by choice. Beyond that, he remains a mystery. A snide, abrasive mystery.~
+
+SAY MORALE ~A dead man serves no-one.~ [gv#vyndw]
+SAY LEADER ~I'll be the leader for now. Just, uh, don't stand between me and the exit.~ [gv#vyndb]
+SAY TIRED ~I'm tired of trotting around like a damn mule. Let's find an inn and some warm beds.~ [gv#vyndc]
+SAY BORED ~There must be more to life than standing around wondering if there's more to life.~ [gv#vyndd]
+SAY BATTLE_CRY1 ~My enemies always bring out the best in me.~ [gv#vynda]
+SAY BATTLE_CRY2 ~My enemies always bring out the best in me.~ [gv#vynda]
+SAY BATTLE_CRY3 ~My enemies always bring out the best in me.~ [gv#vynda]
+SAY BATTLE_CRY4 ~My enemies always bring out the best in me.~ [gv#vynda]
+SAY BATTLE_CRY5 ~My enemies always bring out the best in me.~ [gv#vynda]
+SAY DAMAGE ~~ [gv#vyndl]
+SAY DYING ~~ [gv#vyndm]
+SAY HURT ~I think my adventuring days are almost over.~ [gv#vynde]
+SAY SELECT_COMMON1 ~Yeah?~ [gv#vyndf]
+SAY SELECT_COMMON2 ~What's up?~ [gv#vyndg]
+SAY SELECT_COMMON3 ~What now?~ [gv#vyndh]
+SAY SELECT_ACTION1 ~Here I go.~ [gv#vyndi]
+SAY SELECT_ACTION2 ~On my way.~ [gv#vyndj]
+SAY SELECT_ACTION3 ~No worries.~ [gv#vyndk]
+END
+
+
+
+
 COPY ~GlamNPCPack/Creature/GV#SPID.cre~ ~override/GV#SPID.cre~
 
 SAY NAME1 ~Spider~
@@ -518,6 +550,13 @@ COMPILE EVALUATE_BUFFER ~GlamNPCPack/Dialogue~
   ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
             COMPILE EVALUATE_BUFFER ~GlamNPCPack/BGEE~
   END
+  
+// Glam-Sandrah
+ACTION_IF FILE_EXISTS_IN_GAME ~BGV#LITT.dlg~ AND FILE_EXISTS_IN_GAME ~BSandr.dlg~
+THEN BEGIN
+  PRINT ~Adding crossmod banters between Glam's NPC Pack and Sandrah~
+COMPILE EVALUATE_BUFFER ~GlamNPCPack/crossmod/sandrah~
+END
 
 
 //JOURNAL
