@@ -9,7 +9,7 @@ END
 
 IF ~~ v1
 SAY ~Friendly Arm it is, then. Possibly the only place on the coast where someone could start a fight with me and *they'd* get kicked out.~
-IF ~~ DO ~SetGlobal("GV#DAVEJoined","GLOBAL",0) EscapeAreaMove("FriendlyArmInn_L1",1160,740,2)~ EXIT
+IF ~~ DO ~SetGlobal("GV#DAVEJoined","GLOBAL",0) EscapeAreaMove("%FriendlyArmInn_L1%",1160,740,2)~ EXIT
 END
 
 IF ~~ v2

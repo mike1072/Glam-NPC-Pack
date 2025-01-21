@@ -122,18 +122,18 @@ CHAIN GV#MOID m1.20
 END
 + ~CheckStatGT(Player1,14,INT)~ + ~"Alak min orn nagh mair?" A heavy pledge for someone you just met.~ EXTERN GV#MOID m1.21
 ++ ~What was that?~ EXTERN GV#MOID m1.22
-++ ~Uh, right. On we go, then.~ DO ~SetGlobal("GV#MOIDJoined","GLOBAL",1) JoinParty()~ EXIT
+++ ~Uh, right. On we go, then.~ DO ~SetGlobal("GV#MOIDJoined","GLOBAL",1) SetGlobal("GV#MOIDRecruited","GLOBAL",1) JoinParty()~ EXIT
 
 CHAIN GV#MOID m1.21
 ~It's important. Keeps me straight.~
-DO ~SetGlobal("GV#MOIDJoined","GLOBAL",1) JoinParty()~ EXIT
+DO ~SetGlobal("GV#MOIDJoined","GLOBAL",1) SetGlobal("GV#MOIDRecruited","GLOBAL",1) JoinParty()~ EXIT
 
 CHAIN GV#MOID m1.22
 ~Oath.~
 END
 ++ ~Do you swear oaths to all your clients?~ EXTERN GV#MOID m1.21
 ++ ~There's no need to go that far.~ EXTERN GV#MOID m1.21
-++ ~Uh, right. On we go, then.~ DO ~SetGlobal("GV#MOIDJoined","GLOBAL",1) JoinParty()~ EXIT
+++ ~Uh, right. On we go, then.~ DO ~SetGlobal("GV#MOIDJoined","GLOBAL",1) SetGlobal("GV#MOIDRecruited","GLOBAL",1) JoinParty()~ EXIT
 
 
 CHAIN IF ~Dead("Karlat") Global("GV#MOIDMet","GLOBAL",1)~ THEN GV#MOID m2

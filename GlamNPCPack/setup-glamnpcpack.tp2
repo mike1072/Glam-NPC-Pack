@@ -769,6 +769,7 @@ SAY DESC ~Fashioned from the scales of the serpentine naga, this shimmering garm
 
 STATISTICS:
 
+Spellcasting is not disabled
 Bonuses: Immunity to Poison
 Armor Class: 8
 Weight: 15
@@ -805,7 +806,7 @@ STATISTICS:
 
 Equipped Abilities:
 Armor Class: +1
-Disables Spellcasting
+Disables arcane spellcasting
 Open Locks: -10%
 Find Traps: -10%
 Pick Pockets: -10%

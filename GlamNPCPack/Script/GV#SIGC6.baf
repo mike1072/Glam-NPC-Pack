@@ -4,7 +4,7 @@ THEN
 RESPONSE #100
 CutSceneId("GV#FLAR")
 SetGlobal("GV#MarinaBadIdea","GLOBAL",2)
-CreateVisualEffectObject("sppfirxi","GV#MARI")
+CreateVisualEffectObject("spfirepi","GV#MARI")
 ActionOverride("GV#MARI",Polymorph("CLERIC_FEMALE_HUMAN"))
 PlaySound("EFF_P115")
 ScreenShake([30.25],20)

@@ -2,21 +2,10 @@ BEGIN GV#DAVEJ
 
 
 //Thalantyr
-INTERJECT ~%tutu_var%THALAN~ 1 GV#DAVEInterjectTHALAN1
+I_C_T2 ~%tutu_var%THALAN~ 1 GV#DAVEInterjectTHALAN1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 ~It's not you, <CHARNAME>. I've knocked on his door once or twice before and he was exactly this grumpy every time. Probably cabin fever.~
 END
-  ++ ~Rumors talk of a powerful mage that lives out here. If it is you, I would like to speak with you.~ EXTERN %tutu_var%THALAN 2
-  ++ ~I go where I wish and stay as long as I please. Don't threaten me.~ EXTERN %tutu_var%THALAN 3
-  ++ ~I apologize for the intrusion, and will leave immediately.~ EXTERN %tutu_var%THALAN 4
-  +~PartyHasItem("MISC49")~+ ~Well, it's rather amusing actually. You see, I happened to rescue this... um... talking chicken...~ DO
-  ~TakePartyItem("MISC49")
-  DestroyItem("MISC49")
-  CreateCreature("MELICA",[286.398],8)
-  ActionOverride("Melicamp",SetNumTimesTalkedTo(2))
-  SetGlobal("LeftChicken","GLOBAL",1)~ EXTERN %tutu_var%THALAN 7
-  +~GlobalGT("GV#DAVETalk","GLOBAL",6)~+ ~Are you aware there's a temple of Talos next door to you?~ EXTERN %tutu_var%THALAN GV#THALAN
-
 
 //Hentold
 I_C_T2 ~%tutu_var%HENTOL~ 8 GV#DAVEInterjectHENTOL1

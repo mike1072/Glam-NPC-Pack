@@ -84,5 +84,5 @@ ActionOverride("GV#PAM",Enemy()) ActionOverride("GV#PHIL",Enemy()) ActionOverrid
 CHAIN GV#JEFF j3.4
 ~Healing services?! Talos' faithful are no peddlers of curatives! This insult must be answered with death!~
 = ~But hark! I hear His voice on the winds. Rejoice, worm, for your brazenness has pleased Talos! This once, He shall provide! Coin only, please.~
-DO ~SetGlobal("GV#JEFFOpenedStore","GLOBAL",1) StartStore("Tem2601",LastTalkedToBy())~
+DO ~SetGlobal("GV#JEFFOpenedStore","GLOBAL",1) StartStore("%tutu_var%Tem2601",LastTalkedToBy())~
 EXIT

@@ -12,7 +12,7 @@ ActionOverride("GV#PAM",Enemy()) ActionOverride("GV#PHIL",Enemy()) ActionOverrid
 CHAIN GV#PAM a1.1
 ~Would you believe I used to be a paladin? Tormite, no less. Duty this, obedience that. I wiped out a Zhentarim cabal in Scornubel, down to the last man. I led a charge against the orcs of Muranndin, killed their leader in single combat.~
 = ~Then I found out some buttery little bastard had been two-timing my daughter. Three-timing, actually. I went over to knock a couple of teeth out, and the silly bugger falls and cracks his head on the balustrade. Dead.~
-= ~And there goes my knighthood. Loyalty is the most important thing in the world, but twenty  years of it doesn't excuse one accident, apparently. Well he can stick it, the tightarse.~
+= ~And there goes my knighthood. Loyalty is the most important thing in the world, but twenty years of it doesn't excuse one accident, apparently. Well he can stick it, the tightarse.~
 EXIT
 
 CHAIN IF ~NumTimesTalkedToGT(0) Global("GV#TARAIntro","GLOBAL",0)~ THEN GV#PAM a2
