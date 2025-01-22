@@ -65,10 +65,12 @@ BEGIN @14 /* Glam's NPC Pack for BG:EE, BGT and BG TUTU */
 REQUIRE_PREDICATE GAME_IS ~tutu tutu_totsc bgt bgee eet~ @13
 LABEL ~gv#_glams_npc_pack~
 
-OUTER_SPRINT "ElfsongBartender" ~BART8~
+OUTER_SPRINT "ElfsongBartender" ~BART8~ // _bart11 for tutu
 OUTER_SPRINT "GhostKnight" ~%tutu_scriptbg%KNIGHT%eet_var%~
+OUTER_SPRINT "BlackguardKitCheck" ~!Kit(Player1,Blackguard)~ // blanked for non-ee
 
 ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_glam_ai BEGIN
+
   // ee script => obg2 substitute
   bdbard01 => gpmage2  // used by sigurd
   bdcler01 => priest5  // used by kelly, lady burnhart, phil, taranis
@@ -81,7 +83,7 @@ OUTER_SET opp_palette = 0
 ACTION_IF enhanced_edition BEGIN 
   
   ACTION_PHP_EACH cd_glam_ai AS eescript => obg2script BEGIN
-  OUTER_SPRINT $cd_glam_ai("%eescript%") ~%eescript%~
+    OUTER_SPRINT $cd_glam_ai("%eescript%") ~%eescript%~
     ACTION_IF !FILE_EXISTS_IN_GAME ~%eescript%.bcs~ BEGIN
       COMPILE ~glamnpcpack/scripts/bgee/%eescript%.baf~
     END
@@ -91,13 +93,10 @@ ACTION_IF enhanced_edition BEGIN
 
   // BAELOTH BANTER
   PRINT @15 /* BG:EE detected - Baeloth interdia.2da append - set Baeloth's banter file (BBAELOTH) */
-  APPEND ~interdia.2da~ ~BAELOTH BBAELOTH~  UNLESS ~BAELOTH~
   ACTION_IF NOT (FILE_EXISTS_IN_GAME ~BBAELOTH.dlg~) THEN BEGIN
     COMPILE EVALUATE_BUFFER ~GlamNPCPack/dialogue/BBAELOTHFix.d~
   END
-  
-  OUTER_SPRINT "BlackguardKitCheck" ~!Kit(Player1,Blackguard)~ /* !Kit(Player1,Blackguard) */
-  
+    
   COPY ~GlamNPCPack/Creature/GV#FLAR.cre~ ~override/GV#FLAR.cre~
        ~GlamNPCPack/Creature/GV#MOID.cre~ ~override/GV#MOID.cre~
   
@@ -108,7 +107,6 @@ END ELSE BEGIN
   APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
 
   // Fixing Imoen's dialogue file
-  APPEND ~interdia.2da~ ~IMOEN %IMOEN_BANTER%~ UNLESS ~%IMOEN_BANTER%~
   ACTION_IF NOT (FILE_EXISTS_IN_GAME ~%IMOEN_BANTER%.dlg~) AND (GAME_IS ~tutu tutu_totsc~) THEN BEGIN
     COMPILE EVALUATE_BUFFER ~GlamNPCPack/dialogue/bimoen.d~ 
   END
@@ -770,86 +768,52 @@ ACTION_IF !enhanced_edition BEGIN // do this via op360 on EEs
     END
 END
 
+ACTION_FOR_EACH file IN pdialog bgdialog bddialog BEGIN 
 
-
-ACTION_IF GAME_IS ~bgt tutu tutu_totsc bgee~ THEN BEGIN
-
-  APPEND ~pdialog.2da~
-~GV#DAVE GV#DAVEP GV#DAVEJ GV#DAVED
-GV#FLAR GV#FLARP GV#FLARJ GV#FLARD
-GV#LITT GV#LITTP GV#LITTJ GV#LITTD
-GV#MOID GV#MOIDP GV#MOIDJ GV#MOIDD
-GV#VYND GV#VYNDP GV#VYNDJ GV#VYNDD~
-  UNLESS ~GV#DAVE~
-  UNLESS ~25POST~
-
-  APPEND ~pdialog.2da~
-~GV#DAVE GV#DAVEP GV#DAVEJ GV#DAVED *** *** *** ***
-GV#FLAR GV#FLARP GV#FLARJ GV#FLARD *** *** *** ***
-GV#LITT GV#LITTP GV#LITTJ GV#LITTD *** *** *** ***
-GV#MOID GV#MOIDP GV#MOIDJ GV#MOIDD *** *** *** ***
-GV#VYND GV#VYNDP GV#VYNDJ GV#VYNDD *** *** *** ***~
-  UNLESS ~GV#DAVE~
-  IF ~25POST~
-
-  APPEND ~interdia.2da~
-~GV#DAVE BGV#DAVE
-GV#FLAR BGV#FLAR
-GV#LITT BGV#LITT
-GV#MOID BGV#MOID
-GV#VYND BGV#VYND~
-  UNLESS ~GV#DAVE~
-  UNLESS ~25FILE~
-
-  APPEND ~interdia.2da~
-~GV#DAVE BGV#DAVE ***
-GV#FLAR BGV#FLAR ***
-GV#LITT BGV#LITT ***
-GV#MOID BGV#MOID ***
-GV#VYND BGV#VYND ***~
-  UNLESS ~GV#DAVE~
-  IF ~25FILE~
+  ACTION_IF FILE_EXISTS_IN_GAME ~%file%.2da~ BEGIN 
   
-END ELSE BEGIN /* BG1:EET */
+    COPY_EXISTING ~%file%.2da~ ~override~
+      COUNT_2DA_COLS cols
+      SPRINT extra ~~
+      FOR (index = 4 ; index < cols ; ++index) BEGIN
+        SPRINT extra ~%extra% ***~
+      END
 
-  APPEND ~bgdialog.2da~
-~GV#DAVE GV#DAVEP GV#DAVEJ GV#DAVED
-GV#FLAR GV#FLARP GV#FLARJ GV#FLARD
-GV#LITT GV#LITTP GV#LITTJ GV#LITTD
-GV#MOID GV#MOIDP GV#MOIDJ GV#MOIDD
-GV#VYND GV#VYNDP GV#VYNDJ GV#VYNDD ~
-  UNLESS ~GV#DAVE~
+    APPEND ~%file%.2da~
+~GV#DAVE GV#DAVEP GV#DAVEJ GV#DAVED%extra%
+GV#FLAR GV#FLARP GV#FLARJ GV#FLARD%extra%
+GV#LITT GV#LITTP GV#LITTJ GV#LITTD%extra%
+GV#MOID GV#MOIDP GV#MOIDJ GV#MOIDD%extra%
+GV#VYND GV#VYNDP GV#VYNDJ GV#VYNDD%extra%~
 
-  APPEND ~bgbanter.2da~
-~GV#DAVE BGV#DAVE
-GV#FLAR BGV#FLAR
-GV#LITT BGV#LITT
-GV#MOID BGV#MOID
-GV#VYND BGV#VYND~
-  UNLESS ~GV#DAVE~
+  END
 
-  /* SOD */
-  APPEND ~bdbanter.2da~
-~GV#DAVE BGV#DAVE
-GV#FLAR BGV#FLAR
-GV#LITT BGV#LITT
-GV#MOID BGV#MOID
-GV#VYND BGV#VYND~
-  UNLESS ~GV#DAVE~
+END  
+
+ACTION_FOR_EACH file IN interdia bgbanter bdbanter BEGIN 
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%file%.2da~ BEGIN 
+
+    COPY_EXISTING ~%file%.2da~ ~override~
+      COUNT_2DA_COLS cols
+      SPRINT extra ~~
+      FOR (index = 2 ; index < cols ; ++index) BEGIN
+        SPRINT extra ~%extra% ***~
+      END
+
+    APPEND ~%file%.2da~
+~GV#DAVE BGV#DAVE%extra%
+GV#FLAR BGV#FLAR%extra%
+GV#LITT BGV#LITT%extra%
+GV#MOID BGV#MOID%extra%
+GV#VYND BGV#VYND%extra%~
+
+    ACTION_IF enhanced_edition BEGIN
+      APPEND ~%file%.2da~ ~BAELOTH BBAELOTH%extra%~  UNLESS ~BAELOTH~
+    END ELSE BEGIN
+      APPEND ~%file%.2da~ ~IMOEN %IMOEN_BANTER%%extra%~ UNLESS ~%IMOEN_BANTER%~
+    END  
+
+  END
   
-END
-
-
-/* SoD */
-
-ACTION_IF (GAME_IS ~bgee eet~ AND FILE_EXISTS_IN_GAME ~bd0103.are~) THEN BEGIN
-
-  APPEND ~bddialog.2da~
-~GV#DAVE GV#DAVEP GV#DAVEJ GV#DAVED
-GV#FLAR GV#FLARP GV#FLARJ GV#FLARD
-GV#LITT GV#LITTP GV#LITTJ GV#LITTD
-GV#MOID GV#MOIDP GV#MOIDJ GV#MOIDD
-GV#VYND GV#VYNDP GV#VYNDJ GV#VYNDD ~
-  UNLESS ~GV#DAVE~
-
 END
