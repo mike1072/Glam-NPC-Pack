@@ -403,13 +403,13 @@ INTERJECT ~%tutu_var%PERDUE~ 7 GV#LITTInterjectPERDUE1
 ~Psh. If it's a gnoll, I'd *pay* fifty gold to wipe its arse.~
 = ~With the sword, obviously.~
 END
-++ ~You've got yourself a deal.~ EXTERN %tutu_var%PERDUE 3
+++ ~You've got yourself a deal.~ EXTERN ~%tutu_var%PERDUE~ ~3~
 ++ ~For 50 gold that gnoll can wipe his own arse. Hey, did you hear the one about the halfling who climbed into the ale keg to lick up the last drop?~ EXTERN GV#LITTJ GV#LITTInterjectPERDUE2
 
 CHAIN GV#LITTJ GV#LITTInterjectPERDUE2
 ~I haven't. Why don't you tell me?~
 == GV#VYNDJ IF ~IsValidForPartyDialogue("GV#VYND")~ THEN ~He drowned.~
-EXTERN %tutu_var%PERDUE 2
+EXTERN ~%tutu_var%PERDUE~ ~2~
 
 
 //Ludrug
@@ -583,7 +583,7 @@ INTERJECT ~%tutu_var%DYNAHE~ 10 GV#LITTInterjectDynaheir5
 ~Now hold on just a bloody minute! I've been busting my arse to try and save the prisoners here, and now you want me to kill the only one that survived? Just because this red streak of piss says so?~
 = ~If you're with him, <CHARNAME>, you're against me. End of story.~
 END
-++ ~Well then. Sorry Edwin. I'm not about to argue with a loaded crossbow.~ EXTERN %tutu_var%DYNAHE 11
+++ ~Well then. Sorry Edwin. I'm not about to argue with a loaded crossbow.~ EXTERN ~%tutu_var%DYNAHE~ ~11~
 ++ ~An apt choice of words, halfling! Your story ends here!~ DO ~SetGlobal("GV#LITTJoined","GLOBAL",0) LeaveParty() Enemy() ActionOverride("Dynaheir",Enemy()) ActionOverride("Minsc",LeaveParty()) ActionOverride("Minsc",Enemy())~ EXIT
 
 INTERJECT ~%EDWIN_JOINED%~ 8 GV#LITTInterjectDynaheir6
@@ -591,7 +591,7 @@ INTERJECT ~%EDWIN_JOINED%~ 8 GV#LITTInterjectDynaheir6
 ~Now hold on just a bloody minute! I've been busting my arse to try and save the prisoners here, and now you want me to stand by and let this red streak of piss kill the only survivor?~
 = ~If you're with him, <CHARNAME>, you're against me. End of story.~
 END
-++ ~Well then. Sorry Edwin. I'm not about to argue with a loaded crossbow.~ EXTERN %tutu_var%DYNAHE 11
+++ ~Well then. Sorry Edwin. I'm not about to argue with a loaded crossbow.~ EXTERN ~%tutu_var%DYNAHE~ ~11~
 ++ ~An apt choice of words, halfling! Your story ends here!~ DO ~SetGlobal("GV#LITTJoined","GLOBAL",0) LeaveParty() Enemy() ActionOverride("Dynaheir",Enemy()) ActionOverride("Minsc",LeaveParty()) ActionOverride("Minsc",Enemy())~ EXIT
 
 

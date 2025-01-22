@@ -516,7 +516,7 @@ CHAIN IF ~Global("GV#FLARVyndBlast","GLOBAL",1)~ THEN GV#VYNDJ GV#VyndBlast
 ~Okay.~
 DO ~SetGlobal("GV#FLARVyndBlast","GLOBAL",2)~
 = ~I was, in fact, kidding.~
-== GV#FLARJ ~I'm not apologising.~ EXTERN %tutu_var%CHARLE 21
+== GV#FLARJ ~I'm not apologising.~ EXTERN ~%tutu_var%CHARLE~ ~21~
 
 
 //Littlun Drienne Interaction

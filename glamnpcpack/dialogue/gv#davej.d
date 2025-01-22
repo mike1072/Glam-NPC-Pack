@@ -142,7 +142,7 @@ END
 
 CHAIN GV#DAVEJ GV#DAVEJalantha
 ~Really, <CHARNAME>? After all that?~
-EXTERN %tutu_var%JALANT 6
+EXTERN ~%tutu_var%JALANT~ ~6~
 
 CHAIN GV#DAVEJ GV#DAVEJalantha2
 ~Nobody will know you did this for us. In fact, I'll tell people you threw me to a pack of sharks and made me swim for my life just for asking.~

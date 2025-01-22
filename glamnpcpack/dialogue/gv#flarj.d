@@ -299,13 +299,13 @@ END
 INTERJECT ~%tutu_var%KIRIAN~ 4 GV#FLARInterjectKIRIAN2
 == GV#FLARJ IF ~InParty("GV#FLAR") InMyArea("GV#FLAR") !StateCheck("GV#FLAR",CD_STATE_NOTVALID)~ THEN
 ~Your every word is a step towards your pyre, little girl. I suggest you slow your pace.~
-EXTERN %tutu_var%KIRIAN 3
+EXTERN ~%tutu_var%KIRIAN~ ~3~
 
 INTERJECT ~%tutu_var%KIRIAN~ 3 GV#FLARInterjectKIRIAN3
 == GV#FLARJ IF ~InParty("GV#FLAR") InMyArea("GV#FLAR") !StateCheck("GV#FLAR",CD_STATE_NOTVALID)~ THEN
 ~I rethink spitting bile instead of flames, you insignificant wretch! You'll return to Waterdeep in an urn!~
 == GV#VYNDJ IF ~InParty("GV#VYND") InMyArea("GV#VYND") !StateCheck("GV#VYND",CD_STATE_NOTVALID)~ THEN ~Would you settle down?~ DO ~SetGlobal("GV#FLARKirian","GLOBAL",1)~
-EXTERN %tutu_var%KIRIAN 5
+EXTERN ~%tutu_var%KIRIAN~ ~5~
 
 
 
