@@ -809,7 +809,7 @@ GV#MOID BGV#MOID%extra%
 GV#VYND BGV#VYND%extra%~
 
     ACTION_IF enhanced_edition BEGIN
-      APPEND ~%file%.2da~ ~BAELOTH BBAELOTH%extra%~  UNLESS ~BAELOTH~
+      APPEND ~%file%.2da~ ~BAELOTH BDBAELOB%extra%~  UNLESS ~BAELOTH~
     END ELSE BEGIN
       APPEND ~%file%.2da~ ~IMOEN %IMOEN_BANTER%%extra%~ UNLESS ~%IMOEN_BANTER%~
     END  
