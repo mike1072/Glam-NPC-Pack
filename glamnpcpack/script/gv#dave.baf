@@ -18,7 +18,7 @@ Global("GV#DAVEShout","GLOBAL",0)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~Can I interest you in a RELIGIOUS EPIPHANY?~)
+DisplayStringHead(Myself,@7989 /* Can I interest you in a RELIGIOUS EPIPHANY? */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -31,7 +31,7 @@ Global("GV#DAVEShout","GLOBAL",1)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~Lightning strikes millions of times a day! Which end of the bolt will YOU be on?~)
+DisplayStringHead(Myself,@7990 /* Lightning strikes millions of times a day! Which end of the bolt will YOU be on? */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -44,7 +44,7 @@ Global("GV#DAVEShout","GLOBAL",2)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~Heal your friends! Destroy your enemies! Never worry about the weather again! How can you say no?~)
+DisplayStringHead(Myself,@7991 /* Heal your friends! Destroy your enemies! Never worry about the weather again! How can you say no? */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -57,7 +57,7 @@ Global("GV#DAVEShout","GLOBAL",3)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~Everyone welcome! All ages, all races! Elves, dwarves, halflings, gnomes! Break your paradigm!~)
+DisplayStringHead(Myself,@7992 /* Everyone welcome! All ages, all races! Elves, dwarves, halflings, gnomes! Break your paradigm! */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -70,7 +70,7 @@ Global("GV#DAVEShout","GLOBAL",4)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~You'll travel the world! Or...most of the coast, at least! ALWAYS be on holiday!~)
+DisplayStringHead(Myself,@7993 /* You'll travel the world! Or...most of the coast, at least! ALWAYS be on holiday! */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -83,7 +83,7 @@ Global("GV#DAVEShout","GLOBAL",5)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~All our holy-symbols are HAND-CARVED and varnished to perfection! Put a spark of style in ANY outfit!~)
+DisplayStringHead(Myself,@7994 /* All our holy-symbols are HAND-CARVED and varnished to perfection! Put a spark of style in ANY outfit! */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -96,7 +96,7 @@ Global("GV#DAVEShout","GLOBAL",6)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~Where will you go when you die? Not where the faithless go, that's for certain!~)
+DisplayStringHead(Myself,@7995 /* Where will you go when you die? Not where the faithless go, that's for certain! */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -109,7 +109,7 @@ Global("GV#DAVEShout","GLOBAL",7)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~Don't be shy! Step right up! Ask me anything! We (almost) never smite the curious!~)
+DisplayStringHead(Myself,@7996 /* Don't be shy! Step right up! Ask me anything! We (almost) never smite the curious! */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -122,7 +122,7 @@ Global("GV#DAVEShout","GLOBAL",8)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~Free scones for those attending their first sermon! Buttermilk scones! Clotted cream!~)
+DisplayStringHead(Myself,@7997 /* Free scones for those attending their first sermon! Buttermilk scones! Clotted cream! */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -135,7 +135,7 @@ Global("GV#DAVEShout","GLOBAL",9)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~Er...uh...~)
+DisplayStringHead(Myself,@7998 /* Er...uh... */)
 IncrementGlobal("GV#DAVEShout","GLOBAL",1)
 END
 
@@ -148,7 +148,7 @@ Global("GV#DAVEShout","GLOBAL",10)
 THEN
 RESPONSE #100
 Wait(12)
-DisplayStringHead(Myself,~(Damn. Out of lines. I'll just go from the beginning.)~)
+DisplayStringHead(Myself,@7999 /* (Damn. Out of lines. I'll just go from the beginning.) */)
 SetGlobal("GV#DAVEShout","GLOBAL",0)
 END
 

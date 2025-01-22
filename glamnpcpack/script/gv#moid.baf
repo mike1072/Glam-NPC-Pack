@@ -393,7 +393,7 @@ Global("GV#MOIDStrengthDecreased","GLOBAL",0)
 THEN
 RESPONSE #100
 SetGlobal("GV#MOIDStrengthDecreased","GLOBAL",1)
-DisplayStringHead(Myself,~(Strength decreased.)~)
+DisplayStringHead(Myself,@8011)
 END
 
 //Charisma Increase
@@ -409,7 +409,7 @@ Global("GV#MOIDCharismaIncreased","GLOBAL",0)
 THEN
 RESPONSE #100
 SetGlobal("GV#MOIDCharismaIncreased","GLOBAL",1)
-DisplayStringHead(Myself,~(Charisma increased.)~)
+DisplayStringHead(Myself,@8012)
 END
 
 //Edwin Hurt Banter

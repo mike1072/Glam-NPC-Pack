@@ -8,29 +8,29 @@ ALWAYS
 
 ACTION_IF GAME_IS ~bgee~ BEGIN
   /*Tell the player it is using BG:EE stuff */
-  PRINT ~BG:EE install detected~
+  PRINT @9 /* BG:EE install detected */
   INCLUDE ~GlamNPCPack\Libraries\liam_bgee_vars.tpa~
 END ELSE ACTION_IF GAME_IS ~tutu tutu_totsc~ BEGIN
   /* Tell the player it is using Tutu stuff */
-  PRINT ~Tutu install detected.~
+  PRINT @10 /* Tutu install detected. */
   INCLUDE ~GlamNPCPack\Libraries\g3_tutu_cpmvars.tpa~
 END ELSE ACTION_IF GAME_IS ~bgt~ THEN BEGIN
   /* Tell the player it is using BGT stuff */
-  PRINT ~BGT install detected.~
+  PRINT @11 /* BGT install detected. */
   INCLUDE ~GlamNPCPack\Libraries\g3_bgt_cpmvars.tpa~
 END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
   /*Tell the player it is using EET stuff */
-  PRINT ~EET install detected~
+  PRINT @12 /* EET install detected */
   INCLUDE ~GlamNPCPack\Libraries\eet_cpmvars.tpa~
 END ELSE BEGIN
   /* Tell the player it is not Tutu or BGT */
-  FAIL ~Please install on BG:EE, Tutu, BGT or EET.~
+  FAIL @13 /* Please install on BG:EE, Tutu, BGT or EET. */
 END
 
 END
 
-LANGUAGE ~English~ ~English~ ~GlamNPCPack/Languages/English/Setup-NPCPack.tra~
-BEGIN ~Glam's NPC Pack for BG:EE, BGT and BG TUTU~
+LANGUAGE ~English~ ~English~ ~GlamNPCPack/Languages/English/game.tra~
+BEGIN @14 /* Glam's NPC Pack for BG:EE, BGT and BG TUTU */
 
 
 APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
@@ -73,7 +73,7 @@ APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   // BAELOTH BANTER
 
 ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
- PRINT ~BG:EE detected - Baeloth interdia.2da append - set Baeloth's banter file (BBAELOTH)~
+ PRINT @15 /* BG:EE detected - Baeloth interdia.2da append - set Baeloth's banter file (BBAELOTH) */
     APPEND ~interdia.2da~ ~BAELOTH BBAELOTH~
     UNLESS ~BAELOTH~
    ACTION_IF NOT (FILE_EXISTS_IN_GAME ~BBAELOTH.dlg~) THEN BEGIN
@@ -148,27 +148,27 @@ COPY_EXISTING ~%WyrmsCrossing%.are~ ~override~
 END
 
 ACTION_IF GAME_IS ~bgee bg2ee eet~ THEN BEGIN
-  OUTER_SPRINT "BlackguardKitCheck" ~!Kit(Player1,Blackguard)~
+  OUTER_SPRINT "BlackguardKitCheck" @16 /* !Kit(Player1,Blackguard) */
 END
 ELSE BEGIN
   OUTER_SPRINT "BlackguardKitCheck" ""
 END
 
 ACTION_IF GAME_IS ~tutu tutu_totsc~ THEN BEGIN
-  OUTER_SPRINT "ElfsongBartender" ~_BART11~
+  OUTER_SPRINT "ElfsongBartender" @18 /* _BART11 */
 END
 ELSE BEGIN
-  OUTER_SPRINT "ElfsongBartender" ~BART8~
+  OUTER_SPRINT "ElfsongBartender" @19 /* BART8 */
 END
 
 ACTION_IF GAME_IS ~bgt~ THEN BEGIN
-  OUTER_SPRINT "GhostKnight" ~BGKNIGHT~
+  OUTER_SPRINT "GhostKnight" @20 /* BGKNIGHT */
 END ELSE ACTION_IF GAME_IS ~bgee~ THEN BEGIN
-  OUTER_SPRINT "GhostKnight" ~KNIGHT~
+  OUTER_SPRINT "GhostKnight" @21 /* KNIGHT */
 END ELSE ACTION_IF GAME_IS ~tutu tutu_totsc~ THEN BEGIN
-  OUTER_SPRINT "GhostKnight" ~_KNIGHT~
+  OUTER_SPRINT "GhostKnight" @22 /* _KNIGHT */
 END ELSE ACTION_IF GAME_IS ~eet~ THEN BEGIN
-   OUTER_SPRINT "GhostKnight" ~KNIGHT_~
+   OUTER_SPRINT "GhostKnight" @23 /* KNIGHT_ */
 END
 
 
@@ -185,350 +185,350 @@ LAF HANDLE_AUDIO END
 ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
 COPY ~GlamNPCPack/Creature/GV#DAVE.cre~ ~override/GV#DAVE.cre~
 
-SAY NAME1 ~Dave~
-SAY NAME2 ~Dave~
+SAY NAME1 @24 /* Dave */
+SAY NAME2 @24 /* Dave */
 
-SAY BIO ~When asked about his past, Dave chuckles and says it's not the past you should be interested in, but the present. Born to a single mother in a quiet village, Dave seems to have joined the church of Talos on a whim, for there was no outside force, nor troubled childhood, nor deranged power-hunger to compel him. Despite this, he expresses no doubts or regrets over his chosen path, and refuses to be swayed from it.~
+SAY BIO @25 /* When asked about his past, Dave chuckles and says it's not the past you should be interested in, but the present. Born to a single mother in a quiet village, Dave seems to have joined the church of Talos on a whim, for there was no outside force, nor troubled childhood, nor deranged power-hunger to compel him. Despite this, he expresses no doubts or regrets over his chosen path, and refuses to be swayed from it. */
 
-SAY LEADER ~*bewildered laughter*~ [GV#DAVEb]
-SAY TIRED ~I'm beat.~ [GV#DAVEc]
-SAY BORED ~Isn't there something better we could be doing?~ [GV#DAVEd]
-SAY BATTLE_CRY1 ~You're gonna regret this!~ [gv#Davea]
-SAY BATTLE_CRY2 ~You're gonna regret this!~ [gv#Davea]
-SAY BATTLE_CRY3 ~You're gonna regret this!~ [gv#Davea]
-SAY BATTLE_CRY4 ~You're gonna regret this!~ [gv#Davea]
-SAY BATTLE_CRY5 ~You're gonna regret this!~ [gv#Davea]
-SAY DAMAGE ~~ [GV#DAVEl]
-SAY DYING ~~ [GV#DAVEm]
-SAY HURT ~Help me! I'm injured!~ [GV#DAVEe]
-SAY SELECT_COMMON1 ~Yes?~ [GV#DAVEf]
-SAY SELECT_COMMON2 ~What can I do?~ [GV#DAVEg]
-SAY SELECT_COMMON3 ~You need something?~ [GV#DAVEh]
-SAY SELECT_ACTION1 ~I'll get on it.~ [GV#DAVEi]
-SAY SELECT_ACTION2 ~Now's better than later.~ [GV#DAVEj]
-SAY SELECT_ACTION3 ~Got it.~ [GV#DAVEk]
+SAY LEADER @26 /* *bewildered laughter* */
+SAY TIRED @27 /* I'm beat. */
+SAY BORED @28 /* Isn't there something better we could be doing? */
+SAY BATTLE_CRY1 @29 /* You're gonna regret this! */
+SAY BATTLE_CRY2 @29 /* You're gonna regret this! */
+SAY BATTLE_CRY3 @29 /* You're gonna regret this! */
+SAY BATTLE_CRY4 @29 /* You're gonna regret this! */
+SAY BATTLE_CRY5 @29 /* You're gonna regret this! */
+SAY DAMAGE @30 /* [GV#DAVEl] */
+SAY DYING @31 /* [GV#DAVEm] */
+SAY HURT @32 /* Help me! I'm injured! */
+SAY SELECT_COMMON1 @33 /* Yes? */
+SAY SELECT_COMMON2 @34 /* What can I do? */
+SAY SELECT_COMMON3 @35 /* You need something? */
+SAY SELECT_ACTION1 @36 /* I'll get on it. */
+SAY SELECT_ACTION2 @37 /* Now's better than later. */
+SAY SELECT_ACTION3 @38 /* Got it. */
 
 END ELSE BEGIN
 COPY ~GlamNPCPack/Creature/GV#DAVE2.cre~ ~override/GV#DAVE.cre~
 
-SAY NAME1 ~Dave~
-SAY NAME2 ~Dave~
+SAY NAME1 @24 /* Dave */
+SAY NAME2 @24 /* Dave */
 
-SAY BIO ~When asked about his past, Dave chuckles and says it's not the past you should be interested in, but the present. Born to a single mother in a quiet village, Dave seems to have joined the church of Talos on a whim, for there was no outside force, nor troubled childhood, nor deranged power-hunger to compel him. Despite this, he expresses no doubts or regrets over his chosen path, and refuses to be swayed from it.~
+SAY BIO @25 /* When asked about his past, Dave chuckles and says it's not the past you should be interested in, but the present. Born to a single mother in a quiet village, Dave seems to have joined the church of Talos on a whim, for there was no outside force, nor troubled childhood, nor deranged power-hunger to compel him. Despite this, he expresses no doubts or regrets over his chosen path, and refuses to be swayed from it. */
 
-SAY LEADER ~*bewildered laughter*~ [GV#DAVEb]
-SAY TIRED ~I'm beat.~ [GV#DAVEc]
-SAY BORED ~Isn't there something better we could be doing?~ [GV#DAVEd]
-SAY BATTLE_CRY1 ~You're gonna regret this!~ [gv#Davea]
-SAY BATTLE_CRY2 ~You're gonna regret this!~ [gv#Davea]
-SAY BATTLE_CRY3 ~You're gonna regret this!~ [gv#Davea]
-SAY BATTLE_CRY4 ~You're gonna regret this!~ [gv#Davea]
-SAY BATTLE_CRY5 ~You're gonna regret this!~ [gv#Davea]
-SAY DAMAGE ~~ [GV#DAVEl]
-SAY DYING ~~ [GV#DAVEm]
-SAY HURT ~Help me! I'm injured!~ [GV#DAVEe]
-SAY SELECT_COMMON1 ~Yes?~ [GV#DAVEf]
-SAY SELECT_COMMON2 ~What can I do?~ [GV#DAVEg]
-SAY SELECT_COMMON3 ~You need something?~ [GV#DAVEh]
-SAY SELECT_ACTION1 ~I'll get on it.~ [GV#DAVEi]
-SAY SELECT_ACTION2 ~Now's better than later.~ [GV#DAVEj]
-SAY SELECT_ACTION3 ~Got it.~ [GV#DAVEk]
+SAY LEADER @26 /* *bewildered laughter* */
+SAY TIRED @27 /* I'm beat. */
+SAY BORED @28 /* Isn't there something better we could be doing? */
+SAY BATTLE_CRY1 @29 /* You're gonna regret this! */
+SAY BATTLE_CRY2 @29 /* You're gonna regret this! */
+SAY BATTLE_CRY3 @29 /* You're gonna regret this! */
+SAY BATTLE_CRY4 @29 /* You're gonna regret this! */
+SAY BATTLE_CRY5 @29 /* You're gonna regret this! */
+SAY DAMAGE @30 /* [GV#DAVEl] */
+SAY DYING @31 /* [GV#DAVEm] */
+SAY HURT @32 /* Help me! I'm injured! */
+SAY SELECT_COMMON1 @33 /* Yes? */
+SAY SELECT_COMMON2 @34 /* What can I do? */
+SAY SELECT_COMMON3 @35 /* You need something? */
+SAY SELECT_ACTION1 @36 /* I'll get on it. */
+SAY SELECT_ACTION2 @37 /* Now's better than later. */
+SAY SELECT_ACTION3 @38 /* Got it. */
 END
 
 
 COPY ~GlamNPCPack/Creature/GV#ALAN.cre~ ~override/GV#ALAN.cre~
-SAY NAME1 ~Alan~
-SAY NAME2 ~Alan~
-SAY DAMAGE ~~ [BELTT08]
-SAY DYING ~~ [BELTT09]
+SAY NAME1 @39 /* Alan */
+SAY NAME2 @39 /* Alan */
+SAY DAMAGE @40 /* [BELTT08] */
+SAY DYING @41 /* [BELTT09] */
 
 COPY ~GlamNPCPack/Creature/GV#BRIA.cre~ ~override/GV#BRIA.cre~
-SAY NAME1 ~Brian~
-SAY NAME2 ~Brian~
-SAY DAMAGE ~~ [VOLO08]
-SAY DYING ~~ [VOLO09]
+SAY NAME1 @42 /* Brian */
+SAY NAME2 @42 /* Brian */
+SAY DAMAGE @43 /* [VOLO08] */
+SAY DYING @44 /* [VOLO09] */
 
 COPY ~GlamNPCPack/Creature/GV#JEFF.cre~ ~override/GV#JEFF.cre~
-SAY NAME1 ~Stormlord Jeff~
-SAY NAME2 ~Stormlord Jeff~
-SAY DAMAGE ~~ [DAVEO08]
-SAY DYING ~~ [DAVEO09]
+SAY NAME1 @45 /* Stormlord Jeff */
+SAY NAME2 @45 /* Stormlord Jeff */
+SAY DAMAGE @46 /* [DAVEO08] */
+SAY DYING @47 /* [DAVEO09] */
 
 COPY ~GlamNPCPack/Creature/GV#KELL.cre~ ~override/GV#KELL.cre~
-SAY NAME1 ~Kelly~
-SAY NAME2 ~Kelly~
-SAY DAMAGE ~~ [SHOAL03]
-SAY DYING ~~ [SHOAL04]
+SAY NAME1 @48 /* Kelly */
+SAY NAME2 @48 /* Kelly */
+SAY DAMAGE @49 /* [SHOAL03] */
+SAY DYING @50 /* [SHOAL04] */
 
 COPY ~GlamNPCPack/Creature/GV#KELLa.cre~ ~override/GV#KELLa.cre~
-SAY NAME1 ~Kelly~
-SAY NAME2 ~Kelly~
-SAY DAMAGE ~~ [SHOAL03]
-SAY DYING ~~ [SHOAL04]
+SAY NAME1 @48 /* Kelly */
+SAY NAME2 @48 /* Kelly */
+SAY DAMAGE @49 /* [SHOAL03] */
+SAY DYING @50 /* [SHOAL04] */
 
 COPY ~GlamNPCPack/Creature/GV#PAM.cre~ ~override/GV#PAM.cre~
-SAY NAME1 ~Pam~
-SAY NAME2 ~Pam~
-SAY DAMAGE ~~ [KRYST08]
-SAY DYING ~~ [KRYST09]
+SAY NAME1 @51 /* Pam */
+SAY NAME2 @51 /* Pam */
+SAY DAMAGE @52 /* [KRYST08] */
+SAY DYING @53 /* [KRYST09] */
 
 COPY ~GlamNPCPack/Creature/GV#PHIL.cre~ ~override/GV#PHIL.cre~
-SAY NAME1 ~Phil~
-SAY NAME2 ~Phil~
-SAY DAMAGE ~~ [THALT03]
-SAY DYING ~~ [THALT04]
+SAY NAME1 @54 /* Phil */
+SAY NAME2 @54 /* Phil */
+SAY DAMAGE @55 /* [THALT03] */
+SAY DYING @56 /* [THALT04] */
 
 COPY ~GlamNPCPack/Creature/GV#STOR.cre~ ~override/GV#STOR.cre~
-SAY NAME1 ~Storm Knight~
-SAY NAME2 ~Storm Knight~
-SAY DAMAGE ~~ [GUARR05]
-SAY DYING ~~ [GUARR06]
+SAY NAME1 @57 /* Storm Knight */
+SAY NAME2 @57 /* Storm Knight */
+SAY DAMAGE @58 /* [GUARR05] */
+SAY DYING @59 /* [GUARR06] */
 
 COPY ~GlamNPCPack/Creature/GV#TARA.cre~ ~override/GV#TARA.cre~
-SAY NAME1 ~Taranis~
-SAY NAME2 ~Taranis~
-SAY INITIAL_MEETING ~Fear my wrath, for it is great indeed.~ [GENMT09]
-SAY DAMAGE ~~ [SCARR08]
-SAY DYING ~~ [SCARR09]
+SAY NAME1 @60 /* Taranis */
+SAY NAME2 @60 /* Taranis */
+SAY INITIAL_MEETING @61 /* Fear my wrath, for it is great indeed. */
+SAY DAMAGE @62 /* [SCARR08] */
+SAY DYING @63 /* [SCARR09] */
 
 COPY ~GlamNPCPack/Creature/GV#THUN.cre~ ~override/GV#THUN.cre~
-SAY NAME1 ~Thundercat~
-SAY NAME2 ~Thundercat~
+SAY NAME1 @64 /* Thundercat */
+SAY NAME2 @64 /* Thundercat */
 
 COPY ~GlamNPCPack/Creature/GV#THUN2.cre~ ~override/GV#THUN2.cre~
-SAY NAME1 ~Thundercat~
-SAY NAME2 ~Thundercat~
+SAY NAME1 @64 /* Thundercat */
+SAY NAME2 @64 /* Thundercat */
 
 ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
 COPY ~GlamNPCPack/Creature/GV#FLAR.cre~ ~override/GV#FLAR.cre~
 
-SAY NAME1 ~Flara~
-SAY NAME2 ~Flara~
+SAY NAME1 @65 /* Flara */
+SAY NAME2 @65 /* Flara */
 
-SAY BIO ~Before you even had the chance to ask about her past, Flara insisted she was once a powerful red dragon, who is now trapped in human form. This may be true, or it may not; she can offer no concrete explanation for how such a predicament came about, nor does she recall much of her time before it. Nevertheless, the air around her ripples with heat, and her fiery breath is difficult to argue with, though not as much as her temperament.~
+SAY BIO @66 /* Before you even had the chance to ask about her past, Flara insisted she was once a powerful red dragon, who is now trapped in human form. This may be true, or it may not; she can offer no concrete explanation for how such a predicament came about, nor does she recall much of her time before it. Nevertheless, the air around her ripples with heat, and her fiery breath is difficult to argue with, though not as much as her temperament. */
 
-SAY MORALE ~I leave you to handle this!~ [gv#flarw]
-SAY LEADER ~It is only right that I lead.~ [gv#flarb]
-SAY TIRED ~Are we to march till we drop? I must have rest!~ [gv#flarc]
-SAY BORED ~If I stand still much longer, I shall sprout roots.~ [gv#flard]
-SAY BATTLE_CRY1 ~Die, fool!~ [gv#flara]
-SAY BATTLE_CRY2 ~Die, fool!~ [gv#flara]
-SAY BATTLE_CRY3 ~Die, fool!~ [gv#flara]
-SAY BATTLE_CRY4 ~Die, fool!~ [gv#flara]
-SAY BATTLE_CRY5 ~Die, fool!~ [gv#flara]
-SAY DAMAGE ~~ [gv#flarl]
-SAY DYING ~~ [gv#flarm]
-SAY HURT ~I'm hurt! Help me, you fools!~ [gv#flare]
-SAY SELECT_COMMON1 ~What?~ [gv#flarf]
-SAY SELECT_COMMON2 ~What is it?~ [gv#flarg]
-SAY SELECT_COMMON3 ~I'm listening.~ [gv#flarh]
-SAY SELECT_ACTION1 ~I'll do it.~ [gv#flari]
-SAY SELECT_ACTION2 ~So be it.~ [gv#flarj]
-SAY SELECT_ACTION3 ~If I must.~ [gv#flark]
+SAY MORALE @67 /* I leave you to handle this! */
+SAY LEADER @68 /* It is only right that I lead. */
+SAY TIRED @69 /* Are we to march till we drop? I must have rest! */
+SAY BORED @70 /* If I stand still much longer, I shall sprout roots. */
+SAY BATTLE_CRY1 @71 /* Die, fool! */
+SAY BATTLE_CRY2 @71 /* Die, fool! */
+SAY BATTLE_CRY3 @71 /* Die, fool! */
+SAY BATTLE_CRY4 @71 /* Die, fool! */
+SAY BATTLE_CRY5 @71 /* Die, fool! */
+SAY DAMAGE @72 /* [gv#flarl] */
+SAY DYING @73 /* [gv#flarm] */
+SAY HURT @74 /* I'm hurt! Help me, you fools! */
+SAY SELECT_COMMON1 @75 /* What? */
+SAY SELECT_COMMON2 @76 /* What is it? */
+SAY SELECT_COMMON3 @77 /* I'm listening. */
+SAY SELECT_ACTION1 @78 /* I'll do it. */
+SAY SELECT_ACTION2 @79 /* So be it. */
+SAY SELECT_ACTION3 @80 /* If I must. */
 
 END ELSE BEGIN
 COPY ~GlamNPCPack/Creature/GV#FLAR2.cre~ ~override/GV#FLAR.cre~
 
-SAY NAME1 ~Flara~
-SAY NAME2 ~Flara~
+SAY NAME1 @65 /* Flara */
+SAY NAME2 @65 /* Flara */
 
-SAY BIO ~Before you even had the chance to ask about her past, Flara insisted she was once a powerful red dragon, who is now trapped in human form. This may be true, or it may not; she can offer no concrete explanation for how such a predicament came about, nor does she recall much of her time before it. Nevertheless, the air around her ripples with heat, and her fiery breath is difficult to argue with, though not as much as her temperament.~
+SAY BIO @66 /* Before you even had the chance to ask about her past, Flara insisted she was once a powerful red dragon, who is now trapped in human form. This may be true, or it may not; she can offer no concrete explanation for how such a predicament came about, nor does she recall much of her time before it. Nevertheless, the air around her ripples with heat, and her fiery breath is difficult to argue with, though not as much as her temperament. */
 
-SAY MORALE ~I leave you to handle this!~ [gv#flarw]
-SAY LEADER ~It is only right that I lead.~ [gv#flarb]
-SAY TIRED ~Are we to march till we drop? I must have rest!~ [gv#flarc]
-SAY BORED ~If I stand still much longer, I shall sprout roots.~ [gv#flard]
-SAY BATTLE_CRY1 ~Die, fool!~ [gv#flara]
-SAY BATTLE_CRY2 ~Die, fool!~ [gv#flara]
-SAY BATTLE_CRY3 ~Die, fool!~ [gv#flara]
-SAY BATTLE_CRY4 ~Die, fool!~ [gv#flara]
-SAY BATTLE_CRY5 ~Die, fool!~ [gv#flara]
-SAY DAMAGE ~~ [gv#flarl]
-SAY DYING ~~ [gv#flarm]
-SAY HURT ~I'm hurt! Help me, you fools!~ [gv#flare]
-SAY SELECT_COMMON1 ~What?~ [gv#flarf]
-SAY SELECT_COMMON2 ~What is it?~ [gv#flarg]
-SAY SELECT_COMMON3 ~I'm listening.~ [gv#flarh]
-SAY SELECT_ACTION1 ~I'll do it.~ [gv#flari]
-SAY SELECT_ACTION2 ~So be it.~ [gv#flarj]
-SAY SELECT_ACTION3 ~If I must.~ [gv#flark]
+SAY MORALE @67 /* I leave you to handle this! */
+SAY LEADER @68 /* It is only right that I lead. */
+SAY TIRED @69 /* Are we to march till we drop? I must have rest! */
+SAY BORED @70 /* If I stand still much longer, I shall sprout roots. */
+SAY BATTLE_CRY1 @71 /* Die, fool! */
+SAY BATTLE_CRY2 @71 /* Die, fool! */
+SAY BATTLE_CRY3 @71 /* Die, fool! */
+SAY BATTLE_CRY4 @71 /* Die, fool! */
+SAY BATTLE_CRY5 @71 /* Die, fool! */
+SAY DAMAGE @72 /* [gv#flarl] */
+SAY DYING @73 /* [gv#flarm] */
+SAY HURT @74 /* I'm hurt! Help me, you fools! */
+SAY SELECT_COMMON1 @75 /* What? */
+SAY SELECT_COMMON2 @76 /* What is it? */
+SAY SELECT_COMMON3 @77 /* I'm listening. */
+SAY SELECT_ACTION1 @78 /* I'll do it. */
+SAY SELECT_ACTION2 @79 /* So be it. */
+SAY SELECT_ACTION3 @80 /* If I must. */
 END
 
 
 
 
 COPY ~GlamNPCPack/Creature/GV#SIGU.cre~ ~override/GV#SIGU.cre~
-SAY NAME1 ~Sigurd~
-SAY NAME2 ~Sigurd~
-SAY INITIAL_MEETING ~Troubled times are upon us.~ [ELFFF02]
-SAY DAMAGE ~~ [ELFFF05]
-SAY DYING ~~ [ELFFF06]
+SAY NAME1 @81 /* Sigurd */
+SAY NAME2 @81 /* Sigurd */
+SAY INITIAL_MEETING @82 /* Troubled times are upon us. */
+SAY DAMAGE @83 /* [ELFFF05] */
+SAY DYING @84 /* [ELFFF06] */
 
 COPY ~GlamNPCPack/Creature/GV#KRAK.cre~ ~override/GV#KRAK.cre~
-SAY NAME1 ~Lord Burnheart~
-SAY NAME2 ~Lord Burnheart~
-SAY DAMAGE ~~ [GREYW08]
-SAY DYING ~~ [GREYW09]
+SAY NAME1 @85 /* Lord Burnheart */
+SAY NAME2 @85 /* Lord Burnheart */
+SAY DAMAGE @86 /* [GREYW08] */
+SAY DYING @87 /* [GREYW09] */
 
 COPY ~GlamNPCPack/Creature/GV#MARI.cre~ ~override/GV#MARI.cre~
-SAY NAME1 ~Lady Burnheart~
-SAY NAME2 ~Lady Burnheart~
-SAY DAMAGE ~~ [FTOWN05]
-SAY DYING ~~ [FTOWN06]
+SAY NAME1 @88 /* Lady Burnheart */
+SAY NAME2 @88 /* Lady Burnheart */
+SAY DAMAGE @89 /* [FTOWN05] */
+SAY DYING @90 /* [FTOWN06] */
 
 COPY ~GlamNPCPack/Creature/GV#WINK.cre~ ~override/GV#WINK.cre~
-SAY NAME1 ~Reeves~
-SAY NAME2 ~Reeves~
-SAY DAMAGE ~~ [BASSL03]
-SAY DYING ~~ [BASSL04]
+SAY NAME1 @91 /* Reeves */
+SAY NAME2 @91 /* Reeves */
+SAY DAMAGE @92 /* [BASSL03] */
+SAY DYING @93 /* [BASSL04] */
 
 
 COPY ~GlamNPCPack/Creature/GV#LITT.cre~ ~override/GV#LITT.cre~
 
-SAY NAME1 ~Littlun~
-SAY NAME2 ~Littlun~
+SAY NAME1 @94 /* Littlun */
+SAY NAME2 @94 /* Littlun */
 
-SAY BIO ~When asked about her past, Littlun proudly informs you of how she was taken in as a baby by a tribe of elves, who raised her as one of their own. However, while she is very much a product of the wilds, the mechanical, rapid-fire crossbow she carries is the work of her long-deceased father, once a master craftsman and wandering scholar. She is a walking contradiction, a juxtaposition of untamed nature and advanced technology. ~
+SAY BIO @95 /* When asked about her past, Littlun proudly informs you of how she was taken in as a baby by a tribe of elves, who raised her as one of their own. However, while she is very much a product of the wilds, the mechanical, rapid-fire crossbow she carries is the work of her long-deceased father, once a master craftsman and wandering scholar. She is a walking contradiction, a juxtaposition of untamed nature and advanced technology.  */
 
-SAY LEADER ~Yeah, I'll take point. Saves me having to shoot past you lot.~ [GV#LITTb]
-SAY TIRED ~I'm used to trekking, but this is just torture. Let's bed down.~ [GV#LITTc]
-SAY BORED ~Are we gonna get a move on, or what?~ [GV#LITTd]
-SAY BATTLE_CRY1 ~Time for some target practice!~ [GV#LITTa]
-SAY BATTLE_CRY2 ~Time for some target practice!~ [GV#LITTa]
-SAY BATTLE_CRY3 ~Time for some target practice!~ [GV#LITTa]
-SAY BATTLE_CRY4 ~Time for some target practice!~ [GV#LITTa]
-SAY BATTLE_CRY5 ~Time for some target practice!~ [GV#LITTa]
-SAY DAMAGE ~~ [GV#LITTl]
-SAY DYING ~Look after the crossbow...~ [GV#LITTm]
-SAY HURT ~Make mine a healing potion...~ [GV#LITTe]
-SAY SELECT_COMMON1 ~Need a hand?~ [GV#LITTf]
-SAY SELECT_COMMON2 ~Ready for action.~ [GV#LITTg]
-SAY SELECT_COMMON3 ~Just say the word.~ [GV#LITTh]
-SAY SELECT_ACTION1 ~Righto.~ [GV#LITTi]
-SAY SELECT_ACTION2 ~Easy enough.~ [GV#LITTj]
-SAY SELECT_ACTION3 ~Give us a sec.~ [GV#LITTk]
-SAY CRITICAL_HIT ~Hah! Right between the eyes!~ [GV#LITTz]
-SAY CRITICAL_MISS ~Ugh, that's not like me...~ [GV#LITT1]
-SAY TARGET_IMMUNE ~I ain't making a dent here!~ [GV#LITT2]
-SAY HIDDEN_IN_SHADOWS ~They won't catch a whiff of me.~ [GV#LITT5]
-SAY SPELL_DISRUPTED ~Argh, my spell's gone tits up!~ [GV#LITT6]
+SAY LEADER @96 /* Yeah, I'll take point. Saves me having to shoot past you lot. */
+SAY TIRED @97 /* I'm used to trekking, but this is just torture. Let's bed down. */
+SAY BORED @98 /* Are we gonna get a move on, or what? */
+SAY BATTLE_CRY1 @99 /* Time for some target practice! */
+SAY BATTLE_CRY2 @99 /* Time for some target practice! */
+SAY BATTLE_CRY3 @99 /* Time for some target practice! */
+SAY BATTLE_CRY4 @99 /* Time for some target practice! */
+SAY BATTLE_CRY5 @99 /* Time for some target practice! */
+SAY DAMAGE @100 /* [GV#LITTl] */
+SAY DYING @101 /* Look after the crossbow... */
+SAY HURT @102 /* Make mine a healing potion... */
+SAY SELECT_COMMON1 @103 /* Need a hand? */
+SAY SELECT_COMMON2 @104 /* Ready for action. */
+SAY SELECT_COMMON3 @105 /* Just say the word. */
+SAY SELECT_ACTION1 @106 /* Righto. */
+SAY SELECT_ACTION2 @107 /* Easy enough. */
+SAY SELECT_ACTION3 @108 /* Give us a sec. */
+SAY CRITICAL_HIT @109 /* Hah! Right between the eyes! */
+SAY CRITICAL_MISS @110 /* Ugh, that's not like me... */
+SAY TARGET_IMMUNE @111 /* I ain't making a dent here! */
+SAY HIDDEN_IN_SHADOWS @112 /* They won't catch a whiff of me. */
+SAY SPELL_DISRUPTED @113 /* Argh, my spell's gone tits up! */
 
 
 COPY ~GlamNPCPack/Creature/GV#PIER.cre~ ~override/GV#PIER.cre~
-SAY NAME1 ~Pierson~
-SAY NAME2 ~Pierson~
-SAY DAMAGE ~~ [PNOBL10]
-SAY DYING ~~ [PNOBL11]
+SAY NAME1 @114 /* Pierson */
+SAY NAME2 @114 /* Pierson */
+SAY DAMAGE @115 /* [PNOBL10] */
+SAY DYING @116 /* [PNOBL11] */
 
 
 ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
 COPY ~GlamNPCPack/Creature/GV#MOID.cre~ ~override/GV#MOID.cre~
 
-SAY NAME1 ~Moidre~
-SAY NAME2 ~Moidre~
+SAY NAME1 @117 /* Moidre */
+SAY NAME2 @117 /* Moidre */
 
-SAY BIO ~When asked about her past, Moidre says little, which you've quickly come to realise is normal for her. Her helmet, which she refuses to remove even when ordered, hides her countenance from the world, and her voice rarely wavers from its flat inflection, making her as easy to engage with as a brick; however, her intense discipline marks her as something more than common sellsword.~
+SAY BIO @118 /* When asked about her past, Moidre says little, which you've quickly come to realise is normal for her. Her helmet, which she refuses to remove even when ordered, hides her countenance from the world, and her voice rarely wavers from its flat inflection, making her as easy to engage with as a brick; however, her intense discipline marks her as something more than common sellsword. */
 
-SAY LEADER ~An honour.~ [GV#MOIDb]
-SAY TIRED ~*yawn*~ [GV#MOIDc]
-SAY BORED ~~
-SAY BATTLE_CRY1 ~~
-SAY BATTLE_CRY2 ~~
-SAY BATTLE_CRY3 ~~
-SAY BATTLE_CRY4 ~~
-SAY BATTLE_CRY5 ~~
-SAY DAMAGE ~~ [GV#MOIDl]
-SAY DYING ~~ [GV#MOIDm]
-SAY HURT ~Ignore the pain.~ [GV#MOIDe]
-SAY SELECT_COMMON1 ~What?~ [GV#MOIDf]
-SAY SELECT_COMMON2 ~Huh?~ [GV#MOIDg]
-SAY SELECT_COMMON3 ~Speak.~ [GV#MOIDh]
-SAY SELECT_ACTION1 ~As you wish.~ [GV#MOIDi]
-SAY SELECT_ACTION2 ~Done.~ [GV#MOIDj]
-SAY SELECT_ACTION3 ~Fine.~ [GV#MOIDk]
+SAY LEADER @119 /* An honour. */
+SAY TIRED @120 /* *yawn* */
+WRITE_LONG BORED "-1"
+WRITE_LONG BATTLE_CRY1 "-1"
+WRITE_LONG BATTLE_CRY2 "-1"
+WRITE_LONG BATTLE_CRY3 "-1"
+WRITE_LONG BATTLE_CRY4 "-1"
+WRITE_LONG BATTLE_CRY5 "-1"
+SAY DAMAGE @121 /* [GV#MOIDl] */
+SAY DYING @122 /* [GV#MOIDm] */
+SAY HURT @123 /* Ignore the pain. */
+SAY SELECT_COMMON1 @124 /* What? */
+SAY SELECT_COMMON2 @125 /* Huh? */
+SAY SELECT_COMMON3 @126 /* Speak. */
+SAY SELECT_ACTION1 @127 /* As you wish. */
+SAY SELECT_ACTION2 @128 /* Done. */
+SAY SELECT_ACTION3 @129 /* Fine. */
 
 END ELSE BEGIN
 
 COPY ~GlamNPCPack/Creature/GV#MOID2.cre~ ~override/GV#MOID.cre~
 
-SAY NAME1 ~Moidre~
-SAY NAME2 ~Moidre~
+SAY NAME1 @117 /* Moidre */
+SAY NAME2 @117 /* Moidre */
 
-SAY BIO ~When asked about her past, Moidre says little, which you've quickly come to realise is normal for her. Her helmet, which she refuses to remove even when ordered, hides her countenance from the world, and her voice rarely wavers from its flat inflection, making her as easy to engage with as a brick; however, her intense discipline marks her as something more than common sellsword.~
+SAY BIO @118 /* When asked about her past, Moidre says little, which you've quickly come to realise is normal for her. Her helmet, which she refuses to remove even when ordered, hides her countenance from the world, and her voice rarely wavers from its flat inflection, making her as easy to engage with as a brick; however, her intense discipline marks her as something more than common sellsword. */
 
-SAY LEADER ~An honour.~ [GV#MOIDb]
-SAY TIRED ~*yawn*~ [GV#MOIDc]
-SAY BORED ~~
-SAY BATTLE_CRY1 ~~
-SAY BATTLE_CRY2 ~~
-SAY BATTLE_CRY3 ~~
-SAY BATTLE_CRY4 ~~
-SAY BATTLE_CRY5 ~~
-SAY DAMAGE ~~ [GV#MOIDl]
-SAY DYING ~~ [GV#MOIDm]
-SAY HURT ~Ignore the pain.~ [GV#MOIDe]
-SAY SELECT_COMMON1 ~What?~ [GV#MOIDf]
-SAY SELECT_COMMON2 ~Huh?~ [GV#MOIDg]
-SAY SELECT_COMMON3 ~Speak.~ [GV#MOIDh]
-SAY SELECT_ACTION1 ~As you wish.~ [GV#MOIDi]
-SAY SELECT_ACTION2 ~Done.~ [GV#MOIDj]
-SAY SELECT_ACTION3 ~Fine.~ [GV#MOIDk]
+SAY LEADER @119 /* An honour. */
+SAY TIRED @120 /* *yawn* */
+WRITE_LONG BORED "-1"
+WRITE_LONG BATTLE_CRY1 "-1"
+WRITE_LONG BATTLE_CRY2 "-1"
+WRITE_LONG BATTLE_CRY3 "-1"
+WRITE_LONG BATTLE_CRY4 "-1"
+WRITE_LONG BATTLE_CRY5 "-1"
+SAY DAMAGE @121 /* [GV#MOIDl] */
+SAY DYING @122 /* [GV#MOIDm] */
+SAY HURT @123 /* Ignore the pain. */
+SAY SELECT_COMMON1 @124 /* What? */
+SAY SELECT_COMMON2 @125 /* Huh? */
+SAY SELECT_COMMON3 @126 /* Speak. */
+SAY SELECT_ACTION1 @127 /* As you wish. */
+SAY SELECT_ACTION2 @128 /* Done. */
+SAY SELECT_ACTION3 @129 /* Fine. */
 END
 
 ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
 COPY ~GlamNPCPack/Creature/gv#vynd.cre~ ~override/gv#vynd.cre~
 
-SAY NAME1 ~Vynd~
-SAY NAME2 ~Vynd~
+SAY NAME1 @130 /* Vynd */
+SAY NAME2 @130 /* Vynd */
 
-SAY BIO ~When asked about his past, Vynd wonders aloud how you'd feel if some nosy bastard you barely know asked for your life story. You've pieced together that he's not new to the surface world, and he left the Underdark by choice. Beyond that, he remains a mystery. A snide, abrasive mystery.~
+SAY BIO @131 /* When asked about his past, Vynd wonders aloud how you'd feel if some nosy bastard you barely know asked for your life story. You've pieced together that he's not new to the surface world, and he left the Underdark by choice. Beyond that, he remains a mystery. A snide, abrasive mystery. */
 
-SAY MORALE ~A dead man serves no-one.~ [gv#vyndw]
-SAY LEADER ~I'll be the leader for now. Just, uh, don't stand between me and the exit.~ [gv#vyndb]
-SAY TIRED ~I'm tired of trotting around like a damn mule. Let's find an inn and some warm beds.~ [gv#vyndc]
-SAY BORED ~There must be more to life than standing around wondering if there's more to life.~ [gv#vyndd]
-SAY BATTLE_CRY1 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY BATTLE_CRY2 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY BATTLE_CRY3 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY BATTLE_CRY4 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY BATTLE_CRY5 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY DAMAGE ~~ [gv#vyndl]
-SAY DYING ~~ [gv#vyndm]
-SAY HURT ~I think my adventuring days are almost over.~ [gv#vynde]
-SAY SELECT_COMMON1 ~Yeah?~ [gv#vyndf]
-SAY SELECT_COMMON2 ~What's up?~ [gv#vyndg]
-SAY SELECT_COMMON3 ~What now?~ [gv#vyndh]
-SAY SELECT_ACTION1 ~Here I go.~ [gv#vyndi]
-SAY SELECT_ACTION2 ~On my way.~ [gv#vyndj]
-SAY SELECT_ACTION3 ~No worries.~ [gv#vyndk]
+SAY MORALE @132 /* A dead man serves no-one. */
+SAY LEADER @133 /* I'll be the leader for now. Just, uh, don't stand between me and the exit. */
+SAY TIRED @134 /* I'm tired of trotting around like a damn mule. Let's find an inn and some warm beds. */
+SAY BORED @135 /* There must be more to life than standing around wondering if there's more to life. */
+SAY BATTLE_CRY1 @136 /* My enemies always bring out the best in me. */
+SAY BATTLE_CRY2 @136 /* My enemies always bring out the best in me. */
+SAY BATTLE_CRY3 @136 /* My enemies always bring out the best in me. */
+SAY BATTLE_CRY4 @136 /* My enemies always bring out the best in me. */
+SAY BATTLE_CRY5 @136 /* My enemies always bring out the best in me. */
+SAY DAMAGE @137 /* [gv#vyndl] */
+SAY DYING @138 /* [gv#vyndm] */
+SAY HURT @139 /* I think my adventuring days are almost over. */
+SAY SELECT_COMMON1 @140 /* Yeah? */
+SAY SELECT_COMMON2 @141 /* What's up? */
+SAY SELECT_COMMON3 @142 /* What now? */
+SAY SELECT_ACTION1 @143 /* Here I go. */
+SAY SELECT_ACTION2 @144 /* On my way. */
+SAY SELECT_ACTION3 @145 /* No worries. */
 
 END ELSE BEGIN
 
 COPY ~GlamNPCPack/Creature/GV#VYND2.cre~ ~override/GV#VYND.cre~
 
-SAY NAME1 ~Vynd~
-SAY NAME2 ~Vynd~
+SAY NAME1 @130 /* Vynd */
+SAY NAME2 @130 /* Vynd */
 
-SAY BIO ~When asked about his past, Vynd wonders aloud how you'd feel if some nosy bastard you barely know asked for your life story. You've pieced together that he's not new to the surface world, and he left the Underdark by choice. Beyond that, he remains a mystery. A snide, abrasive mystery.~
+SAY BIO @131 /* When asked about his past, Vynd wonders aloud how you'd feel if some nosy bastard you barely know asked for your life story. You've pieced together that he's not new to the surface world, and he left the Underdark by choice. Beyond that, he remains a mystery. A snide, abrasive mystery. */
 
-SAY MORALE ~A dead man serves no-one.~ [gv#vyndw]
-SAY LEADER ~I'll be the leader for now. Just, uh, don't stand between me and the exit.~ [gv#vyndb]
-SAY TIRED ~I'm tired of trotting around like a damn mule. Let's find an inn and some warm beds.~ [gv#vyndc]
-SAY BORED ~There must be more to life than standing around wondering if there's more to life.~ [gv#vyndd]
-SAY BATTLE_CRY1 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY BATTLE_CRY2 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY BATTLE_CRY3 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY BATTLE_CRY4 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY BATTLE_CRY5 ~My enemies always bring out the best in me.~ [gv#vynda]
-SAY DAMAGE ~~ [gv#vyndl]
-SAY DYING ~~ [gv#vyndm]
-SAY HURT ~I think my adventuring days are almost over.~ [gv#vynde]
-SAY SELECT_COMMON1 ~Yeah?~ [gv#vyndf]
-SAY SELECT_COMMON2 ~What's up?~ [gv#vyndg]
-SAY SELECT_COMMON3 ~What now?~ [gv#vyndh]
-SAY SELECT_ACTION1 ~Here I go.~ [gv#vyndi]
-SAY SELECT_ACTION2 ~On my way.~ [gv#vyndj]
-SAY SELECT_ACTION3 ~No worries.~ [gv#vyndk]
+SAY MORALE @132 /* A dead man serves no-one. */
+SAY LEADER @133 /* I'll be the leader for now. Just, uh, don't stand between me and the exit. */
+SAY TIRED @134 /* I'm tired of trotting around like a damn mule. Let's find an inn and some warm beds. */
+SAY BORED @135 /* There must be more to life than standing around wondering if there's more to life. */
+SAY BATTLE_CRY1 @136 /* My enemies always bring out the best in me. */
+SAY BATTLE_CRY2 @136 /* My enemies always bring out the best in me. */
+SAY BATTLE_CRY3 @136 /* My enemies always bring out the best in me. */
+SAY BATTLE_CRY4 @136 /* My enemies always bring out the best in me. */
+SAY BATTLE_CRY5 @136 /* My enemies always bring out the best in me. */
+SAY DAMAGE @137 /* [gv#vyndl] */
+SAY DYING @138 /* [gv#vyndm] */
+SAY HURT @139 /* I think my adventuring days are almost over. */
+SAY SELECT_COMMON1 @140 /* Yeah? */
+SAY SELECT_COMMON2 @141 /* What's up? */
+SAY SELECT_COMMON3 @142 /* What now? */
+SAY SELECT_ACTION1 @143 /* Here I go. */
+SAY SELECT_ACTION2 @144 /* On my way. */
+SAY SELECT_ACTION3 @145 /* No worries. */
 END
 
 
@@ -536,12 +536,12 @@ END
 
 COPY ~GlamNPCPack/Creature/GV#SPID.cre~ ~override/GV#SPID.cre~
 
-SAY NAME1 ~Spider~
-SAY NAME2 ~Spider~
+SAY NAME1 @146 /* Spider */
+SAY NAME2 @146 /* Spider */
 
 COPY ~GlamNPCPack/Creature/GV#CORPS.cre~ ~override/GV#CORPS.cre~
-SAY NAME1 ~Corpse~
-SAY NAME2 ~Corpse~
+SAY NAME1 @147 /* Corpse */
+SAY NAME2 @147 /* Corpse */
 
 
 
@@ -554,13 +554,27 @@ COMPILE EVALUATE_BUFFER ~GlamNPCPack/Dialogue~
 // Glam-Sandrah
 ACTION_IF FILE_EXISTS_IN_GAME ~BGV#LITT.dlg~ AND FILE_EXISTS_IN_GAME ~BSandr.dlg~
 THEN BEGIN
-  PRINT ~Adding crossmod banters between Glam's NPC Pack and Sandrah~
+  PRINT @148 /* Adding crossmod banters between Glam's NPC Pack and Sandrah */
 COMPILE EVALUATE_BUFFER ~GlamNPCPack/crossmod/sandrah~
 END
 
 
 //JOURNAL
-ADD_JOURNAL @1 @2 @3 @4 @5 @6 @7 USING ~GlamNPCPack/Languages/English/Setup-NPCPack.tra~
+ADD_JOURNAL @1 /* A NOTICE
+
+WHEN THE IRON CRISIS IS FULLY RESOLVED, REMIND FLARA TO HAVE WORDS WITH THE OWNER OF THE "BELCHING DRAGON" TAVERN. I WRITE THIS MISSIVE BOLDLY, THAT YOUR EYES WILL HEED IT EACH TIME YOU CONSULT THESE RECORDS. */ @2 /* Family reunion?
+
+A half-elven man named Sigurd, who claims to be a friend of Flara's parents, has asked to meet her at the Friendly Arm Inn in one day's time. Though Flara has consented to this, she is in no hurry. */ @3 /* The Dragon Trade
+
+Sigurd has offered to pay a sum of gold if I will convince Flara to go with him. He and his party await at Sorcerous Sundries, in east Baldur's Gate. Whatever decision I make, it may be wisest to speak directly to Flara before I go to meet them. */ @4 /* Idol Curiosity
+
+Dave believes it would be worth keeping the idol we found in the archaeological dig. What he thinks he can do with it, I can't imagine. */ @5 /* Whispers on the Winds
+
+Dave has been called back to his temple at High Hedge, for undisclosed reasons. Apparently it's located in the building *next* to the big, imposing one. I am not to go in without him, or the reception may be less than welcoming. */ @6 /* Toppling Taranis
+
+Dave has asked that we bring the idol of Kozah to Taranis in the Talassan temple. */ @7 /* Dead or Deadbeat?
+
+Littlun's father, Pierson Plunkett, is alive. He was clearly not prepared to see her, however, and fled at the first opportunity. He is too far gone to give chase, but before he left, he mentioned something about three old kegs... */ USING ~GlamNPCPack/Languages/English/Setup-NPCPack.tra~
 
 //SCRIPTS
 COMPILE EVALUATE_BUFFER ~GlamNPCPack/Script~
@@ -587,29 +601,29 @@ ACTION_IF GAME_IS ~tutu tutu_totsc~ THEN BEGIN
 
   // Creatures
   COPY_EXISTING ~_FFHUNT.cre~ ~override/GV#MERI.cre~
-	SAY NAME1 ~Officer Meriwether~
-	SAY NAME2 ~Officer Meriwether~
+	SAY NAME1 @149 /* Officer Meriwether */
+	SAY NAME2 @149 /* Officer Meriwether */
     WRITE_ASCII 0x248 ~GV#MERI~ #8  //override script
     WRITE_ASCII 0x280 ~GV#MERI~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#MERI~ #8   //pre-joining dialogue file
     
       COPY_EXISTING ~_FTOBE5.cre~ ~override/GV#COMM1.cre~
-	SAY NAME1 ~Commoner~
-	SAY NAME2 ~Commoner~
+	SAY NAME1 @150 /* Commoner */
+	SAY NAME2 @150 /* Commoner */
     WRITE_ASCII 0x248 ~GV#COMM1~ #8  //override script
     WRITE_ASCII 0x280 ~GV#COMM1~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#COMM1~ #8   //pre-joining dialogue file
     
           COPY_EXISTING ~_MTOB7.cre~ ~override/GV#COMM2.cre~
-	SAY NAME1 ~Commoner~
-	SAY NAME2 ~Commoner~
+	SAY NAME1 @150 /* Commoner */
+	SAY NAME2 @150 /* Commoner */
     WRITE_ASCII 0x248 ~GV#COMM2~ #8  //override script
     WRITE_ASCII 0x280 ~GV#COMM2~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#COMM2~ #8   //pre-joining dialogue file
 
           COPY_EXISTING ~_MTOB6.cre~ ~override/GV#COMM3.cre~
-	SAY NAME1 ~Commoner~
-	SAY NAME2 ~Commoner~
+	SAY NAME1 @150 /* Commoner */
+	SAY NAME2 @150 /* Commoner */
     WRITE_ASCII 0x248 ~GV#COMM3~ #8  //override script
     WRITE_ASCII 0x280 ~GV#COMM3~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#COMM3~ #8   //pre-joining dialogue file
@@ -631,30 +645,30 @@ END ELSE BEGIN
         EXTEND_TOP ~ARD011.bcs~ ~GlamNPCPack/Script/fw0511.baf~
 // Creatures
   COPY_EXISTING ~FFHUNT.cre~ ~override/GV#MERI.cre~
-	SAY NAME1 ~Officer Meriwether~
-	SAY NAME2 ~Officer Meriwether~
+	SAY NAME1 @149 /* Officer Meriwether */
+	SAY NAME2 @149 /* Officer Meriwether */
     WRITE_ASCII 0x248 ~GV#MERI~ #8  //override script
     WRITE_ASCII 0x280 ~GV#MERI~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#MERI~ #8   //pre-joining dialogue file 
 
 
           COPY_EXISTING ~FTOBE5.cre~ ~override/GV#COMM1.cre~
-	SAY NAME1 ~Commoner~
-	SAY NAME2 ~Commoner~
+	SAY NAME1 @150 /* Commoner */
+	SAY NAME2 @150 /* Commoner */
     WRITE_ASCII 0x248 ~GV#COMM1~ #8  //override script
     WRITE_ASCII 0x280 ~GV#COMM1~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#COMM1~ #8   //pre-joining dialogue file
     
           COPY_EXISTING ~MTOB7.cre~ ~override/GV#COMM2.cre~
-	SAY NAME1 ~Commoner~
-	SAY NAME2 ~Commoner~
+	SAY NAME1 @150 /* Commoner */
+	SAY NAME2 @150 /* Commoner */
     WRITE_ASCII 0x248 ~GV#COMM2~ #8  //override script
     WRITE_ASCII 0x280 ~GV#COMM2~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#COMM2~ #8   //pre-joining dialogue file
 
           COPY_EXISTING ~MTOB6.cre~ ~override/GV#COMM3.cre~
-	SAY NAME1 ~Commoner~
-	SAY NAME2 ~Commoner~
+	SAY NAME1 @150 /* Commoner */
+	SAY NAME2 @150 /* Commoner */
     WRITE_ASCII 0x248 ~GV#COMM3~ #8  //override script
     WRITE_ASCII 0x280 ~GV#COMM3~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#COMM3~ #8   //pre-joining dialogue file
@@ -675,29 +689,29 @@ END ELSE BEGIN
      EXTEND_TOP ~%DurlagsTower_D1%.bcs~ ~GlamNPCPack/Script/fw0511.baf~
   // Creatures
   COPY_EXISTING ~FFHUNT.cre~ ~override/GV#MERI.cre~
-	SAY NAME1 ~Officer Meriwether~
-	SAY NAME2 ~Officer Meriwether~
+	SAY NAME1 @149 /* Officer Meriwether */
+	SAY NAME2 @149 /* Officer Meriwether */
     WRITE_ASCII 0x248 ~GV#MERI~ #8  //override script
     WRITE_ASCII 0x280 ~GV#MERI~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#MERI~ #8   //pre-joining dialogue file
 
           COPY_EXISTING ~FTOBE5.cre~ ~override/GV#COMM1.cre~
-	SAY NAME1 ~Commoner~
-	SAY NAME2 ~Commoner~
+	SAY NAME1 @150 /* Commoner */
+	SAY NAME2 @150 /* Commoner */
     WRITE_ASCII 0x248 ~GV#COMM1~ #8  //override script
     WRITE_ASCII 0x280 ~GV#COMM1~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#COMM1~ #8   //pre-joining dialogue file
     
           COPY_EXISTING ~MTOB5.cre~ ~override/GV#COMM2.cre~
-	SAY NAME1 ~Commoner~
-	SAY NAME2 ~Commoner~
+	SAY NAME1 @150 /* Commoner */
+	SAY NAME2 @150 /* Commoner */
     WRITE_ASCII 0x248 ~GV#COMM2~ #8  //override script
     WRITE_ASCII 0x280 ~GV#COMM2~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#COMM2~ #8   //pre-joining dialogue file
 
           COPY_EXISTING ~MTOB6.cre~ ~override/GV#COMM3.cre~
-	SAY NAME1 ~Commoner~
-	SAY NAME2 ~Commoner~
+	SAY NAME1 @150 /* Commoner */
+	SAY NAME2 @150 /* Commoner */
     WRITE_ASCII 0x248 ~GV#COMM3~ #8  //override script
     WRITE_ASCII 0x280 ~GV#COMM3~ #32  //DV
     WRITE_ASCII 0x2cc ~GV#COMM3~ #8   //pre-joining dialogue file
@@ -721,49 +735,49 @@ END
 //ITEMS
 
 COPY ~GlamNPCPack/Item/GV#BOOT.itm~ ~override/GV#BOOT.itm~
-SAY NAME1 ~Courier's Boots~
-SAY NAME2 ~Courier's Boots~
-SAY DESC ~Sturdy yet comfortable footwear, specially tailored for long-distance running. Ideal for a Talassan in a hurry.
+SAY NAME1 @151 /* Courier's Boots */
+SAY NAME2 @151 /* Courier's Boots */
+SAY DESC @152 /* Sturdy yet comfortable footwear, specially tailored for long-distance running. Ideal for a Talassan in a hurry.
 
 STATISTICS:
 
 Equipped Abilities:
 Movement Speed: +1
-Weight: 4~
+Weight: 4 */
 
 COPY ~GlamNPCPack/Item/GV#IDOL.itm~ ~override/GV#IDOL.itm~
-SAY NAME1 ~Charged Idol~
-SAY NAME2 ~Charged Idol~
-SAY DESC ~The duel between Dave and Taranis awakened the dormant power within this idol, and now even the lowliest of heathens may call upon it and gain a measure of Talos' divine protection.
+SAY NAME1 @153 /* Charged Idol */
+SAY NAME2 @153 /* Charged Idol */
+SAY DESC @154 /* The duel between Dave and Taranis awakened the dormant power within this idol, and now even the lowliest of heathens may call upon it and gain a measure of Talos' divine protection.
 
 STATISTICS:
 
 Charge Abilities:
 Cast Storm Shield once per day
-Weight: 1~
+Weight: 1 */
 
 COPY ~GlamNPCPack/Item/GV#THUN.itm~ ~override/GV#THUN.itm~
-SAY NAME1 ~Thundercat~
-SAY NAME2 ~Thundercat~
-SAY DESC ~A grey tabby ragamuffin, and mute familiar of the now-deceased Stormlord Jeff. While her feral temperament makes for a poor lap cat, it is easily turned against one's enemies; at least, for as long as she sees fit.
+SAY NAME1 @64 /* Thundercat */
+SAY NAME2 @64 /* Thundercat */
+SAY DESC @155 /* A grey tabby ragamuffin, and mute familiar of the now-deceased Stormlord Jeff. While her feral temperament makes for a poor lap cat, it is easily turned against one's enemies; at least, for as long as she sees fit.
 
 STATISTICS:
 
 Charge Abilities:
 Summon Thundercat once per day
 Duration: 1 hour
-Weight: 1~
+Weight: 1 */
 
 COPY ~GlamNPCPack/Item/GV#PARC.itm~ ~override/GV#PARC.itm~
-SAY NAME1 ~Talassan Parchments~
-SAY NAME2 ~Talassan Parchments~
-SAY DESC ~A stack of flyers, each summarising the perks of a life under Talos in easily digestible bullet points. The text looks professionally scribed, being uniformly sized and spaced...which means the haphazard drawings of lightning bolts and charred stick figures were likely added afterwards.~
+SAY NAME1 @156 /* Talassan Parchments */
+SAY NAME2 @156 /* Talassan Parchments */
+SAY DESC @157 /* A stack of flyers, each summarising the perks of a life under Talos in easily digestible bullet points. The text looks professionally scribed, being uniformly sized and spaced...which means the haphazard drawings of lightning bolts and charred stick figures were likely added afterwards. */
 
 
 COPY ~GlamNPCPack/Item/GV#SW1H.itm~ ~override/GV#SW1H.itm~
-SAY NAME1 ~Bastard Sword~
-SAY NAME2 ~Pam's Bastard Sword~
-SAY DESC ~There's an inscription on the blade. "For Faerun's greatest mum."
+SAY NAME1 @158 /* Bastard Sword */
+SAY NAME2 @159 /* Pam's Bastard Sword */
+SAY DESC @160 /* There's an inscription on the blade. "For Faerun's greatest mum."
 
 
 STATISTICS:
@@ -777,12 +791,12 @@ Type: One-handed
 Requires:
  11 Strength
 
-Weight: 9 ~
+Weight: 9  */
 
 COPY ~GlamNPCPack/Item/GV#SHLD.itm~ ~override/GV#SHLD.itm~
-SAY NAME1 ~Tower Shield~
-SAY NAME2 ~Tower Shield~
-SAY DESC ~Practically a portable wall, the tower shield provides unparalleled protection from missiles and melee weapons alike. However, to strike from behind it can be awkward, due to its sheer size. This particular shield is rippled with dents, and has clearly been with its owner for a long time.
+SAY NAME1 @161 /* Tower Shield */
+SAY NAME2 @161 /* Tower Shield */
+SAY DESC @162 /* Practically a portable wall, the tower shield provides unparalleled protection from missiles and melee weapons alike. However, to strike from behind it can be awkward, due to its sheer size. This particular shield is rippled with dents, and has clearly been with its owner for a long time.
 
 
 STATISTICS:
@@ -794,17 +808,17 @@ THAC0: -1 Penalty
 Requires:
  16 Strength
 
-Weight: 15 ~
+Weight: 15  */
 
 COPY ~GlamNPCPack/Item/GV#WAND.itm~ ~override/GV#WAND.itm~
-SAY NAME1 ~Drakonophobe Wand~
-SAY NAME2 ~Drakonophobe Wand~
-SAY DESC ~Specifically designed to combat dragons, this now depleted wand combined a powerful polymorph effect with mind-affecting magic to force its target into a vulnerable human form. Sigurd and his party used it against Flara, though it seems the effects were not as indelible as they'd hoped.~
+SAY NAME1 @163 /* Drakonophobe Wand */
+SAY NAME2 @163 /* Drakonophobe Wand */
+SAY DESC @164 /* Specifically designed to combat dragons, this now depleted wand combined a powerful polymorph effect with mind-affecting magic to force its target into a vulnerable human form. Sigurd and his party used it against Flara, though it seems the effects were not as indelible as they'd hoped. */
 
 COPY ~GlamNPCPack/Item/GV#NAGA.itm~ ~override/GV#NAGA.itm~
-SAY NAME1 ~Leather Armour~
-SAY NAME2 ~Nagahide Jerkin~
-SAY DESC ~Fashioned from the scales of the serpentine naga, this shimmering garment provides the protection of leather armour without compromising mobility, spellcasting, or fashion. It also protects the wearer from poison.
+SAY NAME1 @165 /* Leather Armour */
+SAY NAME2 @166 /* Nagahide Jerkin */
+SAY DESC @167 /* Fashioned from the scales of the serpentine naga, this shimmering garment provides the protection of leather armour without compromising mobility, spellcasting, or fashion. It also protects the wearer from poison.
 
 STATISTICS:
 
@@ -812,34 +826,34 @@ Spellcasting is not disabled
 Bonuses: Immunity to Poison
 Armor Class: 8
 Weight: 15
-Requires: 4 Strength~
+Requires: 4 Strength */
 
 COPY ~GlamNPCPack/Item/GV#RUBY.itm~ ~override/GV#RUBY.itm~
-SAY NAME1 ~Dragon Statuette~
-SAY NAME2 ~Dragon Statuette~
-SAY UNIDENTIFIED_DESC ~This sculpture, carved from red crystal, emits a faint glow from its core.~
-SAY DESC ~Exquisitely crafted from blood-red ruby, this sculpture is not only a fine work of art, but a powerful magical item, able to produce a shield of blue flames that protect the bearer from cold.
+SAY NAME1 @168 /* Dragon Statuette */
+SAY NAME2 @168 /* Dragon Statuette */
+SAY UNIDENTIFIED_DESC @169 /* This sculpture, carved from red crystal, emits a faint glow from its core. */
+SAY DESC @170 /* Exquisitely crafted from blood-red ruby, this sculpture is not only a fine work of art, but a powerful magical item, able to produce a shield of blue flames that protect the bearer from cold.
 
 STATISTICS:
 
 Charge Abilities: Cast Fireshield (Blue) once per day
-Weight: 0~
+Weight: 0 */
 
 COPY ~GlamNPCPack/Item/GV#COIN.itm~ ~override/GV#COIN.itm~
-SAY NAME1 ~Coin~
-SAY NAME2 ~Unlucky Coin~
-SAY UNIDENTIFIED_DESC ~This coin is of no denomination that you recognise~
-SAY DESC ~A token of Beshaba's "favour", tossing this coin bestows a deadly curse. Whether this curse affects one's foes or the owner of the coin is for the Maid of Misfortune to decide. Pray that she lands smiling.
+SAY NAME1 @171 /* Coin */
+SAY NAME2 @172 /* Unlucky Coin */
+SAY UNIDENTIFIED_DESC @173 /* This coin is of no denomination that you recognise */
+SAY DESC @174 /* A token of Beshaba's "favour", tossing this coin bestows a deadly curse. Whether this curse affects one's foes or the owner of the coin is for the Maid of Misfortune to decide. Pray that she lands smiling.
 
 STATISTICS:
 
 Charge Abilities: Cast Greater Malison (centred on self) once per day. 50% chance of inflicting Doom on user instead.
-Weight: 0~
+Weight: 0 */
 
 COPY ~GlamNPCPack/Item/GV#CLCK.itm~ ~override/GV#CLCK.itm~
-SAY NAME1 ~Cloak~
-SAY NAME2 ~Owlbear Pelt~
-SAY DESC ~The pelt of an owlbear, talons and all, to be draped haphazardly over one's person. It provides an extra layer of nonmagical protection, but it's so bulky and clumsy that it hinders almost any task requiring a delicate touch, including spellcasting.
+SAY NAME1 @175 /* Cloak */
+SAY NAME2 @176 /* Owlbear Pelt */
+SAY DESC @177 /* The pelt of an owlbear, talons and all, to be draped haphazardly over one's person. It provides an extra layer of nonmagical protection, but it's so bulky and clumsy that it hinders almost any task requiring a delicate touch, including spellcasting.
 
 STATISTICS:
 
@@ -849,12 +863,12 @@ Disables arcane spellcasting
 Open Locks: -10%
 Find Traps: -10%
 Pick Pockets: -10%
-Move Silently: -20%~
+Move Silently: -20% */
 
 COPY ~GlamNPCPack/Item/GV#STAF.itm~ ~override/GV#STAF.itm~
-SAY NAME1 ~Quarterstaff~
-SAY NAME2 ~Last Resort~
-SAY DESC ~When the time comes that a mage must rely on their trusty staff to defend themselves, finesse takes the back seat.
+SAY NAME1 @178 /* Quarterstaff */
+SAY NAME2 @179 /* Last Resort */
+SAY DESC @180 /* When the time comes that a mage must rely on their trusty staff to defend themselves, finesse takes the back seat.
 
 STATISTICS:
 
@@ -866,12 +880,12 @@ Type: Two-handed
 Requires:
  5 Strength
 
-Weight: 4~
+Weight: 4 */
 
 COPY ~GlamNPCPack/Item/GV#XBOW.itm~ ~override/GV#XBOW.itm~
-SAY NAME1 ~Plunkett Repeater~
-SAY NAME2 ~Plunkett Repeater~
-SAY DESC ~A custom-made, rapid-firing crossbow, designed by Littlun's father and passed on to her by the wild elves. Although a devastating weapon, the intricate mechanisms make it tricky to use without extensive training.
+SAY NAME1 @181 /* Plunkett Repeater */
+SAY NAME2 @181 /* Plunkett Repeater */
+SAY DESC @182 /* A custom-made, rapid-firing crossbow, designed by Littlun's father and passed on to her by the wild elves. Although a devastating weapon, the intricate mechanisms make it tricky to use without extensive training.
 
 
 STATISTICS:
@@ -886,12 +900,12 @@ Type: Two-handed
 Requires:
  12 Strength
 
-Weight: 14~
+Weight: 14 */
 
 COPY ~GlamNPCPack/Item/GV#XBOW2.itm~ ~override/GV#XBOW2.itm~
-SAY NAME1 ~Plunkett Reiterator~
-SAY NAME2 ~Plunkett Reiterator~
-SAY DESC ~With the additional modifications made by Littlun's father, a veritable hailstorm of bolts awaits the hapless souls stood at the wrong end of this crossbow.
+SAY NAME1 @183 /* Plunkett Reiterator */
+SAY NAME2 @183 /* Plunkett Reiterator */
+SAY DESC @184 /* With the additional modifications made by Littlun's father, a veritable hailstorm of bolts awaits the hapless souls stood at the wrong end of this crossbow.
 
 
 STATISTICS:
@@ -907,12 +921,12 @@ Type: Two-handed
 Requires:
  12 Strength
 
-Weight: 14~
+Weight: 14 */
 
 COPY ~GlamNPCPack/Item/GV#XBOW3.itm~ ~override/GV#XBOW3.itm~
-SAY NAME1 ~Heavy Crossbow~
-SAY NAME2 ~Plunkett Goblinstopper~
-SAY DESC ~This hefty crossbow forgoes the quickfire qualities of the Plunkett Repeater in exchange for pure penetrative power, although it requires a strong arm to manage the recoil effectively.
+SAY NAME1 @185 /* Heavy Crossbow */
+SAY NAME2 @186 /* Plunkett Goblinstopper */
+SAY DESC @187 /* This hefty crossbow forgoes the quickfire qualities of the Plunkett Repeater in exchange for pure penetrative power, although it requires a strong arm to manage the recoil effectively.
 
 
 STATISTICS:
@@ -925,35 +939,35 @@ Requires:
 15 Strength
 
 Weight: 20
-~
+ */
 
 COPY ~GlamNPCPack/Item/GV#MANU.itm~ ~override/GV#MANU.itm~
-SAY NAME1 ~The Progress of Projectiles~
-SAY NAME2 ~The Progress of Projectiles~
-SAY DESC ~A travelogue and treatise on projectile weapons throughout all ages and cultures, this bulky, yet unfinished manuscript details and diagrams everything from slings to springalds.
+SAY NAME1 @188 /* The Progress of Projectiles */
+SAY NAME2 @188 /* The Progress of Projectiles */
+SAY DESC @189 /* A travelogue and treatise on projectile weapons throughout all ages and cultures, this bulky, yet unfinished manuscript details and diagrams everything from slings to springalds.
 
-The author, one P. Plunkett, particularly raves about his experiences with wild elf bowyers, enthralled with their ability to "craft superlative weaponry, in outrageous defiance of limited resources and primitive tools." He claims his days spent among the tribesmen were among the most fulfilling of his life, and made him friends he would never forget.~
+The author, one P. Plunkett, particularly raves about his experiences with wild elf bowyers, enthralled with their ability to "craft superlative weaponry, in outrageous defiance of limited resources and primitive tools." He claims his days spent among the tribesmen were among the most fulfilling of his life, and made him friends he would never forget. */
 
 
 COPY ~GlamNPCPack/Item/GV#RING.itm~ ~override/GV#RING.itm~
-SAY NAME1 ~Wedding Ring~
-SAY NAME2 ~Wedding Ring~
-SAY DESC ~A simple gold band, unadorned, unenchanted, and slightly tarnished on the inside from decades of wear.~
+SAY NAME1 @190 /* Wedding Ring */
+SAY NAME2 @190 /* Wedding Ring */
+SAY DESC @191 /* A simple gold band, unadorned, unenchanted, and slightly tarnished on the inside from decades of wear. */
 
 
 COPY ~GlamNPCPack/Item/GV#BOOK.itm~ ~override/GV#BOOK.itm~
-SAY NAME1 ~Lockpicking for Total Muttonheads~
-SAY NAME2 ~Lockpicking for Total Muttonheads~
-SAY 0x50 ~you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap~
-SAY 0x54 ~you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap~
+SAY NAME1 @192 /* Lockpicking for Total Muttonheads */
+SAY NAME2 @192 /* Lockpicking for Total Muttonheads */
+SAY 0x50 @193 /* you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap */
+SAY 0x54 @193 /* you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap */
 
 
 COPY ~GlamNPCPack/Item/GV#HELM.itm~ ~override/GV#HELM.itm~
 
 COPY ~GlamNPCPack/Item/GV#DIAR.itm~ ~override/GV#DIAR.itm~
-SAY NAME1 ~Jeff's Old Journal~
-SAY NAME2 ~Jeff's Old Journal~
-SAY DESC ~28 Hammer, 1358:
+SAY NAME1 @194 /* Jeff's Old Journal */
+SAY NAME2 @194 /* Jeff's Old Journal */
+SAY DESC @195 /* 28 Hammer, 1358:
 On my mother's grave, I will kill every hippogriff I see to the end of my life. Stinking beasts stomped my Thundercat into the dirt. Even now, with her wounds treated, she won't wake up. The healer says he doesn't know if she will. I wave sardines beneath her nose, I poke her in the belly, for which she has never before failed to punish me, even from the deepest slumber, and yet still she lies unaware on her pillow, quiet as death.
 
 You pull through, you old hag. Don't leave me alone in this wretched world.
@@ -988,7 +1002,7 @@ We fought to a stalemate, until we both lay drained and breathless on the cold s
 
 She tells me she knows a thing or two of divine power, and of a short path to walk for those who seek it, and I know from our battle that she speaks true.
 
-I have followed the trail this far. Let us see what waits at the end of it.~
+I have followed the trail this far. Let us see what waits at the end of it. */
 
 
 
@@ -1003,7 +1017,7 @@ COPY ~GlamNPCPack/Spells/GV#SHOT2.spl~ ~override/GV#SHOT2.spl~
 COPY ~GlamNPCPack/Spells/GV#XBOW.spl~ ~override/GV#XBOW.spl~
 COPY ~GlamNPCPack/Spells/GV#PSN.spl~ ~override/GV#PSN.spl~
 COPY ~GlamNPCPack/Spells/GV#DART.spl~ ~override/GV#DART.spl~
-SAY NAME1 ~Poison Dart~
+SAY NAME1 @196 /* Poison Dart */
 
 
 
@@ -1014,25 +1028,25 @@ COPY_EXISTING ~dplayer2.bcs~ ~override~
                                  !Name("GV#DAVE",Myself)~
         REPLACE_TEXTUALLY       ~BreakingPoint()~
                                 ~BreakingPoint()
-                                 !CharName("Dave",Myself)~
+                                 !Name("GV#DAVE",Myself)~                             
         REPLACE_TEXTUALLY       ~!HappinessGT(Myself,-299)~
                                 ~!HappinessGT(Myself,-299)
                                  !Name("GV#FLAR",Myself)~
         REPLACE_TEXTUALLY       ~BreakingPoint()~
                                 ~BreakingPoint()
-                                 !CharName("Flara",Myself)~
+                                 !Name("GV#FLAR",Myself)~
         REPLACE_TEXTUALLY       ~!HappinessGT(Myself,-299)~
                                 ~!HappinessGT(Myself,-299)
                                  !Name("GV#MOID",Myself)~
         REPLACE_TEXTUALLY       ~BreakingPoint()~
                                 ~BreakingPoint()
-                                 !CharName("Moidre",Myself)~
+                                 !Name("GV#FLAR",Myself)~
         REPLACE_TEXTUALLY       ~!HappinessGT(Myself,-299)~
                                 ~!HappinessGT(Myself,-299)
                                  !Name("GV#VYND",Myself)~
         REPLACE_TEXTUALLY       ~BreakingPoint()~
                                 ~BreakingPoint()
-                                 !CharName("Vynd",Myself)~
+                                 !Name("GV#VYND",Myself)~
   COMPILE_BAF_TO_BCS
 
 

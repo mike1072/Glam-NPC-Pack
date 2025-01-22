@@ -10,7 +10,7 @@ IF
 Global("GV#THUNUnsummon","GLOBAL",1)
 THEN
 RESPONSE #100
-DisplayStringHead(Myself,~(Thundercat is injured! She scurries back into Dave's pack.)~)
+DisplayStringHead(Myself,@8010 /* (Thundercat is injured! She scurries back into Dave's pack.) */)
 SetGlobal("GV#THUNUnsummon","GLOBAL",0)
 DestroySelf()
 END
