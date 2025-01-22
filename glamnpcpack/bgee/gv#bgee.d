@@ -73,12 +73,12 @@ DO ~SetGlobal("GV#VYNDBaeloth4","GLOBAL",1)~
 == %VICONIA_BANTER% @221 /* Yes, you're still here. I had noticed. */
 == BGV#VYND @222 /* Hah! No. But you're close. See, I think there are too many drow in this party. */
 = @223 /* Normally, I have no problems avoiding attention. Baeloth...well, Baeloth's not great at it, so he needs whatever help he can get. */
-== BDBAELOB @224 /* I can suppress my magnificent presence if I have to! I just don't see *why* I should have to. */
+== BBAELOTH @224 /* I can suppress my magnificent presence if I have to! I just don't see *why* I should have to. */
 == BGV#VYND @225 /* Yes. Fine. Point is, alone, we can manage. But three of us in one group? People will start wondering why we're banding together. Whispering to the guards. Forming mobs. */
 = @226 /* So Baeloth and I talked about it and decided you should be the one to go. Sorry. */
-== BDBAELOB  @227 /* I don't recall having that discussion. */
+== BBAELOTH  @227 /* I don't recall having that discussion. */
 == BGV#VYND @228 /* We didn't. But if we did, that's what would have happened. */
-== BDBAELOB  @229 /* True. */
+== BBAELOTH  @229 /* True. */
 EXIT
 
 

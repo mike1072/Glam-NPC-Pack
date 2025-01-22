@@ -5,16 +5,16 @@ See("GV#MOID")
 !StateCheck("GV#MOID",CD_STATE_NOTVALID)
 CombatCounter(0)
 !See([ENEMY])
-Global("GV#MOIDBaeloth1","GLOBAL",0)~ THEN BDBAELOB GV#MOIDBaeloth1
+Global("GV#MOIDBaeloth1","GLOBAL",0)~ THEN BBAELOTH GV#MOIDBaeloth1
 @501 /* Now here's a fine contender. */
 DO ~SetGlobal("GV#MOIDBaeloth1","GLOBAL",1)~
 == BGV#MOID @264 /* What? */
-== BDBAELOB @502 /* Strong. Silent. Subservient. The helmet lends an aura of mystique, and you'd be too far from the spectators to offend them with your...other aura. */
+== BBAELOTH @502 /* Strong. Silent. Subservient. The helmet lends an aura of mystique, and you'd be too far from the spectators to offend them with your...other aura. */
 = @503 /* You simply must participate in my arena once I'm reinstated. And I do mean must. */
 == BGV#MOID @504 /* I don't fight in pits. */
-== BDBAELOB @505 /* No no. You mean you don't *want* to fight in pits. You'd be amazed how little that matters. */
+== BBAELOTH @505 /* No no. You mean you don't *want* to fight in pits. You'd be amazed how little that matters. */
 == BGV#MOID @506 /* I do not fight in pits. Cage me, beat me, kill me if you want. You will never make me lift a shield without a reason behind it. */
-== BDBAELOB @507 /* Your survival is the reason! */
+== BBAELOTH @507 /* Your survival is the reason! */
 == BGV#MOID @508 /* Hah. */
 EXIT
 
