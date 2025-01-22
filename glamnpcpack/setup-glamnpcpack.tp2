@@ -65,6 +65,7 @@ LANGUAGE ~English~ ~English~
   ~GlamNPCPack/Languages/English/weidu.tra~
 
 BEGIN @14 /* Glam's NPC Pack for BG:EE, BGT and BG TUTU */
+LABEL ~gv#_glams_npc_pack~
 
 
 APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
