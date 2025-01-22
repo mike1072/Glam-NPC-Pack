@@ -210,6 +210,9 @@ COPY_EXISTING ~GV#DAVE.cre~ ~override~ // copied from gv#dave or gv#dave2 in ee/
   SAY SELECT_ACTION1 @36 /* I'll get on it. */
   SAY SELECT_ACTION2 @37 /* Now's better than later. */
   SAY SELECT_ACTION3 @38 /* Got it. */
+  PATCH_IF enhanced_edition BEGIN 
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 360 target = 1 timing = 1 END
+  END  
 
 COPY ~GlamNPCPack/Creature/GV#ALAN.cre~ ~override/GV#ALAN.cre~
   SAY NAME1 @39 /* Alan */
@@ -299,6 +302,9 @@ COPY_EXISTING ~GV#FLAR.cre~ ~override~ // copied from gv#flar or gv#flar2 in ee/
   SAY SELECT_ACTION1 @78 /* I'll do it. */
   SAY SELECT_ACTION2 @79 /* So be it. */
   SAY SELECT_ACTION3 @80 /* If I must. */
+  PATCH_IF enhanced_edition BEGIN 
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 360 target = 1 timing = 1 END
+  END  
 
 COPY ~GlamNPCPack/Creature/GV#SIGU.cre~ ~override/GV#SIGU.cre~
   SAY NAME1 @81 /* Sigurd */
@@ -387,6 +393,9 @@ COPY_EXISTING ~GV#MOID.cre~ ~override~ // copied from gv#moid or gv#moid2 in ee/
   SAY SELECT_ACTION1 @127 /* As you wish. */
   SAY SELECT_ACTION2 @128 /* Done. */
   SAY SELECT_ACTION3 @129 /* Fine. */
+  PATCH_IF enhanced_edition BEGIN 
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 360 target = 1 timing = 1 END
+  END  
 
 COPY_EXISTING ~GV#vynd.cre~ ~override~ // copied from gv#vynd or gv#vynd2 in ee/non-ee section, above
 
@@ -413,6 +422,9 @@ COPY_EXISTING ~GV#vynd.cre~ ~override~ // copied from gv#vynd or gv#vynd2 in ee/
   SAY SELECT_ACTION1 @143 /* Here I go. */
   SAY SELECT_ACTION2 @144 /* On my way. */
   SAY SELECT_ACTION3 @145 /* No worries. */ 
+  PATCH_IF enhanced_edition BEGIN 
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 360 target = 1 timing = 1 END
+  END  
 
 COPY ~GlamNPCPack/Creature/GV#SPID.cre~ ~override/GV#SPID.cre~
 
@@ -500,274 +512,104 @@ LAF cd_portrait_npc STR_VAR source = ~vynd~   destination = ~gv#vynd~ source_pat
 //ITEMS
 
 COPY ~GlamNPCPack/Item/GV#BOOT.itm~ ~override/GV#BOOT.itm~
-SAY NAME1 @151 /* Courier's Boots */
-SAY NAME2 @151 /* Courier's Boots */
-SAY DESC @152 /* Sturdy yet comfortable footwear, specially tailored for long-distance running. Ideal for a Talassan in a hurry.
-
-STATISTICS:
-
-Equipped Abilities:
-Movement Speed: +1
-Weight: 4 */
+  SAY NAME1 @151 /* Courier's Boots */
+  SAY NAME2 @151 /* Courier's Boots */
+  SAY DESC @152
 
 COPY ~GlamNPCPack/Item/GV#IDOL.itm~ ~override/GV#IDOL.itm~
-SAY NAME1 @153 /* Charged Idol */
-SAY NAME2 @153 /* Charged Idol */
-SAY DESC @154 /* The duel between Dave and Taranis awakened the dormant power within this idol, and now even the lowliest of heathens may call upon it and gain a measure of Talos' divine protection.
-
-STATISTICS:
-
-Charge Abilities:
-Cast Storm Shield once per day
-Weight: 1 */
+  SAY NAME1 @153 /* Charged Idol */
+  SAY NAME2 @153 /* Charged Idol */
+  SAY DESC @154
 
 COPY ~GlamNPCPack/Item/GV#THUN.itm~ ~override/GV#THUN.itm~
-SAY NAME1 @64 /* Thundercat */
-SAY NAME2 @64 /* Thundercat */
-SAY DESC @155 /* A grey tabby ragamuffin, and mute familiar of the now-deceased Stormlord Jeff. While her feral temperament makes for a poor lap cat, it is easily turned against one's enemies; at least, for as long as she sees fit.
-
-STATISTICS:
-
-Charge Abilities:
-Summon Thundercat once per day
-Duration: 1 hour
-Weight: 1 */
+  SAY NAME1 @64 /* Thundercat */
+  SAY NAME2 @64 /* Thundercat */
+  SAY DESC @155
 
 COPY ~GlamNPCPack/Item/GV#PARC.itm~ ~override/GV#PARC.itm~
-SAY NAME1 @156 /* Talassan Parchments */
-SAY NAME2 @156 /* Talassan Parchments */
-SAY DESC @157 /* A stack of flyers, each summarising the perks of a life under Talos in easily digestible bullet points. The text looks professionally scribed, being uniformly sized and spaced...which means the haphazard drawings of lightning bolts and charred stick figures were likely added afterwards. */
-
+  SAY NAME1 @156 /* Talassan Parchments */
+  SAY NAME2 @156 /* Talassan Parchments */
+  SAY DESC @157
 
 COPY ~GlamNPCPack/Item/GV#SW1H.itm~ ~override/GV#SW1H.itm~
-SAY NAME1 @158 /* Bastard Sword */
-SAY NAME2 @159 /* Pam's Bastard Sword */
-SAY DESC @160 /* There's an inscription on the blade. "For Faerun's greatest mum."
-
-
-STATISTICS:
-
-Charge Abilities: Cast Sanctuary once per day
-THAC0: +1
-Damage: 2d4+1 (slashing)
-Speed Factor: 7
-Proficiency Type: Bastard Sword
-Type: One-handed
-Requires:
- 11 Strength
-
-Weight: 9  */
+  SAY NAME1 @158 /* Bastard Sword */
+  SAY NAME2 @159 /* Pam's Bastard Sword */
+  SAY DESC @160
 
 COPY ~GlamNPCPack/Item/GV#SHLD.itm~ ~override/GV#SHLD.itm~
-SAY NAME1 @161 /* Tower Shield */
-SAY NAME2 @161 /* Tower Shield */
-SAY DESC @162 /* Practically a portable wall, the tower shield provides unparalleled protection from missiles and melee weapons alike. However, to strike from behind it can be awkward, due to its sheer size. This particular shield is rippled with dents, and has clearly been with its owner for a long time.
-
-
-STATISTICS:
-
-Equipped abilities:
-Armor Class: +2, an extra +1 vs. missile attacks
-THAC0: -1 Penalty
-
-Requires:
- 16 Strength
-
-Weight: 15  */
+  SAY NAME1 @161 /* Tower Shield */
+  SAY NAME2 @161 /* Tower Shield */
+  SAY DESC @162
 
 COPY ~GlamNPCPack/Item/GV#WAND.itm~ ~override/GV#WAND.itm~
-SAY NAME1 @163 /* Drakonophobe Wand */
-SAY NAME2 @163 /* Drakonophobe Wand */
-SAY DESC @164 /* Specifically designed to combat dragons, this now depleted wand combined a powerful polymorph effect with mind-affecting magic to force its target into a vulnerable human form. Sigurd and his party used it against Flara, though it seems the effects were not as indelible as they'd hoped. */
+  SAY NAME1 @163 /* Drakonophobe Wand */
+  SAY NAME2 @163 /* Drakonophobe Wand */
+  SAY DESC @164
 
 COPY ~GlamNPCPack/Item/GV#NAGA.itm~ ~override/GV#NAGA.itm~
-SAY NAME1 @165 /* Leather Armour */
-SAY NAME2 @166 /* Nagahide Jerkin */
-SAY DESC @167 /* Fashioned from the scales of the serpentine naga, this shimmering garment provides the protection of leather armour without compromising mobility, spellcasting, or fashion. It also protects the wearer from poison.
-
-STATISTICS:
-
-Spellcasting is not disabled
-Bonuses: Immunity to Poison
-Armor Class: 8
-Weight: 15
-Requires: 4 Strength */
+  SAY NAME1 @165 /* Leather Armour */
+  SAY NAME2 @166 /* Nagahide Jerkin */
+  SAY DESC @167
 
 COPY ~GlamNPCPack/Item/GV#RUBY.itm~ ~override/GV#RUBY.itm~
-SAY NAME1 @168 /* Dragon Statuette */
-SAY NAME2 @168 /* Dragon Statuette */
-SAY UNIDENTIFIED_DESC @169 /* This sculpture, carved from red crystal, emits a faint glow from its core. */
-SAY DESC @170 /* Exquisitely crafted from blood-red ruby, this sculpture is not only a fine work of art, but a powerful magical item, able to produce a shield of blue flames that protect the bearer from cold.
-
-STATISTICS:
-
-Charge Abilities: Cast Fireshield (Blue) once per day
-Weight: 0 */
+  SAY NAME1 @168 /* Dragon Statuette */
+  SAY NAME2 @168 /* Dragon Statuette */
+  SAY UNIDENTIFIED_DESC @169 /* This sculpture, carved from red crystal, emits a faint glow from its core. */
+  SAY DESC @170
 
 COPY ~GlamNPCPack/Item/GV#COIN.itm~ ~override/GV#COIN.itm~
-SAY NAME1 @171 /* Coin */
-SAY NAME2 @172 /* Unlucky Coin */
-SAY UNIDENTIFIED_DESC @173 /* This coin is of no denomination that you recognise */
-SAY DESC @174 /* A token of Beshaba's "favour", tossing this coin bestows a deadly curse. Whether this curse affects one's foes or the owner of the coin is for the Maid of Misfortune to decide. Pray that she lands smiling.
-
-STATISTICS:
-
-Charge Abilities: Cast Greater Malison (centred on self) once per day. 50% chance of inflicting Doom on user instead.
-Weight: 0 */
+  SAY NAME1 @171 /* Coin */
+  SAY NAME2 @172 /* Unlucky Coin */
+  SAY UNIDENTIFIED_DESC @173 /* This coin is of no denomination that you recognise */
+  SAY DESC @174
 
 COPY ~GlamNPCPack/Item/GV#CLCK.itm~ ~override/GV#CLCK.itm~
-SAY NAME1 @175 /* Cloak */
-SAY NAME2 @176 /* Owlbear Pelt */
-SAY DESC @177 /* The pelt of an owlbear, talons and all, to be draped haphazardly over one's person. It provides an extra layer of nonmagical protection, but it's so bulky and clumsy that it hinders almost any task requiring a delicate touch, including spellcasting.
-
-STATISTICS:
-
-Equipped Abilities:
-Armor Class: +1
-Disables arcane spellcasting
-Open Locks: -10%
-Find Traps: -10%
-Pick Pockets: -10%
-Move Silently: -20% */
+  SAY NAME1 @175 /* Cloak */
+  SAY NAME2 @176 /* Owlbear Pelt */
+  SAY DESC @177
 
 COPY ~GlamNPCPack/Item/GV#STAF.itm~ ~override/GV#STAF.itm~
 SAY NAME1 @178 /* Quarterstaff */
 SAY NAME2 @179 /* Last Resort */
-SAY DESC @180 /* When the time comes that a mage must rely on their trusty staff to defend themselves, finesse takes the back seat.
-
-STATISTICS:
-
-Bonuses: Set Strength to 18/00
-Damage: 1d6+1 (crushing)
-Speed Factor: 3
-Proficiency Type: Quarterstaff
-Type: Two-handed
-Requires:
- 5 Strength
-
-Weight: 4 */
+SAY DESC @180
 
 COPY ~GlamNPCPack/Item/GV#XBOW.itm~ ~override/GV#XBOW.itm~
-SAY NAME1 @181 /* Plunkett Repeater */
-SAY NAME2 @181 /* Plunkett Repeater */
-SAY DESC @182 /* A custom-made, rapid-firing crossbow, designed by Littlun's father and passed on to her by the wild elves. Although a devastating weapon, the intricate mechanisms make it tricky to use without extensive training.
-
-
-STATISTICS:
-
-Only usable by: Littlun
-Equipped abilities: 1 extra attack per round
-
-Damage: +2
-Speed Factor: 5
-Proficiency Type: Crossbow
-Type: Two-handed
-Requires:
- 12 Strength
-
-Weight: 14 */
+  SAY NAME1 @181 /* Plunkett Repeater */
+  SAY NAME2 @181 /* Plunkett Repeater */
+  SAY DESC @182
 
 COPY ~GlamNPCPack/Item/GV#XBOW2.itm~ ~override/GV#XBOW2.itm~
-SAY NAME1 @183 /* Plunkett Reiterator */
-SAY NAME2 @183 /* Plunkett Reiterator */
-SAY DESC @184 /* With the additional modifications made by Littlun's father, a veritable hailstorm of bolts awaits the hapless souls stood at the wrong end of this crossbow.
-
-
-STATISTICS:
-
-Only usable by: Littlun
-Equipped abilities: 1.5 extra attacks per round
-
-THAC0: +2
-Damage: +2
-Speed Factor: 5
-Proficiency Type: Crossbow
-Type: Two-handed
-Requires:
- 12 Strength
-
-Weight: 14 */
+  SAY NAME1 @183 /* Plunkett Reiterator */
+  SAY NAME2 @183 /* Plunkett Reiterator */
+  SAY DESC @184
 
 COPY ~GlamNPCPack/Item/GV#XBOW3.itm~ ~override/GV#XBOW3.itm~
-SAY NAME1 @185 /* Heavy Crossbow */
-SAY NAME2 @186 /* Plunkett Goblinstopper */
-SAY DESC @187 /* This hefty crossbow forgoes the quickfire qualities of the Plunkett Repeater in exchange for pure penetrative power, although it requires a strong arm to manage the recoil effectively.
-
-
-STATISTICS:
-
-Damage: +6 (missile)
-Speed Factor: 10
-Proficiency Type: Crossbow
-Type: Two-handed
-Requires:
-15 Strength
-
-Weight: 20
- */
+  SAY NAME1 @185 /* Heavy Crossbow */
+  SAY NAME2 @186 /* Plunkett Goblinstopper */
+  SAY DESC @187
 
 COPY ~GlamNPCPack/Item/GV#MANU.itm~ ~override/GV#MANU.itm~
-SAY NAME1 @188 /* The Progress of Projectiles */
-SAY NAME2 @188 /* The Progress of Projectiles */
-SAY DESC @189 /* A travelogue and treatise on projectile weapons throughout all ages and cultures, this bulky, yet unfinished manuscript details and diagrams everything from slings to springalds.
-
-The author, one P. Plunkett, particularly raves about his experiences with wild elf bowyers, enthralled with their ability to "craft superlative weaponry, in outrageous defiance of limited resources and primitive tools." He claims his days spent among the tribesmen were among the most fulfilling of his life, and made him friends he would never forget. */
-
+  SAY NAME1 @188 /* The Progress of Projectiles */
+  SAY NAME2 @188 /* The Progress of Projectiles */
+  SAY DESC @189
 
 COPY ~GlamNPCPack/Item/GV#RING.itm~ ~override/GV#RING.itm~
-SAY NAME1 @190 /* Wedding Ring */
-SAY NAME2 @190 /* Wedding Ring */
-SAY DESC @191 /* A simple gold band, unadorned, unenchanted, and slightly tarnished on the inside from decades of wear. */
-
+  SAY NAME1 @190 /* Wedding Ring */
+  SAY NAME2 @190 /* Wedding Ring */
+  SAY DESC @191 /* A simple gold band, unadorned, unenchanted, and slightly tarnished on the inside from decades of wear. */
 
 COPY ~GlamNPCPack/Item/GV#BOOK.itm~ ~override/GV#BOOK.itm~
-SAY NAME1 @192 /* Lockpicking for Total Muttonheads */
-SAY NAME2 @192 /* Lockpicking for Total Muttonheads */
-SAY 0x50 @193 /* you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap */
-SAY 0x54 @193 /* you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap */
-
+  SAY NAME1 @192 /* Lockpicking for Total Muttonheads */
+  SAY NAME2 @192 /* Lockpicking for Total Muttonheads */
+  SAY 0x50 @193 /* you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap */
+  SAY 0x54 @193 /* you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap */
 
 COPY ~GlamNPCPack/Item/GV#HELM.itm~ ~override/GV#HELM.itm~
 
 COPY ~GlamNPCPack/Item/GV#DIAR.itm~ ~override/GV#DIAR.itm~
-SAY NAME1 @194 /* Jeff's Old Journal */
-SAY NAME2 @194 /* Jeff's Old Journal */
-SAY DESC @195 /* 28 Hammer, 1358:
-On my mother's grave, I will kill every hippogriff I see to the end of my life. Stinking beasts stomped my Thundercat into the dirt. Even now, with her wounds treated, she won't wake up. The healer says he doesn't know if she will. I wave sardines beneath her nose, I poke her in the belly, for which she has never before failed to punish me, even from the deepest slumber, and yet still she lies unaware on her pillow, quiet as death.
-
-You pull through, you old hag. Don't leave me alone in this wretched world.
-
-
-4 Alturiak, 1358:
-Thundercat is awake and alert, but not whole. I am told the injuries to her head were too severe to mend fully, and now she mews and growls where once she spoke as eruditely as I.
-
-It pains her. I can see it. She hides it well, as she hides everything besides her ire, but I've had her at my side too long to be fooled. She has not forgotten herself, what she used to be. She knows what is gone.
-
-I've never felt such unbearable helplessness! I had every blasted medic in the regiment up by their collars, demanding solutions, finding none. There is magic to heal even the deepest afflictions, they say, but none of the sort I can afford.
-
-Perhaps, instead, it could be earned.
-
-
-25 Ches, 1358:
-Rejected. Rejected everywhere. Tempus spurns me for favouring spellbook over sword, while the Lady of Strategy tuts at my impatience. Chauntea resents that I will not value plants as people, and Eldath will have no-one who clings to the trappings of war. For Sune, too dour, for Torm, too rebellious, for Ilmater, too selfish. Tell me, what is selfish in the wish to heal a friend? I will ask them such when next I visit. Bastards.
-
-
-1 Tarsakh, 1358:
-The Ilmatari shrine is destroyed! I returned to present my case anew and found only rubble and corpses, and the telltale black streaks of magical electric discharge. A scene of terrible carnage.
-
-And yet, I find myself unmoved; even, dare I say, gratified to witness their smug piety torn down and left in ruins. Perhaps a dose of healthy self-interest would have seen them with more than wooden staffs and begging bowls to defend themselves from whomever did this.
-
-There is a trail here.
-
-
-5 Tarsakh, 1358:
-My hunt led to a cavern in the mountains, and to a woman dressed in steel and leather, who wore a silver bolt of lightning around her neck. She attacked the moment she saw me, perhaps assuming I had come to pay justice for Ilmater's fallen, but a captain of the War Wizards is no easy foe.
-
-We fought to a stalemate, until we both lay drained and breathless on the cold stone. Only then did she ask my name and my purpose. I said that I sought the destroyer of the Ilmatari shrine, and she told me I had found her. I said that I commended her thoroughness, and she laughed a longer laugh than I have ever heard. Thus, our acquaintance made, we set our weapons aside and settled by the fire to recuperate.
-
-She tells me she knows a thing or two of divine power, and of a short path to walk for those who seek it, and I know from our battle that she speaks true.
-
-I have followed the trail this far. Let us see what waits at the end of it. */
+  SAY NAME1 @194 /* Jeff's Old Journal */
+  SAY NAME2 @194 /* Jeff's Old Journal */
+  SAY DESC @195
 
 
 
@@ -782,38 +624,17 @@ COPY ~GlamNPCPack/Spells/GV#SHOT2.spl~ ~override/GV#SHOT2.spl~
 COPY ~GlamNPCPack/Spells/GV#XBOW.spl~ ~override/GV#XBOW.spl~
 COPY ~GlamNPCPack/Spells/GV#PSN.spl~ ~override/GV#PSN.spl~
 COPY ~GlamNPCPack/Spells/GV#DART.spl~ ~override/GV#DART.spl~
-SAY NAME1 @196 /* Poison Dart */
+  SAY NAME1 @196 /* Poison Dart */
 
-
-
-COPY_EXISTING ~dplayer2.bcs~ ~override~
-  DECOMPILE_BCS_TO_BAF
-        REPLACE_TEXTUALLY       ~!HappinessGT(Myself,-299)~
-                                ~!HappinessGT(Myself,-299)
-                                 !Name("GV#DAVE",Myself)~
-        REPLACE_TEXTUALLY       ~BreakingPoint()~
-                                ~BreakingPoint()
-                                 !Name("GV#DAVE",Myself)~                             
-        REPLACE_TEXTUALLY       ~!HappinessGT(Myself,-299)~
-                                ~!HappinessGT(Myself,-299)
-                                 !Name("GV#FLAR",Myself)~
-        REPLACE_TEXTUALLY       ~BreakingPoint()~
-                                ~BreakingPoint()
-                                 !Name("GV#FLAR",Myself)~
-        REPLACE_TEXTUALLY       ~!HappinessGT(Myself,-299)~
-                                ~!HappinessGT(Myself,-299)
-                                 !Name("GV#MOID",Myself)~
-        REPLACE_TEXTUALLY       ~BreakingPoint()~
-                                ~BreakingPoint()
-                                 !Name("GV#FLAR",Myself)~
-        REPLACE_TEXTUALLY       ~!HappinessGT(Myself,-299)~
-                                ~!HappinessGT(Myself,-299)
-                                 !Name("GV#VYND",Myself)~
-        REPLACE_TEXTUALLY       ~BreakingPoint()~
-                                ~BreakingPoint()
-                                 !Name("GV#VYND",Myself)~
-  COMPILE_BAF_TO_BCS
-
+ACTION_IF !enhanced_edition BEGIN // do this via op360 on EEs
+  COPY_EXISTING ~dplayer2.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN 
+      REPLACE_TEXTUALLY ~!HappinessGT(Myself,-299)~
+                        ~!HappinessGT(Myself,-299) !Name("GV#DAVE",Myself) !Name("GV#FLAR",Myself) !Name("GV#MOID",Myself) !Name("GV#VYND",Myself)~
+      REPLACE_TEXTUALLY ~BreakingPoint()~
+                        ~BreakingPoint() !Name("GV#DAVE",Myself) !Name("GV#FLAR",Myself) !Name("GV#MOID",Myself) !Name("GV#VYND",Myself)~
+    END
+END
 
 
 
