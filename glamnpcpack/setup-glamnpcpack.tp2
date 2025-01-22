@@ -24,7 +24,7 @@ ALWAYS
       END 
 
       OUTER_SET enhanced_edition = 1
-    
+      
       OUTER_SPRINT ~tra_location~ ~glamnpcpack/languages~
       
     END ELSE BEGIN   
@@ -43,7 +43,7 @@ ALWAYS
       END
 
       OUTER_SET enhanced_edition = 0
-    
+      
       OUTER_SPRINT ~tra_location~ ~weidu_external/glamnpcpack/languages~
 
       // convert strings from UTF-8 for originals
@@ -70,8 +70,24 @@ LABEL ~gv#_glams_npc_pack~
 OUTER_SPRINT "ElfsongBartender" ~BART8~
 OUTER_SPRINT "GhostKnight" ~%tutu_scriptbg%KNIGHT%eet_var%~
 
+ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_glam_ai BEGIN
+  // ee script => obg2 substitute
+  bdbard01 => gpmage2  // used by sigurd
+  bdcler01 => priest5  // used by kelly, lady burnhart, phil, taranis
+  bdclma01 => priest5  // used by stormlord jeff
+  bdfigh01 => fighter2 // used by brian, lord burnhart, pam, pierson, storm knight
+  bdmage01 => gpmage1  // used by reeves
+END
+
 OUTER_SET opp_palette = 0
 ACTION_IF enhanced_edition BEGIN 
+  
+  ACTION_PHP_EACH cd_glam_ai AS eescript => obg2script BEGIN
+  OUTER_SPRINT $cd_glam_ai("%eescript%") ~%eescript%~
+    ACTION_IF !FILE_EXISTS_IN_GAME ~%eescript%.bcs~ BEGIN
+      COMPILE ~glamnpcpack/scripts/bgee/%eescript%.baf~
+    END
+  END  
 
   OUTER_SET opp_palette = 1
 
@@ -233,6 +249,7 @@ COPY ~GlamNPCPack/Creature/GV#ALAN.cre~ ~override~
   SAY NAME2 @39 /* Alan */
   SAY DAMAGE @40 /* [BELTT08] */
   SAY DYING @41 /* [BELTT09] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdcler01") #8
   WRITE_ASCIIE 0x260 ~%tutu_var%priest2~ #8
   WRITE_ASCIIE 0x268 ~%tutu_var%shout~ #8
   ADD_CRE_ITEM ~%tutu_var%chan01~  #0 #0 #0 ~NONE~ ~ARMOR~
@@ -245,6 +262,7 @@ COPY ~GlamNPCPack/Creature/GV#BRIA.cre~ ~override~
   SAY NAME2 @42 /* Brian */
   SAY DAMAGE @43 /* [VOLO08] */
   SAY DYING @44 /* [VOLO09] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdfigh01") #8
   WRITE_ASCIIE 0x260 ~%tutu_var%priest5~ #8
   WRITE_ASCIIE 0x268 ~%tutu_var%shout~ #8
   ADD_CRE_ITEM ~%tutu_var%helm01~  #0 #0 #0 ~NONE~ ~HELMET~
@@ -257,6 +275,7 @@ COPY ~GlamNPCPack/Creature/GV#JEFF.cre~ ~override~
   SAY NAME2 @45 /* Stormlord Jeff */
   SAY DAMAGE @46 /* [DAVEO08] */
   SAY DYING @47 /* [DAVEO09] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdfigh01") #8
   PATCH_IF FILE_EXISTS_IN_GAME ~mage11.bcs~ BEGIN
     WRITE_ASCIIE 0x260 ~mage11~ #8 // non-bgee
   END  
@@ -271,6 +290,7 @@ COPY ~GlamNPCPack/Creature/GV#KELL.cre~ ~override~
   SAY NAME2 @48 /* Kelly */
   SAY DAMAGE @49 /* [SHOAL03] */
   SAY DYING @50 /* [SHOAL04] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdcler01") #8
   WRITE_ASCIIE 0x260 ~%tutu_var%priest1~ #8
   WRITE_ASCIIE 0x268 ~%tutu_var%shout~ #8
   ADD_CRE_ITEM ~%tutu_var%leat01~  #0 #0 #0 ~NONE~ ~ARMOR~
@@ -289,6 +309,7 @@ COPY ~GlamNPCPack/Creature/GV#PAM.cre~ ~override~
   SAY NAME2 @51 /* Pam */
   SAY DAMAGE @52 /* [KRYST08] */
   SAY DYING @53 /* [KRYST09] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdfigh01") #8
   WRITE_ASCIIE 0x260 ~%tutu_scriptw%tasight~ #8
   WRITE_ASCIIE 0x268 ~%tutu_var%shout~ #8
   ADD_CRE_ITEM ~%tutu_var%helm08~  #0 #0 #0 ~NONE~ ~HELMET~   
@@ -303,6 +324,7 @@ COPY ~GlamNPCPack/Creature/GV#PHIL.cre~ ~override~
   SAY NAME2 @54 /* Phil */
   SAY DAMAGE @55 /* [THALT03] */
   SAY DYING @56 /* [THALT04] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdcler01") #8
   WRITE_ASCIIE 0x260 ~%tutu_var%priest5~ #8
   WRITE_ASCIIE 0x268 ~%tutu_var%shout~ #8
   ADD_CRE_ITEM ~%tutu_var%shld03~  #0 #0 #0 ~NONE~ ~shield~   
@@ -314,6 +336,7 @@ COPY ~GlamNPCPack/Creature/GV#STOR.cre~ ~override~
   SAY NAME2 @57 /* Storm Knight */
   SAY DAMAGE @58 /* [GUARR05] */
   SAY DYING @59 /* [GUARR06] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdfigh01") #8
   WRITE_ASCIIE 0x260 ~%tutu_scriptw%tasight~ #8
   WRITE_ASCIIE 0x268 ~%tutu_var%shout~ #8
   ADD_CRE_ITEM ~%tutu_var%helm01~  #0 #0 #0 ~NONE~ ~HELMET~    
@@ -326,6 +349,7 @@ COPY ~GlamNPCPack/Creature/GV#TARA.cre~ ~override~
   SAY INITIAL_MEETING @61 /* Fear my wrath, for it is great indeed. */
   SAY DAMAGE @62 /* [SCARR08] */
   SAY DYING @63 /* [SCARR09] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdcler01") #8
   WRITE_ASCIIE 0x260 ~%tutu_scriptw%tasight~ #8
   WRITE_ASCIIE 0x268 ~%tutu_var%shout~ #8
   ADD_CRE_ITEM ~%tutu_var%helm10~  #0 #0 #0 ~NONE~ ~HELMET~   
@@ -385,6 +409,7 @@ COPY ~GlamNPCPack/Creature/GV#SIGU.cre~ ~override~
   SAY INITIAL_MEETING @82 /* Troubled times are upon us. */
   SAY DAMAGE @83 /* [ELFFF05] */
   SAY DYING @84 /* [ELFFF06] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdbard01") #8
   WRITE_ASCIIE 0x260 ~%tutu_var%shout~ #8
   WRITE_ASCIIE 0x268 ~%tutu_scriptw%tasight~ #8
   ADD_CRE_ITEM ~%tutu_var%ax1h02~  #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP  
@@ -399,6 +424,7 @@ COPY ~GlamNPCPack/Creature/GV#KRAK.cre~ ~override~
   SAY NAME2 @85 /* Lord Burnheart */
   SAY DAMAGE @86 /* [GREYW08] */
   SAY DYING @87 /* [GREYW09] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdfigh01") #8
   WRITE_ASCIIE 0x258 ~%tutu_scriptw%tasight~ #8
   WRITE_ASCIIE 0x260 ~%tutu_var%shout~ #8
   ADD_CRE_ITEM ~%tutu_var%helm01~  #0 #0 #0 ~NONE~ ~HELMET~
@@ -411,6 +437,7 @@ COPY ~GlamNPCPack/Creature/GV#MARI.cre~ ~override/GV#MARI.cre~
   SAY NAME2 @88 /* Lady Burnheart */
   SAY DAMAGE @89 /* [FTOWN05] */
   SAY DYING @90 /* [FTOWN06] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdcler01") #8
   WRITE_ASCIIE 0x260 ~%tutu_var%shout~ #8
   WRITE_ASCIIE 0x268 ~%tutu_scriptw%tasight~ #8
   ADD_CRE_ITEM ~%tutu_var%chan04~  #0 #0 #0 ~NONE~ ~ARMOR~
@@ -422,6 +449,7 @@ COPY ~GlamNPCPack/Creature/GV#WINK.cre~ ~override/GV#WINK.cre~
   SAY NAME2 @91 /* Reeves */
   SAY DAMAGE @92 /* [BASSL03] */
   SAY DYING @93 /* [BASSL04] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdmage01") #8
   WRITE_ASCIIE 0x260 ~%tutu_var%shout~ #8
   WRITE_ASCIIE 0x268 ~%tutu_scriptw%tasight~ #8
 
@@ -466,6 +494,7 @@ COPY ~GlamNPCPack/Creature/GV#PIER.cre~ ~override~
   SAY NAME2 @114 /* Pierson */
   SAY DAMAGE @115 /* [PNOBL10] */
   SAY DYING @116 /* [PNOBL11] */
+  WRITE_ASCIIE 0x250 $cd_glam_ai("bdfigh01") #8
   WRITE_ASCIIE 0x260 ~%tutu_var%shout~ #8
   WRITE_ASCIIE 0x268 ~%tutu_var%wtarsgt~ #8
   ADD_CRE_ITEM ~%tutu_var%potn14~  #1 #0 #0 ~NONE~ ~QITEM~
@@ -568,13 +597,6 @@ ADD_JOURNAL @1 @2 @3 @4 @5 @6 @7 @8
 
 //SCRIPTS
 COMPILE EVALUATE_BUFFER ~GlamNPCPack/Script/compile~
-
-
-ACTION_BASH_FOR ~GlamNPCPack/Script/bgee~ ~^.+\.baf$~ BEGIN // if a script in GlamNPCPack/Script/bgee isn't in the game, compile for use
-  ACTION_IF !FILE_EXISTS_IN_GAME ~%BASH_FOR_RES%.bcs~ BEGIN
-    COMPILE ~%BASH_FOR_FILESPEC%~
-  END
-END  
 
 EXTEND_TOP ~%Beregost_RedSheaf_L1_BCS%.bcs~         ~GlamNPCPack/Script/fw3357.baf~ EVALUATE_BUFFER
 EXTEND_TOP ~%Beregost_BCS%.bcs~                     ~GlamNPCPack/Script/fw3300.baf~ EVALUATE_BUFFER
@@ -833,6 +855,3 @@ GV#VYND GV#VYNDP GV#VYNDJ GV#VYNDD ~
   UNLESS ~GV#DAVE~
 
 END
-
-
-
