@@ -489,17 +489,11 @@ COPY_EXISTING ~%tutu_var%MTOB6.cre~ ~override/GV#COMM3.cre~
   WRITE_ASCII 0x280 ~GV#COMM3~ #32  //DV
   WRITE_ASCII 0x2cc ~GV#COMM3~ #8   //pre-joining dialogue file
 
-
-
-
-
-ACTION_IF GAME_IS ~tutu tutu_totsc bgt~ THEN BEGIN
-  COPY ~GlamNPCPack/Portrait~ ~override~
-END ELSE BEGIN ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
-  COPY ~GlamNPCPack/Portrait/bgee~ ~override~
-END
-END
-
+LAF cd_portrait_npc STR_VAR source = ~dave~   destination = ~gv#dave~ source_path = ~glamnpcpack/portrait~ END
+LAF cd_portrait_npc STR_VAR source = ~flara~  destination = ~gv#flar~ source_path = ~glamnpcpack/portrait~ END
+LAF cd_portrait_npc STR_VAR source = ~littlu~ destination = ~gv#litt~ source_path = ~glamnpcpack/portrait~ END
+LAF cd_portrait_npc STR_VAR source = ~moidre~ destination = ~gv#moid~ source_path = ~glamnpcpack/portrait~ END
+LAF cd_portrait_npc STR_VAR source = ~vynd~   destination = ~gv#vynd~ source_path = ~glamnpcpack/portrait~ END
 
 
 
