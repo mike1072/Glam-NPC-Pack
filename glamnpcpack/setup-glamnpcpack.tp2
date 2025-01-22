@@ -444,145 +444,51 @@ ADD_JOURNAL @1 @2 @3 @4 @5 @6 @7 @8
 //SCRIPTS
 COMPILE EVALUATE_BUFFER ~GlamNPCPack/Script/compile~
 
-
-
-ACTION_IF enhanced_edition AND NOT FILE_EXISTS_IN_GAME ~bdcaelar.cre~ THEN BEGIN
-  COPY ~GlamNPCPack/Script/bgee~ ~override~
-END
-
-
-ACTION_IF GAME_IS ~tutu tutu_totsc~ THEN BEGIN
-// Area scripts
-  EXTEND_TOP ~_AR3357.bcs~ ~GlamNPCPack/Script/fw3357.baf~ EVALUATE_BUFFER
-  EXTEND_TOP ~_AR3300.bcs~ ~GlamNPCPack/Script/fw3300.baf~ EVALUATE_BUFFER
-  EXTEND_TOP ~_AR3201.bcs~ ~GlamNPCPack/Script/fw3201.baf~ EVALUATE_BUFFER
-  EXTEND_TOP ~_AR4809.bcs~ ~GlamNPCPack/Script/fw4809.baf~ EVALUATE_BUFFER
-  EXTEND_TOP ~_AR2301.bcs~ ~GlamNPCPack/Script/fw2301.baf~ EVALUATE_BUFFER
-  //EXTEND_TOP ~_AR3357.bcs~ ~GlamNPCPack/Script/fw3357.baf~ EVALUATE_BUFFER
-  EXTEND_TOP ~_AR4600.bcs~ ~GlamNPCPack/Script/fw4600.baf~ EVALUATE_BUFFER
-  EXTEND_TOP ~_AR2200.bcs~ ~GlamNPCPack/Script/fw2200.baf~ EVALUATE_BUFFER
-  EXTEND_TOP ~_AR3307.bcs~ ~GlamNPCPack/Script/fw3307.baf~ EVALUATE_BUFFER
-  EXTEND_TOP ~_AR0511.bcs~ ~GlamNPCPack/Script/fw0511.baf~ EVALUATE_BUFFER
-
-  // Creatures
-  COPY_EXISTING ~_FFHUNT.cre~ ~override/GV#MERI.cre~
-	SAY NAME1 @149 /* Officer Meriwether */
-	SAY NAME2 @149 /* Officer Meriwether */
-    WRITE_ASCII 0x248 ~GV#MERI~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#MERI~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#MERI~ #8   //pre-joining dialogue file
-    
-      COPY_EXISTING ~_FTOBE5.cre~ ~override/GV#COMM1.cre~
-	SAY NAME1 @150 /* Commoner */
-	SAY NAME2 @150 /* Commoner */
-    WRITE_ASCII 0x248 ~GV#COMM1~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#COMM1~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#COMM1~ #8   //pre-joining dialogue file
-    
-          COPY_EXISTING ~_MTOB7.cre~ ~override/GV#COMM2.cre~
-	SAY NAME1 @150 /* Commoner */
-	SAY NAME2 @150 /* Commoner */
-    WRITE_ASCII 0x248 ~GV#COMM2~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#COMM2~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#COMM2~ #8   //pre-joining dialogue file
-
-          COPY_EXISTING ~_MTOB6.cre~ ~override/GV#COMM3.cre~
-	SAY NAME1 @150 /* Commoner */
-	SAY NAME2 @150 /* Commoner */
-    WRITE_ASCII 0x248 ~GV#COMM3~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#COMM3~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#COMM3~ #8   //pre-joining dialogue file
-
-
-END ELSE BEGIN
-  ACTION_IF GAME_IS ~bgt~ THEN BEGIN
-
-// Area scripts
-        EXTEND_TOP ~AR6757.bcs~ ~GlamNPCPack/Script/fw3357.baf~ EVALUATE_BUFFER
-        EXTEND_TOP ~AR6700.bcs~ ~GlamNPCPack/Script/fw3300.baf~ EVALUATE_BUFFER
-        EXTEND_TOP ~AR7101.bcs~ ~GlamNPCPack/Script/fw3201.baf~ EVALUATE_BUFFER
-        EXTEND_TOP ~AR3709.bcs~ ~GlamNPCPack/Script/fw4809.baf~ EVALUATE_BUFFER
-        EXTEND_TOP ~AR6801.bcs~ ~GlamNPCPack/Script/fw2301.baf~ EVALUATE_BUFFER
-        //EXTEND_TOP ~AR6757.bcs~ ~GlamNPCPack/Script/fw3357.baf~ EVALUATE_BUFFER
-        EXTEND_TOP ~AR3499.bcs~ ~GlamNPCPack/Script/fw4600.baf~ EVALUATE_BUFFER
-        EXTEND_TOP ~AR7000.bcs~ ~GlamNPCPack/Script/fw2200.baf~ EVALUATE_BUFFER
-        EXTEND_TOP ~AR6707.bcs~ ~GlamNPCPack/Script/fw3307.baf~ EVALUATE_BUFFER
-        EXTEND_TOP ~ARD011.bcs~ ~GlamNPCPack/Script/fw0511.baf~
-// Creatures
-  COPY_EXISTING ~FFHUNT.cre~ ~override/GV#MERI.cre~
-	SAY NAME1 @149 /* Officer Meriwether */
-	SAY NAME2 @149 /* Officer Meriwether */
-    WRITE_ASCII 0x248 ~GV#MERI~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#MERI~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#MERI~ #8   //pre-joining dialogue file 
-
-
-          COPY_EXISTING ~FTOBE5.cre~ ~override/GV#COMM1.cre~
-	SAY NAME1 @150 /* Commoner */
-	SAY NAME2 @150 /* Commoner */
-    WRITE_ASCII 0x248 ~GV#COMM1~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#COMM1~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#COMM1~ #8   //pre-joining dialogue file
-    
-          COPY_EXISTING ~MTOB7.cre~ ~override/GV#COMM2.cre~
-	SAY NAME1 @150 /* Commoner */
-	SAY NAME2 @150 /* Commoner */
-    WRITE_ASCII 0x248 ~GV#COMM2~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#COMM2~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#COMM2~ #8   //pre-joining dialogue file
-
-          COPY_EXISTING ~MTOB6.cre~ ~override/GV#COMM3.cre~
-	SAY NAME1 @150 /* Commoner */
-	SAY NAME2 @150 /* Commoner */
-    WRITE_ASCII 0x248 ~GV#COMM3~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#COMM3~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#COMM3~ #8   //pre-joining dialogue file
-  END ELSE BEGIN
-
-    ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
-
-  // Area scripts
-     EXTEND_TOP ~%Beregost_RedSheaf_L1%.bcs~ ~GlamNPCPack/Script/fw3357.baf~ EVALUATE_BUFFER
-     EXTEND_TOP ~%Beregost%.bcs~ ~GlamNPCPack/Script/fw3300.baf~ EVALUATE_BUFFER
-     EXTEND_TOP ~%HighHedge_House%.bcs~ ~GlamNPCPack/Script/fw3201.baf~ EVALUATE_BUFFER
-     EXTEND_TOP ~%Nashkel_BelchingDragonTavern%.bcs~ ~GlamNPCPack/Script/fw4809.baf~ EVALUATE_BUFFER
-     EXTEND_TOP ~%FriendlyArmInn_L1%.bcs~ ~GlamNPCPack/Script/fw2301.baf~ EVALUATE_BUFFER
-     //EXTEND_TOP ~%Beregost_RedSheaf_L1%.bcs~ ~GlamNPCPack/Script/fw3357.baf~ EVALUATE_BUFFER
-     EXTEND_TOP ~%BearRiver%.bcs~ ~GlamNPCPack/Script/fw4600.baf~ EVALUATE_BUFFER
-     EXTEND_TOP ~%CloakwoodLodge%.bcs~ ~GlamNPCPack/Script/fw2200.baf~ EVALUATE_BUFFER
-     EXTEND_TOP ~%Beregost_BurningWizard_L1%.bcs~ ~GlamNPCPack/Script/fw3307.baf~ EVALUATE_BUFFER
-     EXTEND_TOP ~%DurlagsTower_D1%.bcs~ ~GlamNPCPack/Script/fw0511.baf~
-  // Creatures
-  COPY_EXISTING ~FFHUNT.cre~ ~override/GV#MERI.cre~
-	SAY NAME1 @149 /* Officer Meriwether */
-	SAY NAME2 @149 /* Officer Meriwether */
-    WRITE_ASCII 0x248 ~GV#MERI~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#MERI~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#MERI~ #8   //pre-joining dialogue file
-
-          COPY_EXISTING ~FTOBE5.cre~ ~override/GV#COMM1.cre~
-	SAY NAME1 @150 /* Commoner */
-	SAY NAME2 @150 /* Commoner */
-    WRITE_ASCII 0x248 ~GV#COMM1~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#COMM1~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#COMM1~ #8   //pre-joining dialogue file
-    
-          COPY_EXISTING ~MTOB5.cre~ ~override/GV#COMM2.cre~
-	SAY NAME1 @150 /* Commoner */
-	SAY NAME2 @150 /* Commoner */
-    WRITE_ASCII 0x248 ~GV#COMM2~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#COMM2~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#COMM2~ #8   //pre-joining dialogue file
-
-          COPY_EXISTING ~MTOB6.cre~ ~override/GV#COMM3.cre~
-	SAY NAME1 @150 /* Commoner */
-	SAY NAME2 @150 /* Commoner */
-    WRITE_ASCII 0x248 ~GV#COMM3~ #8  //override script
-    WRITE_ASCII 0x280 ~GV#COMM3~ #32  //DV
-    WRITE_ASCII 0x2cc ~GV#COMM3~ #8   //pre-joining dialogue file
+ACTION_BASH_FOR ~GlamNPCPack/Script/bgee~ ~^.+\.bcs$~ BEGIN // if a script in GlamNPCPack/Script/bgee isn't in the game, copy it over
+  ACTION_IF !FILE_EXISTS_IN_GAME ~%BASH_FOR_FILE%~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
   END
-END
-END
+END  
+
+EXTEND_TOP ~%Beregost_RedSheaf_L1_BCS%.bcs~         ~GlamNPCPack/Script/fw3357.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%Beregost_BCS%.bcs~                     ~GlamNPCPack/Script/fw3300.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%HighHedge_House_BCS%.bcs~              ~GlamNPCPack/Script/fw3201.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%Nashkel_BelchingDragonTavern_BCS%.bcs~ ~GlamNPCPack/Script/fw4809.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%FriendlyArmInn_L1_BCS%.bcs~            ~GlamNPCPack/Script/fw2301.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%BearRiver_BCS%.bcs~                    ~GlamNPCPack/Script/fw4600.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%CloakwoodLodge_BCS%.bcs~               ~GlamNPCPack/Script/fw2200.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%Beregost_BurningWizard_L1_BCS%.bcs~    ~GlamNPCPack/Script/fw3307.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%DurlagsTower_D1_BCS%.bcs~              ~GlamNPCPack/Script/fw0511.baf~
+
+// Creatures
+COPY_EXISTING ~%tutu_var%FFHUNT.cre~ ~override/GV#MERI.cre~
+  SAY NAME1 @149 /* Officer Meriwether */
+  SAY NAME2 @149 /* Officer Meriwether */
+  WRITE_ASCII 0x248 ~GV#MERI~ #8  //override script
+  WRITE_ASCII 0x280 ~GV#MERI~ #32  //DV
+  WRITE_ASCII 0x2cc ~GV#MERI~ #8   //pre-joining dialogue file
+
+COPY_EXISTING ~%tutu_var%FTOBE5.cre~ ~override/GV#COMM1.cre~
+  SAY NAME1 @150 /* Commoner */
+  SAY NAME2 @150 /* Commoner */
+  WRITE_ASCII 0x248 ~GV#COMM1~ #8  //override script
+  WRITE_ASCII 0x280 ~GV#COMM1~ #32  //DV
+  WRITE_ASCII 0x2cc ~GV#COMM1~ #8   //pre-joining dialogue file
+  
+COPY_EXISTING ~%tutu_var%MTOB5.cre~ ~override/GV#COMM2.cre~
+  SAY NAME1 @150 /* Commoner */
+  SAY NAME2 @150 /* Commoner */
+  WRITE_ASCII 0x248 ~GV#COMM2~ #8  //override script
+  WRITE_ASCII 0x280 ~GV#COMM2~ #32  //DV
+  WRITE_ASCII 0x2cc ~GV#COMM2~ #8   //pre-joining dialogue file
+
+COPY_EXISTING ~%tutu_var%MTOB6.cre~ ~override/GV#COMM3.cre~
+  SAY NAME1 @150 /* Commoner */
+  SAY NAME2 @150 /* Commoner */
+  WRITE_ASCII 0x248 ~GV#COMM3~ #8  //override script
+  WRITE_ASCII 0x280 ~GV#COMM3~ #32  //DV
+  WRITE_ASCII 0x2cc ~GV#COMM3~ #8   //pre-joining dialogue file
+
 
 
 
