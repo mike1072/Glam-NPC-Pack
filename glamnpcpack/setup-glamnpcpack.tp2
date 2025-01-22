@@ -807,11 +807,13 @@ GV#FLAR BGV#FLAR%extra%
 GV#LITT BGV#LITT%extra%
 GV#MOID BGV#MOID%extra%
 GV#VYND BGV#VYND%extra%~
-
-    ACTION_IF enhanced_edition BEGIN
-      APPEND ~%file%.2da~ ~BAELOTH BBAELOTH%extra%~  UNLESS ~BAELOTH~
-    END ELSE BEGIN
-      APPEND ~%file%.2da~ ~IMOEN %IMOEN_BANTER%%extra%~ UNLESS ~%IMOEN_BANTER%~
+    
+    ACTION_IF ("%file%" STRING_COMPARE_CASE "interdia" = 0) BEGIN // don't care about supplementaries for these two fixes
+      ACTION_IF enhanced_edition BEGIN
+        APPEND ~%file%.2da~ ~BAELOTH BBAELOTH%extra%~  UNLESS ~BAELOTH~
+      END ELSE BEGIN
+        APPEND ~%file%.2da~ ~IMOEN %IMOEN_BANTER%%extra%~ UNLESS ~%IMOEN_BANTER%~
+      END  
     END  
 
   END
