@@ -1,35 +1,69 @@
-BACKUP ~GlamNPCPack/backup~
-AUTHOR ~Glam Vrock~
+BACKUP ~weidu_external/GlamNPCPack/backup~
+SUPPORT ~https://www.gibberlings3.net/forums/forum/186-glams-npc-pack/~
 
-
-
-// Crossplatform var stuff blatantly stolen from cmorgan/gavin/bg1npc!
 ALWAYS
 
-ACTION_IF GAME_IS ~bgee~ BEGIN
-  /*Tell the player it is using BG:EE stuff */
-  PRINT @9 /* BG:EE install detected */
-  INCLUDE ~GlamNPCPack\Libraries\liam_bgee_vars.tpa~
-END ELSE ACTION_IF GAME_IS ~tutu tutu_totsc~ BEGIN
-  /* Tell the player it is using Tutu stuff */
-  PRINT @10 /* Tutu install detected. */
-  INCLUDE ~GlamNPCPack\Libraries\g3_tutu_cpmvars.tpa~
-END ELSE ACTION_IF GAME_IS ~bgt~ THEN BEGIN
-  /* Tell the player it is using BGT stuff */
-  PRINT @11 /* BGT install detected. */
-  INCLUDE ~GlamNPCPack\Libraries\g3_bgt_cpmvars.tpa~
-END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
-  /*Tell the player it is using EET stuff */
-  PRINT @12 /* EET install detected */
-  INCLUDE ~GlamNPCPack\Libraries\eet_cpmvars.tpa~
-END ELSE BEGIN
-  /* Tell the player it is not Tutu or BGT */
-  FAIL @13 /* Please install on BG:EE, Tutu, BGT or EET. */
-END
+  ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
+    FAIL ~DLC Merger is required before mods can be installed on this game. Check the readme for more information and a link to download DLC Merger.~
+  END
+  
+  ACTION_IF !VARIABLE_IS_SET cd_glamnpcpack_always THEN BEGIN // check to make this happen only once per install 
+      
+    OUTER_SET cd_glamnpcpack_always = 1
+    
+    ACTION_IF GAME_IS ~bgee eet~ BEGIN
+      
+      ACTION_IF GAME_IS ~bgee~ BEGIN
+        /*Tell the player it is using BG:EE stuff */
+        PRINT @9 /* BG:EE install detected */
+        INCLUDE ~GlamNPCPack\Libraries\g3_bgee_cpmvars.tpa~
+      END ELSE BEGIN // eet  
+        /*Tell the player it is using EET stuff */
+        PRINT @12 /* EET install detected */
+        INCLUDE ~EET/other/cpmvars/eet_cpmvars.tpa~
+      END 
 
-END
+      OUTER_SET enhanced_edition = 1
+    
+      OUTER_SPRINT ~tra_location~ ~glamnpcpack/languages~
+      
+    END ELSE BEGIN   
 
-LANGUAGE ~English~ ~English~ ~GlamNPCPack/Languages/English/game.tra~
+      ACTION_IF GAME_IS ~tutu tutu_totsc~ BEGIN
+        /* Tell the player it is using Tutu stuff */
+        PRINT @10 /* Tutu install detected. */
+        INCLUDE ~GlamNPCPack\Libraries\g3_tutu_cpmvars.tpa~
+      END ELSE ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+        /* Tell the player it is using BGT stuff */
+        PRINT @11 /* BGT install detected. */
+        INCLUDE ~GlamNPCPack\Libraries\g3_bgt_cpmvars.tpa~
+      END ELSE BEGIN
+        /* Tell the player it is not Tutu or BGT */
+        FAIL @13 /* Please install on BG:EE, Tutu, BGT or EET. */
+      END
+
+      OUTER_SET enhanced_edition = 0
+    
+      OUTER_SPRINT ~tra_location~ ~weidu_external/glamnpcpack/languages~
+
+      // convert strings from UTF-8 for originals
+      ACTION_DEFINE_ARRAY cdnoconvert BEGIN weidu ee END
+      ACTION_DEFINE_ARRAY cdreload BEGIN game END
+      LAF HANDLE_CHARSETS INT_VAR from_utf8 = 1 infer_charsets = 1
+                          STR_VAR default_language = ~english~ tra_path = ~glamnpcpack/languages~ out_path = ~weidu_external/glamnpcpack/languages~ noconvert_array = cdnoconvert reload_array = cdreload END
+      
+    END
+    
+    INCLUDE ~GlamNPCPack/Libraries/cd_portrait_copy.tph~
+
+  END
+
+END  
+
+LANGUAGE ~English~ ~English~ 
+  ~GlamNPCPack/Languages/English/game.tra~
+  ~GlamNPCPack/Languages/English/weidu.tra~
+
 BEGIN @14 /* Glam's NPC Pack for BG:EE, BGT and BG TUTU */
 
 
