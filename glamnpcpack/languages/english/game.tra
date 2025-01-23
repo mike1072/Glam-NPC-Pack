@@ -181,22 +181,24 @@ Weight: 1~
 @159  = ~Pam's Bastard Sword~
 @160  = ~There's an inscription on the blade. "For Faerun's greatest mum."
 
-
 STATISTICS:
 
 Charge Abilities: Cast Sanctuary once per day
 THAC0: +1
 Damage: 2d4+1 (slashing)
+Weight: 9 
 Speed Factor: 7
 Proficiency Type: Bastard Sword
 Type: One-handed
 Requires:
  11 Strength
-
-Weight: 9 ~
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Thief~
 @161  = ~Tower Shield~
 @162  = ~Practically a portable wall, the tower shield provides unparalleled protection from missiles and melee weapons alike. However, to strike from behind it can be awkward, due to its sheer size. This particular shield is rippled with dents, and has clearly been with its owner for a long time.
-
 
 STATISTICS:
 
@@ -207,7 +209,12 @@ THAC0: -1 Penalty
 Requires:
  16 Strength
 
-Weight: 15 ~
+Weight: 15
+Not Usable By:
+ Bard
+ Druid
+ Mage
+ Thief~
 @163  = ~Drakonophobe Wand~
 @164  = ~Specifically designed to combat dragons, this now depleted wand combined a powerful polymorph effect with mind-affecting magic to force its target into a vulnerable human form. Sigurd and his party used it against Flara, though it seems the effects were not as indelible as they'd hoped.~
 @165  = ~Leather Armour~
@@ -220,7 +227,9 @@ Spellcasting is not disabled
 Bonuses: Immunity to Poison
 Armor Class: 8
 Weight: 15
-Requires: 4 Strength~
+Requires: 4 Strength
+Not Usable By:
+ Mage~
 @168  = ~Dragon Statuette~
 @169  = ~This sculpture, carved from red crystal, emits a faint glow from its core.~
 @170  = ~Exquisitely crafted from blood-red ruby, this sculpture is not only a fine work of art, but a powerful magical item, able to produce a shield of blue flames that protect the bearer from cold.
@@ -250,7 +259,8 @@ Disables arcane spellcasting
 Open Locks: -10%
 Find Traps: -10%
 Pick Pockets: -10%
-Move Silently: -20%~
+Move Silently: -20%
+Hide in Shadows: -20%~
 @178  = ~Quarterstaff~
 @179  = ~Last Resort~
 @180  = ~When the time comes that a mage must rely on their trusty staff to defend themselves, finesse takes the back seat.
@@ -259,33 +269,32 @@ STATISTICS:
 
 Bonuses: Set Strength to 18/00
 Damage: 1d6+1 (crushing)
+Weight: 4
 Speed Factor: 3
 Proficiency Type: Quarterstaff
 Type: Two-handed
 Requires:
  5 Strength
-
-Weight: 4~
+Usable By
+ Mages~
 @181  = ~Plunkett Repeater~
 @182  = ~A custom-made, rapid-firing crossbow, designed by Littlun's father and passed on to her by the wild elves. Although a devastating weapon, the intricate mechanisms make it tricky to use without extensive training.
 
-
 STATISTICS:
 
-Only usable by: Littlun
 Equipped abilities: 1 extra attack per round
 
 Damage: +2
 Speed Factor: 5
+Weight: 14
 Proficiency Type: Crossbow
 Type: Two-handed
 Requires:
  12 Strength
-
-Weight: 14~
+Usable By:
+ Littlun~
 @183  = ~Plunkett Reiterator~
 @184  = ~With the additional modifications made by Littlun's father, a veritable hailstorm of bolts awaits the hapless souls stood at the wrong end of this crossbow.
-
 
 STATISTICS:
 
@@ -295,28 +304,31 @@ Equipped abilities: 1.5 extra attacks per round
 THAC0: +2
 Damage: +2
 Speed Factor: 5
+Weight: 14
 Proficiency Type: Crossbow
 Type: Two-handed
 Requires:
  12 Strength
-
-Weight: 14~
+Usable By:
+ Littlun~
 @185  = ~Heavy Crossbow~
 @186  = ~Plunkett Goblinstopper~
 @187  = ~This hefty crossbow forgoes the quickfire qualities of the Plunkett Repeater in exchange for pure penetrative power, although it requires a strong arm to manage the recoil effectively.
 
-
 STATISTICS:
 
 Damage: +6 (missile)
+Weight: 20
 Speed Factor: 10
 Proficiency Type: Crossbow
 Type: Two-handed
 Requires:
 15 Strength
-
-Weight: 20
-~
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Thief~
 @188  = ~The Progress of Projectiles~
 @189  = ~A travelogue and treatise on projectile weapons throughout all ages and cultures, this bulky, yet unfinished manuscript details and diagrams everything from slings to springalds.
 
@@ -324,7 +336,7 @@ The author, one P. Plunkett, particularly raves about his experiences with wild 
 @190  = ~Wedding Ring~
 @191  = ~A simple gold band, unadorned, unenchanted, and slightly tarnished on the inside from decades of wear.~
 @192  = ~Lockpicking for Total Muttonheads~
-@193  = ~you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap~
+@193  = ~you're crap you're crap you're crap you're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap~
 @194  = ~Jeff's Old Journal~
 @195  = ~28 Hammer, 1358:
 On my mother's grave, I will kill every hippogriff I see to the end of my life. Stinking beasts stomped my Thundercat into the dirt. Even now, with her wounds treated, she won't wake up. The healer says he doesn't know if she will. I wave sardines beneath her nose, I poke her in the belly, for which she has never before failed to punish me, even from the deepest slumber, and yet still she lies unaware on her pillow, quiet as death.

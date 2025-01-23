@@ -1,0 +1,186 @@
+@152  = ~Sturdy yet comfortable footwear, specially tailored for long-distance running. Ideal for a Talassan in a hurry.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement Speed: +1
+
+Weight: 4~
+@154  = ~The duel between Dave and Taranis awakened the dormant power within this idol, and now even the lowliest of heathens may call upon it and gain a measure of Talos' divine protection.
+
+STATISTICS:
+
+Charge abilities:
+– Storm Shield once per day
+  Protects the caster completely from lightning, fire, cold, and normal missiles
+  Duration: 10 rounds
+
+Weight: 1~
+@155  = ~A grey tabby ragamuffin, and mute familiar of the now-deceased Stormlord Jeff. While her feral temperament makes for a poor lap cat, it is easily turned against one's enemies; at least, for as long as she sees fit.
+
+STATISTICS:
+
+Charge abilities:
+– Summon Thundercat once per day
+  Range: 20 ft.
+  Duration: 1 hour
+  Thundercat is immune to sleep, petrification, disintegration, and level drain; and attacks twice times per round at 1d3 (slashing).
+
+Weight: 1~
+@157  = ~A stack of flyers, each summarising the perks of a life under Talos in easily digestible bullet points. The text looks professionally scribed, being uniformly sized and spaced...which means the haphazard drawings of lightning bolts and charred stick figures were likely added afterwards.
+
+STATISTICS:
+
+Weight: 0~
+@160  = ~There's an inscription on the blade. "For Faerun's greatest mum."
+
+Charge abilities:
+– Sanctuary once per day
+  Causes all of <PRO_HISHER> opponents to ignore <PRO_HISHER> existence as if <PRO_HESHE> were invisible
+  Duration: 1 turn
+
+STATISTICS:
+
+THAC0: +1
+Damage: 2d4+1 (slashing)
+Speed Factor: 7
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 9~
+@162  = ~Practically a portable wall, the tower shield provides unparalleled protection from missiles and melee weapons alike. However, to strike from behind it can be awkward, due to its sheer size. This particular shield is rippled with dents, and has clearly been with its owner for a long time.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2, an extra +1 vs. missile attacks
+– THAC0: -1
+
+Requires:
+ 16 Strength
+
+Weight: 15~
+@164  = ~Specifically designed to combat dragons, this now depleted wand combined a powerful polymorph effect with mind-affecting magic to force its target into a vulnerable human form. Sigurd and his party used it against Flara, though it seems the effects were not as indelible as they'd hoped.
+
+STATISTICS:
+
+Weight: 1~
+@167  = ~Fashioned from the scales of the serpentine naga, this shimmering garment provides the protection of leather armour without compromising mobility, spellcasting, or fashion. It also protects the wearer from poison.
+
+STATISTICS:
+
+Equipped abilities:
+– Spellcasting is not disabled
+– Immunity to poison
+
+Armor Class: 8 (10 vs. piercing and missile)
+Requires:
+ 4 Strength
+
+Weight: 15~
+@170  = ~Exquisitely crafted from blood-red ruby, this sculpture is not only a fine work of art, but a powerful magical item, able to produce a shield of blue flames that protect the bearer from cold.
+
+STATISTICS:
+
+Charge abilities:
+– Fireshield (Blue) once per day
+  Grants the user 50% Cold Resistance and attacking opponents within 5-ft. radius suffer 1d8+2 cold damage.
+  Duration: 13 rounds
+
+Weight: 0~
+@174  = ~A token of Beshaba's "Favour", tossing this coin bestows a deadly curse. Whether this curse affects one's foes or the owner of the coin is for the Maid of Misfortune to decide. Pray that she lands smiling.
+
+STATISTICS:
+
+Charge abilities:
+– Beshaba's "Favour" once per day
+  50% chance to cast Greater Malison, centered on self, penalizing enemy saving throws by 4
+  50% chance to cast Doom on self, penalizing user's saving throws by 2
+
+Weight: 0~
+@177  = ~The pelt of an owlbear, talons and all, to be draped haphazardly over one's person. It provides an extra layer of nonmagical protection, but it's so bulky and clumsy that it hinders almost any task requiring a delicate touch, including spellcasting.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Spellcasting is disabled
+– Open Locks: -10%
+– Find Traps: -10%
+– Pick Pockets: -10%
+– Move Silently: -20%
+– Hide in Shadows: -20%
+
+Weight: 3~
+@180  = ~When the time comes that a mage must rely on their trusty staff to defend themselves, finesse takes the back seat.
+
+STATISTICS:
+
+Equipped abilities:
+– Strength: 18/00
+
+THAC0: +1
+Damage: 1d6+1 (crushing)
+Speed Factor: 3
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+@182  = ~A custom-made, rapid-firing crossbow, designed by Littlun's father and passed on to her by the wild elves. Although a devastating weapon, the intricate mechanisms make it tricky to use without extensive training.
+
+Combat abilities:
+– 1 extra attack per round
+
+Damage: +2 (missile)
+Speed Factor: 5
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 12 Strength
+
+Weight: 14~
+@184  = ~With the additional modifications made by Littlun's father, a veritable hailstorm of bolts awaits the hapless souls stood at the wrong end of this crossbow.
+
+Combat abilities:
+– 1.5 extra attacks per round
+
+THAC0: +2
+Damage: +2 (missile)
+Speed Factor: 5
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 12 Strength
+
+Weight: 14~
+@187  = ~This hefty crossbow forgoes the quickfire qualities of the Plunkett Repeater in exchange for pure penetrative power, although it requires a strong arm to manage the recoil effectively.
+
+Damage: +6 (missile)
+Speed Factor: 5
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 15 Strength
+
+Weight: 20~
+@189  = ~A travelogue and treatise on projectile weapons throughout all ages and cultures, this bulky, yet unfinished manuscript details and diagrams everything from slings to springalds.
+
+The author, one P. Plunkett, particularly raves about his experiences with wild elf bowyers, enthralled with their ability to "craft superlative weaponry, in outrageous defiance of limited resources and primitive tools." He claims his days spent among the tribesmen were among the most fulfilling of his life, and made him friends he would never forget.
+
+STATISTICS:
+
+Weight: 2~
+@191  = ~A simple gold band, unadorned, unenchanted, and slightly tarnished on the inside from decades of wear.
+
+STATISTICS:
+
+Weight: 0~
+@193  = ~you're crap you're crap you're crap you're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap
+
+STATISTICS:
+
+Weight: 2~
