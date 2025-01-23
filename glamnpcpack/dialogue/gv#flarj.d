@@ -35,7 +35,7 @@ END
 I_C_T2 ~%tutu_var%IKE2~ 2 GV#FLARInterjectIKE1
 == GV#FLARJ IF ~InParty("GV#FLAR") InMyArea("GV#FLAR") !StateCheck("GV#FLAR",CD_STATE_NOTVALID)~ THEN
 @3923 /* Wealth does not make one's downfall, fool. Only lacking the means to guard it. */
-== %tutu_var%IKE2 ~I will not be heckled, madam, and nor will there be a refund if I must remove you for disrupting the tour. Now, to continue...~
+== %tutu_var%IKE2 @8027
 END
 
 //Demon Knight
@@ -60,7 +60,7 @@ END
 I_C_T ~%tutu_var%MYSMER~ 0 GV#FLARInterjectMYSMER1
 == GV#FLARJ IF ~InParty("GV#FLAR") InMyArea("GV#FLAR") !StateCheck("GV#FLAR",CD_STATE_NOTVALID)~ THEN
 @3928 /* Careful, <CHARNAME>. These elixirs indeed fume with magic, but not all of it benign. I know a drawback when I smell one. */
-== %tutu_var%MYSMER ~What say you, friend? A mere pittance for a taste of godly power and wisdom?~
+== %tutu_var%MYSMER @8028
 END
 
 //Meklin
@@ -169,7 +169,7 @@ END
 I_C_T ~%tutu_var%ZARGAL~ 0 GV#FLARInterjectTEYNGA1
 == GV#FLARJ IF ~InParty("GV#FLAR") InMyArea("GV#FLAR") !StateCheck("GV#FLAR",CD_STATE_NOTVALID)~ THEN
 @3945 /* You hunt prey, but have found a predator. Turn your eyes to smaller game, or I will teach you your place in the food chain. */
-== %tutu_var%ZARGAL ~Huh? Stupid woman! Zargal want gold, not food!~
+== %tutu_var%ZARGAL @8029
 == GV#FLARJ @3947 /* ..."slow-witted city folk." */
 END
 
@@ -179,7 +179,7 @@ END
 I_C_T ~%tutu_var%ARCAND~ 3 GV#FLARInterjectARCAND1
 == GV#FLARJ IF ~InParty("GV#FLAR") InMyArea("GV#FLAR") !StateCheck("GV#FLAR",CD_STATE_NOTVALID)~ THEN
 @3948 /* There was a time, once, when I would have met this man, and I would have stepped on him, and that would have been the sum of our acquaintance. How dark the days have become. */
-== %tutu_var%ARCAND ~There's darker yet in store for you, as surely as I wertle-woo...~
+== %tutu_var%ARCAND @8030
 END
 
 //Arghain
@@ -281,7 +281,7 @@ END
 I_C_T ~%tutu_var%MELICA~ 2 GV#FLARInterjectMELICAMP1
 == GV#FLARJ IF ~InParty("GV#FLAR") InMyArea("GV#FLAR") !StateCheck("GV#FLAR",CD_STATE_NOTVALID)~ THEN
 @3968 /* Hmm. It's been some time since I last ate something that could talk. Perhaps rectifying that might shake loose a memory or two... */
-== %tutu_var%MELICA ~N-no, wait! Please! Hear what I have to say!~
+== %tutu_var%MELICA @8031
 END
 
 I_C_T ~%tutu_var%MELICA~ 10 GV#FLARInterjectMELICAMP2

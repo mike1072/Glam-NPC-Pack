@@ -303,18 +303,18 @@ I_C_T ~%tutu_var%BORDA~ 0 GV#VYNDInterjectBorda1
 == GV#VYNDJ IF ~InParty("GV#VYND") InMyArea("GV#VYND") PartyGoldGT(49) !StateCheck("GV#VYND",CD_STATE_NOTVALID)~ THEN
 @6857 /* Twenty-five for a healing potion? And I'm supposed to believe you didn't just piss in a flask? */
 DO ~SetGlobal("GV#VYNDBorda","GLOBAL",1)~
-== %tutu_var%BORDA ~Too good to be true, is it? Perhaps you've been buying from the wrong vendors?~
+== %tutu_var%BORDA @8032
 == GV#VYNDJ @6859 /* I know what a damn potion's worth. Believe me. I know. */
-== %tutu_var%BORDA ~Very well. Fifty for the potion.~
+== %tutu_var%BORDA @8033
 END
 
 I_C_T ~%tutu_var%BORDA~ 2 GV#VYNDInterjectBorda2
 == GV#VYNDJ IF ~InParty("GV#VYND") InMyArea("GV#VYND") !StateCheck("GV#VYND",CD_STATE_NOTVALID) Global("GV#VYNDBorda","GLOBAL",1)~ THEN
 @6861 /* *What?* That's not what I was... */
-== %tutu_var%BORDA ~Your friend clearly knows a bargain when <PRO_HESHE> sees it.~
+== %tutu_var%BORDA @8034
 == GV#VYNDJ @217 /* ... */
 = @6863 /* You know what, <CHARNAME>? Drink it. Drink it all. You deserve it. */
-== %tutu_var%BORDA ~Indeed. Ta-ta, now.~
+== %tutu_var%BORDA @8035
 DO ~TakePartyGold(25)~
 END
 
@@ -539,7 +539,7 @@ I_C_T ~%tutu_var%DRIENN~ 4 GV#VyndShot2
 == GV#VYNDJ IF ~InParty("GV#VYND") InMyArea("GV#VYND") !StateCheck("GV#VYND",CD_STATE_NOTVALID) GlobalGT("GV#LITTVyndShot","GLOBAL",1)~ THEN
 @6923 /* Aaand you shot me for nothing. */
 == GV#LITTJ @6924 /* You probably done something to deserve it. Just not that. */
-== %tutu_var%DRIENN ~You folks are weird...~
+== %tutu_var%DRIENN @8036
 END
 
 //Kirian Flara Interaction
