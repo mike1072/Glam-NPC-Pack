@@ -9,7 +9,7 @@ CHAIN IF ~Gender(Player1,FEMALE) Global("GV#LITTMetDad","GLOBAL",0)~ THEN GV#PIE
 EXIT
 
 INTERJECT ~%tutu_var%ALDETH~ 4 p2
-== GV#PIER IF ~InParty("GV#LITT") InMyArea("GV#LITT") !StateCheck("GV#LITT",CD_STATE_NOTVALID) !StateCheck("Myself",CD_STATE_NOTVALID)~ THEN @6323 /* Just as well. I've an appointment at the Three Old Kegs, and I'm long overdue. */
+== GV#PIER IF ~InParty("GV#LITT") InMyArea("GV#LITT") !StateCheck("GV#LITT",CD_STATE_NOTVALID) !StateCheck(Myself,CD_STATE_NOTVALID)~ THEN @6323 /* Just as well. I've an appointment at the Three Old Kegs, and I'm long overdue. */
 == ~%tutu_var%ALDETH~ @6324 /* Appointment? With whom? */
 == GV#PIER @6325 /* He has many names, but I'll tell you this much; he's stout, dark, and occasionally bitter. */
 == ~%tutu_var%ALDETH~ @6326 /* Ah, indeed. I may just have to join you. And if these fine folks are as capable as they look, we'll... */
