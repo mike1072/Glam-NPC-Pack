@@ -604,7 +604,7 @@ EXTEND_TOP ~%FriendlyArmInn_L1_BCS%.bcs~            ~GlamNPCPack/Script/fw2301.b
 EXTEND_TOP ~%BearRiver_BCS%.bcs~                    ~GlamNPCPack/Script/fw4600.baf~ EVALUATE_BUFFER
 EXTEND_TOP ~%CloakwoodLodge_BCS%.bcs~               ~GlamNPCPack/Script/fw2200.baf~ EVALUATE_BUFFER
 EXTEND_TOP ~%Beregost_BurningWizard_L1_BCS%.bcs~    ~GlamNPCPack/Script/fw3307.baf~ EVALUATE_BUFFER
-EXTEND_TOP ~%DurlagsTower_D1_BCS%.bcs~              ~GlamNPCPack/Script/fw0511.baf~
+EXTEND_TOP ~%DurlagsTower_D1_BCS%.bcs~              ~GlamNPCPack/Script/fw0511.baf~ EVALUATE_BUFFER
 
 // Creatures
 COPY_EXISTING ~%tutu_var%FFHUNT.cre~ ~override/GV#MERI.cre~
