@@ -5,26 +5,26 @@ BEGIN GV#DAVEJ
 I_C_T ~%tutu_var%THALAN~ 1 GV#DAVEInterjectTHALAN1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 @3195 /* It's not you, <CHARNAME>. I've knocked on his door once or twice before and he was exactly this grumpy every time. Probably cabin fever. */
-== %tutu_var%THALAN ~On the contrary, a spell of cabin fever may be just the remedy I need. Would that I were allowed the chance to find out.~
+== %tutu_var%THALAN @8018
 END
 
 //Hentold
 I_C_T ~%tutu_var%HENTOL~ 8 GV#DAVEInterjectHENTOL1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 @3197 /* Ahh. Classic mistake. If you're going to rob the dead, do it before they're buried. Always gets complicated once the rot sets in. */
-== %tutu_var%HENTOL ~My thieving days are over, and I'll swear it to any god that would grant me peace!~
+== %tutu_var%HENTOL @8019
 END
 
 I_C_T ~%tutu_var%HENTOL~ 9 GV#DAVEInterjectHENTOL1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 @3197 /* Ahh. Classic mistake. If you're going to rob the dead, do it before they're buried. Always gets complicated once the rot sets in. */
-== %tutu_var%HENTOL ~My thieving days are over, and I'll swear it to any god that would grant me peace!~
+== %tutu_var%HENTOL @8019
 END
 
 I_C_T ~%tutu_var%HENTOL~ 10 GV#DAVEInterjectHENTOL1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 @3197 /* Ahh. Classic mistake. If you're going to rob the dead, do it before they're buried. Always gets complicated once the rot sets in. */
-== %tutu_var%HENTOL ~My thieving days are over, and I'll swear it to any god that would grant me peace!~
+== %tutu_var%HENTOL @8019
 END
 
 //Taugosz
@@ -72,7 +72,7 @@ I_C_T ~%tutu_var%TELANO~ 9 GV#DAVEInterjectTELANO1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 @3205 /* Ah, the old "If you kill me, you're no better than me" routine. I tried that on a group of Helmies once. */
 = @3206 /* It, uh...didn't work. At all. */
-== %tutu_var%TELANO ~I'll have a hawk's eye on you, <CHARNAME>, from this moment forward. Be wary.~
+== %tutu_var%TELANO @8020
 END
 
 //Therella
@@ -123,17 +123,17 @@ END
 INTERJECT ~%tutu_var%JALANT~ 5 GV#DAVEInterjectJALANTHA1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID) GlobalGT("GV#DAVETalk","GLOBAL",18)~ THEN
 @3219 /* I had my suspicions, and this confirms them. Jalantha. You don't recognise me, do you? */
-== %tutu_var%JALANT ~I remember your face well enough, Talassan, but do not overvalue our "alliance." Your familiarity quells the whim to have you drowned in the sea. Nothing more.~
+== %tutu_var%JALANT @8021
 == GV#DAVEJ @3221 /* You remember me, but you do not *recognise* me. I am Stormlord now, and you would do well to consider that before you choose your next words. */
-== %tutu_var%JALANT ~Pfah! Stormlord? A knock-kneed acolyte is my memory of you, and precious little has changed since. You are no more a Stormlord than I am Umberlee herself.~
+== %tutu_var%JALANT @8022
 == GV#DAVEJ @3223 /* I am, and the very fact that I still live to say so is proof! You know well what befalls those among our gods who pretend to authority! */
-== %tutu_var%JALANT ~Stormlord or no, you are a long ways from your church, and a very short ways indeed from mine! This place is Umberlee's, and those inside will show RESPECT, no matter what emblem hangs on their pale necks!~
+== %tutu_var%JALANT @8023
 == GV#DAVEJ @3225 /* This place stands because Talos wills it so! Think you that Umberlee has strength enough to hold these walls against his fury? Do you TEST the Destroyer to bring this temple crashing down on your skull?! Are we at last to shed this frail facade of friendship and SUBSUME your broken faith in the tides of conquest?! */
-== %tutu_var%JALANT ~INSOLENT, FLEDGLING BRAT! I WILL NOT BE THREATENED IN THE VERY HOME OF MY GODDESS!~
+== %tutu_var%JALANT @8024
 == GV#DAVEJ @3227 /* THEN YOU WILL BE *BURIED* IN IT! */
 == ~%tutu_var%JALANT~ @217 /* ... */
 == GV#DAVEJ @217 /* ... */
-== %tutu_var%JALANT ~I see you've found a spine somewhere along the way.~
+== %tutu_var%JALANT @8025
 == GV#DAVEJ @3229 /* A spine, a flock, and the meanest cat in Faerun. Don't make me use them. */
 END
 ++ @3230 /* This is all too volatile for me. I'll find another way to deal with this. */ EXIT
@@ -146,7 +146,7 @@ EXTERN ~%tutu_var%JALANT~ ~6~
 
 CHAIN GV#DAVEJ GV#DAVEJalantha2
 @3234 /* Nobody will know you did this for us. In fact, I'll tell people you threw me to a pack of sharks and made me swim for my life just for asking. */
-== %tutu_var%JALANT ~Take it, then, but do not expect any favours for a long time to come. You have pushed me but an inch, and I will yield no more ground.~
+== %tutu_var%JALANT @8026
 DO ~GiveItem("SCRLJALA",LastTalkedToBy) SetGlobal("ReturnedBook","GLOBAL",1) AddexperienceParty(1000)~
 EXIT
 
@@ -239,6 +239,7 @@ END
 I_C_T ~%tutu_var%KORAX~ 0 GV#DAVEInterjectKORAX1
 == GV#DAVEJ IF ~InParty("GV#DAVE") InMyArea("GV#DAVE") !StateCheck("GV#DAVE",CD_STATE_NOTVALID)~ THEN
 @3252 /* Huh. Normally I have to wave my symbol at them first. Should I do it anyway? Make him extra friendly? */
+== %tutu_var%KORAX @8016
 END
 
 //Cloakwood Guard
@@ -276,7 +277,7 @@ I_C_T ~%tutu_var%SHOAL~ 3 GV#DAVEInterjectSHOAL1
 == GV#VYNDJ IF ~IsValidForPartyDialogue("GV#VYND")~ THEN @3257 /* Heh. */
 == GV#DAVEJ IF ~IsValidForPartyDialogue("GV#VYND")~ THEN @3258 /* What? What's funny? */
 == GV#VYNDJ IF ~IsValidForPartyDialogue("GV#VYND")~ THEN @3259 /* Nothing. Suck her tonsils out, Dave. I believe in you. */
-== %tutu_var%SHOAL ~Now then...~
+== %tutu_var%SHOAL @8017
 END
 
 //Scalps
