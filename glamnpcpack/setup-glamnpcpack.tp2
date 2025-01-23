@@ -453,6 +453,7 @@ COPY ~GlamNPCPack/Creature/GV#WINK.cre~ ~override/GV#WINK.cre~
 COPY ~GlamNPCPack/Creature/GV#LITT.cre~ ~override~
   SAY NAME1 @94 /* Littlun */
   SAY NAME2 @94 /* Littlun */
+  READ_LONG 0x08 litt_name
   SAY BIO @95 
   SAY LEADER @96 /* Yeah, I'll take point. Saves me having to shoot past you lot. */
   SAY TIRED @97 /* I'm used to trekking, but this is just torture. Let's bed down. */
@@ -661,11 +662,13 @@ COPY ~GlamNPCPack/Item/GV#IDOL.itm~ ~override/GV#IDOL.itm~
 COPY ~GlamNPCPack/Item/GV#THUN.itm~ ~override/GV#THUN.itm~
   SAY NAME1 @64 /* Thundercat */
   SAY NAME2 @64 /* Thundercat */
+  SAY UNIDENTIFIED_DESC @155
   SAY DESC @155
 
 COPY ~GlamNPCPack/Item/GV#PARC.itm~ ~override/GV#PARC.itm~
   SAY NAME1 @156 /* Talassan Parchments */
   SAY NAME2 @156 /* Talassan Parchments */
+  SAY UNIDENTIFIED_DESC @157
   SAY DESC @157
 
 COPY ~GlamNPCPack/Item/GV#SW1H.itm~ ~override/GV#SW1H.itm~
@@ -676,6 +679,7 @@ COPY ~GlamNPCPack/Item/GV#SW1H.itm~ ~override/GV#SW1H.itm~
 COPY ~GlamNPCPack/Item/GV#SHLD.itm~ ~override/GV#SHLD.itm~
   SAY NAME1 @161 /* Tower Shield */
   SAY NAME2 @161 /* Tower Shield */
+  SAY UNIDENTIFIED_DESC @162
   SAY DESC @162
 
 COPY ~GlamNPCPack/Item/GV#WAND.itm~ ~override/GV#WAND.itm~
@@ -721,7 +725,7 @@ COPY ~GlamNPCPack/Item/GV#XBOW.itm~ ~override/GV#XBOW.itm~
     WRITE_BYTE 0x2d 0             // clear kits
     WRITE_BYTE 0x2f (BIT2 + BIT3) // kensai, cavalier
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 power = 1 parameter2 = 11 
-      timing = 2 special = RESOLVE_STR_REF(@94) STR_VAR resource = ~GV#LITT~ END
+      timing = 2 special = litt_name STR_VAR resource = ~GV#LITT~ END
   END  
 
 COPY ~GlamNPCPack/Item/GV#XBOW2.itm~ ~override/GV#XBOW2.itm~
@@ -735,7 +739,7 @@ COPY ~GlamNPCPack/Item/GV#XBOW2.itm~ ~override/GV#XBOW2.itm~
     WRITE_BYTE 0x2d 0             // clear kits
     WRITE_BYTE 0x2f (BIT2 + BIT3) // kensai, cavalier
     LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 power = 1 parameter2 = 11 
-      timing = 2 special = RESOLVE_STR_REF(@94) STR_VAR resource = ~GV#LITT~ END
+      timing = 2 special = litt_name STR_VAR resource = ~GV#LITT~ END
   END  
 
 COPY ~GlamNPCPack/Item/GV#XBOW3.itm~ ~override/GV#XBOW3.itm~
@@ -746,28 +750,38 @@ COPY ~GlamNPCPack/Item/GV#XBOW3.itm~ ~override/GV#XBOW3.itm~
 COPY ~GlamNPCPack/Item/GV#MANU.itm~ ~override/GV#MANU.itm~
   SAY NAME1 @188 /* The Progress of Projectiles */
   SAY NAME2 @188 /* The Progress of Projectiles */
+  SAY UNIDENTIFIED_DESC @189
   SAY DESC @189
 
 COPY ~GlamNPCPack/Item/GV#RING.itm~ ~override/GV#RING.itm~
   SAY NAME1 @190 /* Wedding Ring */
   SAY NAME2 @190 /* Wedding Ring */
+  SAY UNIDENTIFIED_DESC @191 /* A simple gold band, unadorned, unenchanted, and slightly tarnished on the inside from decades of wear. */
   SAY DESC @191 /* A simple gold band, unadorned, unenchanted, and slightly tarnished on the inside from decades of wear. */
 
 COPY ~GlamNPCPack/Item/GV#BOOK.itm~ ~override/GV#BOOK.itm~
   SAY NAME1 @192 /* Lockpicking for Total Muttonheads */
   SAY NAME2 @192 /* Lockpicking for Total Muttonheads */
-  SAY 0x50 @193 /* you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap */
-  SAY 0x54 @193 /* you're crap you're crap you're crapyou're crap you're crap youre crap you're crap you're crap you're crap keep the pick level you dolt you're crap */
+  SAY UNIDENTIFIED_DESC @193
+  SAY DESC @193
 
 COPY ~GlamNPCPack/Item/GV#HELM.itm~ ~override/GV#HELM.itm~// basic helmet but provides poison immunity
-//  SAY NAME2 @190 /* Wedding Ring */
-//  SAY DESC @191 /* A simple gold band, unadorned, unenchanted, and slightly tarnished on the inside from decades of wear. */
+  SAY NAME2 @8014 /* Helmet of Anti-Venom */
+  SAY DESC  @8015
 
 COPY ~GlamNPCPack/Item/GV#DIAR.itm~ ~override/GV#DIAR.itm~
   SAY NAME1 @194 /* Jeff's Old Journal */
   SAY NAME2 @194 /* Jeff's Old Journal */
+  SAY UNIDENTIFIED_DESC @195
   SAY DESC @195
 
+// item wrapup
+ACTION_IF enhanced_edition BEGIN 
+  APPEND ~item_use.2da~ ~GV#XBOW2 GV#LITT 9382 2 %litt_name%
+GV#XBOW3 GV#LITT 9382 2 %litt_name%~ // add xbows exclusively for littlun
+END
+
+APPEND ~tooltip.2da~ ~GV#sw1h 3155 12084 -1~ // add 'sanctuary' tooltip for pam's sword     
 
 
 

@@ -8192,3 +8192,17 @@ I have followed the trail this far. Let us see what waits at the end of it.~
 @8011 = ~(Strength decreased.)~
 @8012 = ~(Charisma increased.)~
 @8013 = ~I'm...~
+@8014 = ~Helmet of Anti-Venom~
+@8015 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head, save the face and neck.  These helmets commonly provide protection for the nose. This helmet provides protection to the wearer from all forms of poison, be they of a natural or magical nature.
+
+STATISTICS:
+
+Armor Class Bonus:  None
+Special:
+  Protects Against Critical Hits
+  Immune to poison
+Weight: 2
+Not Usable By:
+Mage
+Bard
+Thief~
