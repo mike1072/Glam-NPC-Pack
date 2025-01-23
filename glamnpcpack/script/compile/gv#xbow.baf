@@ -1,0 +1,17 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		CutSceneId(Player1)
+    EraseJournalEntry(@7)
+    SetGlobal("GV#LITTDadQuest","GLOBAL",5) 
+    RealSetGlobalTimer("GV#LITTDadTalkTimer","GLOBAL",3600) 
+    ActionOverride("gv#pier",TakePartyItem("GV#XBOW")) 
+    ActionOverride("gv#pier",DestroyItem("GV#XBOW"))
+    Wait(1) 
+    ActionOverride("gv#pier",GiveItemCreate("GV#XBOW2","GV#LITT",1,1,0))
+    AddexperienceParty(1000) 
+    ActionOverride("gv#pier",EscapeArea())
+		EndCutSceneMode()
+END

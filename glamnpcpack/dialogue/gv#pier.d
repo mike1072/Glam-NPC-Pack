@@ -136,6 +136,4 @@ CHAIN IF ~Global("GV#LITTDadQuest","GLOBAL",3)~ THEN GV#PIER p12
 == GV#LITTJ @1907 /* ...yeah. */
 == GV#PIER @6406 /* Well then. I myself have spent *quite* enough time with my cups, I fear. Far more than taverns out there for a Plunkett, eh? */
 = @6407 /* Goodbye, my dear. And goodbye, <CHARNAME>. Thank you for the part you played in this. You may well have changed a man today. */
-DO ~SetGlobal("GV#LITTDadQuest","GLOBAL",5) RealSetGlobalTimer("GV#LITTDadTalkTimer","GLOBAL",3600) TakePartyItem("GV#XBOW") GiveItemCreate("GV#XBOW2","GV#LITT",1,1,0) AddexperienceParty(1000) EscapeArea() EraseJournalEntry(@7 /* Dead or Deadbeat?
-
-Littlun's father, Pierson Plunkett, is alive. He was clearly not prepared to see her, however, and fled at the first opportunity. He is too far gone to give chase, but before he left, he mentioned something about three old kegs... */)~ EXIT
+DO ~ClearAllActions() StartCutScene("GV#xbow")~ EXIT
