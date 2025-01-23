@@ -5,7 +5,7 @@ RESPONSE #100
 CutSceneId("GV#SIGU")
 MoveToObject(Player1)
 Wait(1)
-StartDialogueNoSet("Player1")
+StartDialogueNoSet(Player1)
 EndCutSceneMode()
 END
 

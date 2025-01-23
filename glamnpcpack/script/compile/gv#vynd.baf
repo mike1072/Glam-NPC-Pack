@@ -26,7 +26,7 @@ See(Player1)
 CombatCounter(0)
 !See([ENEMY])
 !AreaType(DUNGEON)
-OR(13)
+OR(8)
 Global("GV#VYNDTalk","GLOBAL",1)
 Global("GV#VYNDTalk","GLOBAL",5)
 Global("GV#VYNDTalk","GLOBAL",9)
@@ -50,7 +50,7 @@ See(Player1)
 CombatCounter(0)
 !See([ENEMY])
 !AreaType(DUNGEON)
-OR(13)
+OR(8)
 Global("GV#VYNDTalk","GLOBAL",2)
 Global("GV#VYNDTalk","GLOBAL",6)
 Global("GV#VYNDTalk","GLOBAL",10)
@@ -760,6 +760,6 @@ IF
     Global("GV#VYNDElfsong","GLOBAL",1)
 THEN
   RESPONSE #100
-    StartDialogueNoSet("Player1")
+    StartDialogueNoSet(Player1)
 END
 

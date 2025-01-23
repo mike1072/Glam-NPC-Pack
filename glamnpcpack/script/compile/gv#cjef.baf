@@ -13,6 +13,6 @@ ActionOverride("GV#PHIL",DisplayStringHead(Myself,@7978 /* WALK FEARLESS IN THE 
 ActionOverride("GV#KELL",DisplayStringHead(Myself,@7979 /* Walk fearless in...um... */))
 Wait(4)
 EndCutSceneMode()
-StartDialogueNoSet("GV#KELLa")
+StartDialogueNoSet("GV#KELL")
 END
 

@@ -18,7 +18,7 @@ ActionOverride("GV#KRAK",MoveToObject("GV#SIGU"))
 ActionOverride("GV#MARI",MoveToObject("GV#SIGU"))
 ActionOverride("GV#WINK",MoveToObject("GV#SIGU"))
 Wait(6)
-StartDialogueNoSet("Player1")
+StartDialogueNoSet(Player1)
 EndCutSceneMode()
 END
 
