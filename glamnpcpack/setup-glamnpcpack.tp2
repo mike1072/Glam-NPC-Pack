@@ -86,7 +86,7 @@ ACTION_IF enhanced_edition BEGIN
   ACTION_PHP_EACH cd_glam_ai AS eescript => obg2script BEGIN
     OUTER_SPRINT $cd_glam_ai("%eescript%") ~%eescript%~
     ACTION_IF !FILE_EXISTS_IN_GAME ~%eescript%.bcs~ BEGIN
-      COMPILE ~glamnpcpack/scripts/bgee/%eescript%.baf~
+      COMPILE ~glamnpcpack/script/bgee/%eescript%.baf~
     END
   END  
 
