@@ -137,3 +137,14 @@ CHAIN IF ~Global("GV#LITTDadQuest","GLOBAL",3)~ THEN GV#PIER p12
 == GV#PIER @6406 /* Well then. I myself have spent *quite* enough time with my cups, I fear. Far more than taverns out there for a Plunkett, eh? */
 = @6407 /* Goodbye, my dear. And goodbye, <CHARNAME>. Thank you for the part you played in this. You may well have changed a man today. */
 DO ~ClearAllActions() StartCutScene("GV#xbow")~ EXIT
+
+APPEND ~%tutu_var%SENIYA~
+
+  // safety state for post littlun/pierson exchange
+  IF WEIGHT #0 ~Global("GV#LITTDadQuest","GLOBAL",1)
+                !StateCheck(Myself,STATE_CHARMED)
+                !NumberOfTimesTalkedTo(0)~ THEN BEGIN seniyad_safety SAY #952
+    COPY_TRANS ~%tutu_var%SENIYA~ 0
+  END  
+
+END
