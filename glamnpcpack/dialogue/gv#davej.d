@@ -1023,12 +1023,12 @@ END
 
 IF ~~ t8.9
 SAY @3508 /* Even so. "Worthless." It's the way you say it. "Begone, you worthless dogs!" Like that. It's a word for bellowing. He just said it like it was nothing, which means he really believes it. And if we're worthless, why bother with us? */
-+~!PartyHasItem("MISC48")~+ @3509 /* Maybe he wants you to show him you're not worthless. */ + t8.10
-+~!PartyHasItem("MISC48")~+ @3510 /* Because he was told to. */ + t8.11
-+~!PartyHasItem("MISC48")~+ @3511 /* He probably just likes to feel important. */ + t8.12
-+~PartyHasItem("MISC48")~+ @3509 /* Maybe he wants you to show him you're not worthless. */ + t8.17
-+~PartyHasItem("MISC48")~+ @3510 /* Because he was told to. */ + t8.18
-+~PartyHasItem("MISC48")~+ @3511 /* He probably just likes to feel important. */ + t8.19
++~!PartyHasItem("MISC48") !PartyHasItem("C0AUIM04")~+ @3509 /* Maybe he wants you to show him you're not worthless. */ + t8.10
++~!PartyHasItem("MISC48") !PartyHasItem("C0AUIM04")~+ @3510 /* Because he was told to. */ + t8.11
++~!PartyHasItem("MISC48") !PartyHasItem("C0AUIM04")~+ @3511 /* He probably just likes to feel important. */ + t8.12
++~OR(2) PartyHasItem("MISC48") PartyHasItem("C0AUIM04")~+ @3509 /* Maybe he wants you to show him you're not worthless. */ + t8.17
++~OR(2) PartyHasItem("MISC48") PartyHasItem("C0AUIM04")~+ @3510 /* Because he was told to. */ + t8.18
++~OR(2) PartyHasItem("MISC48") PartyHasItem("C0AUIM04")~+ @3511 /* He probably just likes to feel important. */ + t8.19
 END
 
 IF ~~ t8.10
@@ -1198,7 +1198,7 @@ IF ~Global("GV#DAVEChargedIdolTalk","GLOBAL",1)~ t.charge
 SAY @3557 /* <CHARNAME>, take another look at the idol. It's practically humming! Looks like all that lightning woke it up. */
 = @3558 /* By the way, Thundercat will be joining us. Being in the temple reminds her of Stormlord Jeff too much. Besides, it'll...ow...it'll be good for her to get out for a while and...ow! Thundercat, stop. Stop it. You need to go in my pack, where it's safe...ARGH! */
 = @3559 /* She, um. She won't be any trouble. Promise. */
-IF ~~ DO ~SetGlobal("GV#DAVEChargedIdolTalk","GLOBAL",2) TakePartyItem("MISC48") DestroyItem("MISC48") GiveItemCreate("GV#IDOL","GV#DAVE",1,1,0) GiveItemCreate("GV#THUN","GV#DAVE",1,1,0) SetGlobal("GV#DAVETalk","GLOBAL",19) RealSetGlobalTimer("GV#DAVETimer","GLOBAL",3600) AddexperienceParty(1000) EraseJournalEntry(@4 /* Idol Curiosity
+IF ~~ DO ~SetGlobal("GV#DAVEChargedIdolTalk","GLOBAL",2) TakePartyItem("MISC48") DestroyItem("MISC48") TakePartyItem(C0AUIM04) DestroyItem("C0AUIM04") GiveItemCreate("GV#IDOL","GV#DAVE",1,1,0) GiveItemCreate("GV#THUN","GV#DAVE",1,1,0) SetGlobal("GV#DAVETalk","GLOBAL",19) RealSetGlobalTimer("GV#DAVETimer","GLOBAL",3600) AddexperienceParty(1000) EraseJournalEntry(@4 /* Idol Curiosity
 
 Dave believes it would be worth keeping the idol we found in the archaeological dig. What he thinks he can do with it, I can't imagine. */) EraseJournalEntry(@6 /* Toppling Taranis
 

@@ -46,7 +46,7 @@ CHAIN IF ~Global("GV#TARAIntro","GLOBAL",1) OR (3) !InMyArea("GV#DAVE") !InParty
 @6662 /* You travel with the Talassan boy, do you not? Bring him to me immediately. My patience wears thin. */
 EXIT
 
-CHAIN IF ~Global("GV#TARAIntro","GLOBAL",3) OR (2) Global("GV#DAVEHasIdol","GLOBAL",0) !PartyHasItem("MISC48")~ THEN GV#TARA t5
+CHAIN IF ~Global("GV#TARAIntro","GLOBAL",3) OR (3) Global("GV#DAVEHasIdol","GLOBAL",0) !PartyHasItem("MISC48") !PartyHasItem("C0AUIM04")~ THEN GV#TARA t5
 @6663 /* What is your business here? */
 END
 ++ @3078 /* Why do you worship Talos? */ EXTERN GV#TARA t5.1
