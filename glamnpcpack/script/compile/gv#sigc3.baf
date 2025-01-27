@@ -7,6 +7,7 @@ ActionOverride("GV#SIGU",EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",43
 ActionOverride("GV#KRAK",EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",480,280,0))
 ActionOverride("GV#MARI",EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",370,300,0))
 ActionOverride("GV#WINK",EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",400,240,0))
+SetGlobal("gv#movesigbackup","GLOBAL",1)
 Wait(7)
 EndCutSceneMode()
 RestParty()

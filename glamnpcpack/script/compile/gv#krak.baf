@@ -1,11 +1,21 @@
 IF 
+  Global("gv#movesigbackup","GLOBAL",1)
   Global("GV#FLARQuest","GLOBAL",4)
+  Global("gv#movesigbackup_me","LOCALS",0)
   !AreaCheck("%EBaldursGate_SorcerousSundries_L1%")
   ActionListEmpty()
 THEN
   RESPONSE #100
     EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",480,280,S)
 END   
+
+IF 
+  Global("gv#movesigbackup_me","LOCALS",0)
+  AreaCheck("%EBaldursGate_SorcerousSundries_L1%")
+THEN
+  RESPONSE #100
+    SetGlobal("gv#movesigbackup_me","LOCALS",1)
+END 
 
 IF
 AreaCheck("%EBaldursGate_SorcerousSundries_L1%")
