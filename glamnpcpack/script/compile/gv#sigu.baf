@@ -1,3 +1,12 @@
+IF 
+  Global("GV#FLARQuest","GLOBAL",4)
+  !AreaCheck("%EBaldursGate_SorcerousSundries_L1%")
+  ActionListEmpty()
+THEN
+  RESPONSE #100
+    EscapeAreaMove("%EBaldursGate_SorcerousSundries_L1%",430,290,S)
+END    
+
 IF
 InParty("GV#FLAR")
 Global("GV#FLARMetSigurd","GLOBAL",0)
