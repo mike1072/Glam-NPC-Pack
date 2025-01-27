@@ -766,8 +766,6 @@ COPY ~GlamNPCPack/Item/GV#BOOK.itm~ ~override/GV#BOOK.itm~
   SAY DESC @193
 
 COPY ~GlamNPCPack/Item/GV#HELM.itm~ ~override/GV#HELM.itm~// basic helmet but provides poison immunity
-  SAY NAME2 @8014 /* Helmet of Anti-Venom */
-  SAY DESC  @8015
 
 COPY ~GlamNPCPack/Item/GV#DIAR.itm~ ~override/GV#DIAR.itm~
   SAY NAME1 @194 /* Jeff's Old Journal */
