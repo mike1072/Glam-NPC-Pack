@@ -1,6 +1,8 @@
 BACKUP ~weidu_external/GlamNPCPack/backup~
 SUPPORT ~https://www.gibberlings3.net/forums/forum/186-glams-npc-pack/~
 
+VERSION ~v4~
+
 ALWAYS // why is there an always block in a one compoennt mod? don't ask questions.
 
   ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
@@ -608,7 +610,7 @@ EXTEND_TOP ~%DurlagsTower_D1_BCS%.bcs~              ~GlamNPCPack/Script/fw0511.b
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdintro.bcs~ BEGIN // SoD scripting
 
-  COPY  ~glamnpcpack/script/bdintro.baf~  ~glamnpcpack/script/bdintro.baf~
+  COPY  ~glamnpcpack/script/bdintro.baf~  ~glamnpcpack/script/bdintro.baf~ // blanks override scripts, could also blank J dialogue like other NPCs
     READ_ASCII 0x00 bdintro (SOURCE_SIZE) // read entire file into bdintro var
   COPY_EXISTING ~bdintro.bcs~ ~override~
     DECOMPILE_AND_PATCH BEGIN // insert above dynaheir

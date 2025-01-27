@@ -6,7 +6,7 @@ call "%~dp0..\ModPackaging\utilities\ie_games.bat"
 
 REM /* MODIFY: set the values of the 3 variables below to reflect the current mod version */
 set "mod_name=Glam's NPC Pack"
-set mod_version=v3.1
+set mod_version=v4
 set mod_folder=glamnpcpack
 
 REM /* MODIFY: list here which IE games the mod is compatible with, from this list of possibilities: */
