@@ -1,0 +1,64 @@
+IF
+	OR(2)
+		InMyArea("gv#dave")  // Dave
+		InPartyAllowDead("gv#dave")  // Dave
+	GlobalLT("BD_PLOT","GLOBAL",51)
+THEN
+	RESPONSE #100
+		ActionOverride("gv#dave",LeaveParty())
+		SmallWait(1)
+		ActionOverride("gv#dave",DestroySelf())
+		Continue()
+END
+
+IF
+	OR(2)
+		InMyArea("gv#flar")  // Flara
+		InPartyAllowDead("gv#flar")  // Flara
+	GlobalLT("BD_PLOT","GLOBAL",51)
+THEN
+	RESPONSE #100
+		ActionOverride("gv#flar",LeaveParty())
+		SmallWait(1)
+		ActionOverride("gv#flar",DestroySelf())
+		Continue()
+END
+
+IF
+	OR(2)
+		InMyArea("gv#litt")  // Littlun
+		InPartyAllowDead("gv#litt")  // Littlun
+	GlobalLT("BD_PLOT","GLOBAL",51)
+THEN
+	RESPONSE #100
+		ActionOverride("gv#litt",LeaveParty())
+		SmallWait(1)
+		ActionOverride("gv#litt",DestroySelf())
+		Continue()
+END
+
+IF
+	OR(2)
+		InMyArea("gv#moid")  // Moidre
+		InPartyAllowDead("gv#moid")  // Moidre
+	GlobalLT("BD_PLOT","GLOBAL",51)
+THEN
+	RESPONSE #100
+		ActionOverride("gv#moid",LeaveParty())
+		SmallWait(1)
+		ActionOverride("gv#moid",DestroySelf())
+		Continue()
+END
+
+IF
+	OR(2)
+		InMyArea("gv#vynd")  // Vynd
+		InPartyAllowDead("gv#vynd")  // Vynd
+	GlobalLT("BD_PLOT","GLOBAL",51)
+THEN
+	RESPONSE #100
+		ActionOverride("gv#vynd",LeaveParty())
+		SmallWait(1)
+		ActionOverride("gv#vynd",DestroySelf())
+		Continue()
+END

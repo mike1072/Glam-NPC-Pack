@@ -1,0 +1,44 @@
+IF
+	Global("SOD_fromimport","global",1)
+	InMyArea("gv#dave")  // Dave
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("gv#dave",ChangeAIScript("",OVERRIDE))
+END
+
+IF
+	Global("SOD_fromimport","global",1)
+	InMyArea("gv#flar")  // Flara
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("gv#flar",ChangeAIScript("",OVERRIDE))
+END
+
+IF
+	Global("SOD_fromimport","global",1)
+	InMyArea("gv#litt")  // Littlun
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("gv#litt",ChangeAIScript("",OVERRIDE))
+END
+
+IF
+	Global("SOD_fromimport","global",1)
+	InMyArea("gv#moid")  // Moidre
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("gv#moid",ChangeAIScript("",OVERRIDE))
+END
+
+IF
+	Global("SOD_fromimport","global",1)
+	InMyArea("gv#vynd")  // Vynd
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("gv#vynd",ChangeAIScript("",OVERRIDE))
+END

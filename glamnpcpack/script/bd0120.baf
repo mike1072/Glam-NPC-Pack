@@ -1,0 +1,42 @@
+IF
+	Global("bd_leaving_ot_alora","global",0)
+	CombatCounter(0)
+	GlobalGT("bd_leaving_ot","GLOBAL",0)
+	GlobalLT("bd_leaving_ot","GLOBAL",7)
+	IfValidForPartyDialog("%name%")
+	GlobalTimerExpired("bd_leaving_ot_timer","global")
+	!Dead("bdkorlas")  // Korlasz
+	!Global("BD_KORLASZ_SURRENDER","GLOBAL",1)
+THEN
+	RESPONSE #200
+		Continue()
+	RESPONSE #100
+		IncrementGlobal("bd_leaving_ot","global",1)
+		SetGlobal("bd_leaving_ot_alora","global",1)
+		SetGlobalTimerRandom("bd_leaving_ot_timer","global",TWENTY_MINUTES,THIRTY_MINUTES)
+		DisplayStringHead("%name%",67343)  // This has been a memorable journey. I know it won't last forever, but I'm glad we had this time together.
+END
+
+IF
+	Global("bd_leaving2_ot_alora","global",0)
+	CombatCounter(0)
+	GlobalGT("bd_leaving2_ot","GLOBAL",0)
+	GlobalLT("bd_leaving2_ot","GLOBAL",7)
+	IfValidForPartyDialog("%name%") 
+	GlobalTimerExpired("bd_leaving2_ot_timer","global")
+	OR(2)
+		Dead("bdkorlas")  // Korlasz
+		Global("BD_KORLASZ_SURRENDER","GLOBAL",1)
+THEN
+	RESPONSE #200
+		Continue()
+	RESPONSE #100
+		BanterBlockTime(125)
+		IncrementGlobal("bd_leaving2_ot","global",1)
+		SetGlobal("bd_leaving2_ot_alora","global",1)
+		SetGlobalTimerRandom("bd_leaving2_ot_timer","global",EIGHT_MINUTES,THIRTEEN_MINUTES)
+		DisplayStringWait("%name%",57804)  // I don't think I'll be coming back to the Ducal Palace with you, <CHARNAME>.
+		DisplayStringWait("%name%",70027)  // There are so many new folk in the city now—I'm going to spend some time with them.
+		DisplayStringWait("%name%",57805)  // Hey, if the palace butler asks where that vase is, tell him I have no idea what he's talking about.
+END
+

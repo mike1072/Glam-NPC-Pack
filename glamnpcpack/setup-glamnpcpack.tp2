@@ -606,6 +606,33 @@ EXTEND_TOP ~%CloakwoodLodge_BCS%.bcs~               ~GlamNPCPack/Script/fw2200.b
 EXTEND_TOP ~%Beregost_BurningWizard_L1_BCS%.bcs~    ~GlamNPCPack/Script/fw3307.baf~ EVALUATE_BUFFER
 EXTEND_TOP ~%DurlagsTower_D1_BCS%.bcs~              ~GlamNPCPack/Script/fw0511.baf~ EVALUATE_BUFFER
 
+ACTION_IF FILE_EXISTS_IN_GAME ~bdintro.bcs~ BEGIN // SoD scripting
+
+  COPY  ~glamnpcpack/script/bdintro.baf~  ~glamnpcpack/script/bdintro.baf~
+    READ_ASCII 0x00 bdintro (SOURCE_SIZE) // read entire file into bdintro var
+  COPY_EXISTING ~bdintro.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN // insert above dynaheir
+      REPLACE_TEXTUALLY ~\(IF[ %TAB%%LNL%%MNL%%WNL%]+Global("SOD_fromimport","global",1)[ %TAB%%LNL%%MNL%%WNL%]+InMyArea("dynaheir")\)~
+        ~%bdintro%%WNL%%WNL%\1~
+    END
+    BUT_ONLY
+
+  COPY  ~glamnpcpack/script/bd0103.baf~  ~glamnpcpack/script/bd0103.baf~
+    READ_ASCII 0x00 bd0103 (SOURCE_SIZE) // read entire file into bd0103 var
+  COPY_EXISTING ~bd0103.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN // insert above kivan
+      REPLACE_TEXTUALLY ~\(SetGlobal("BD_HAS_BAELOTHS_ROBE","GLOBAL",1)[ %TAB%%LNL%%MNL%%WNL%]+END\)~
+        ~\1%WNL%%WNL%%bd0103%~
+    END
+    BUT_ONLY        
+  
+  // these two provide the random 'it's been great but i'm leaving soon' stringheads that play in korlasz's dungeon
+  // same script bit to add for both, but need glam to write character-appropriate dialogue
+  //EXTEND_BOTTOM ~bd0120.bcs~  ~glamnpcpack/script/bd0120.baf~  EVALUATE_BUFFER
+  //EXTEND_BOTTOM ~bd0130.bcs~  ~glamnpcpack/script/bd0120.baf~  EVALUATE_BUFFER
+
+END  
+
 // Creatures
 COPY_EXISTING ~%tutu_var%FFHUNT.cre~ ~override/GV#MERI.cre~
   SAY NAME1 @149 /* Officer Meriwether */
